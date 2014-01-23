@@ -1,46 +1,28 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: Condense
+tagline: Turning Data Into Action
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+# Condense.  From data to action.
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+**The Data Revolution is now.  Don't get left behind.**
 
-## Update Author Attributes
+Intelligent businesses know their data and how to use it. They have
+the advantage of transparency. Transparency empowers managers
+to make the right decisions for stronger returns and more
+opportunities, with more accurate insights into their best customers.
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+The question is… how do you use data? Where do you start? What
+tools do you use? What are the best practices? How do you manage
+the data flowing into your business?
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
+That’ s where we come in.
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+We help businesses to take advantage of data. We create the
+processes to transform data into informed action. Moreover, we
+empower people with the tools and know-how to leverage their own
+data assets, even if they aren’ t stats savvy.
 
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
-
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
-
+Want to know more? [Talk to us today](mailto:hello@condense.com.au).
