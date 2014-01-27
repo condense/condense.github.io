@@ -23,4 +23,4 @@ processes to transform data into informed action. Moreover, we
 empower people with the tools and know-how to leverage their own
 data assets, even if they aren’ t stats savvy.
 
-Want to know more? [Talk to us today](mailto:hello@condense.com.au)
+Want to know more? [Talk to us today](mailto:hello@condense.com.au).
