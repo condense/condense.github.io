@@ -1,13 +1,11 @@
 ---
 layout: page
 title: Condense
-tagline: Turning Data Into Action
+tagline: From Data Into Action
 ---
 {% include JB/setup %}
 
-# Condense.  From data to action.
-
-**The Data Revolution is now.  Don't get left behind.**
+### The Data Revolution is now.  Don't get left behind.
 
 Intelligent businesses know their data and how to use it. They have
 the advantage of transparency. Transparency empowers managers
