@@ -15,7 +15,7 @@ Research projects are how we take on strategically important work which can't be
 
 In research projects we apply our expertise in new or novel ways with the aim of building new tools and processes which can deliver results. This stands in contrast to our standard consulting engagements where we apply our expertise and established processes to deliver proven results.
 
-An important outcome of this work for us is to be able to talk about the results. We ask our project partners permission to share our successes - with sensitivity to any commercially sensitive aspects.
+An important outcome of this work for us is to be able to talk about the results. We ask our project partners permission to share our successes---with sensitivity to any commercially sensitive aspects.
 
 Currently we're exploring these research areas:
 
