@@ -3,7 +3,6 @@ layout: page
 group: "navigation"
 title: "Approach"
 tagline:
-weight: 30
 ---
 {% include JB/setup %}
 

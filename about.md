@@ -4,7 +4,6 @@ group: "navigation"
 title: "About"
 tagline: ""
 description: ""
-weight: 20
 ---
 {% include JB/setup %}
 
