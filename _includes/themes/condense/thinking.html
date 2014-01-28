@@ -1,0 +1,33 @@
+
+<ul>
+
+  {% assign link_url = "/thinking.html" %}
+  <li class='{% include active_class %}'>
+    <a href="{{ link_url }}">Thinking</a>
+  </li>
+
+  <li class="{% include active_class %}">
+    <a href="/thinking/research.html">Research</a>
+  </li>
+
+  {% assign link_url = "/thinking/research.html" %}
+  <li class="{% include active_class %}">
+    <a href="/thinking/projects.html">Projects</a>
+    <ul>
+      {% assign pages_list = site.pages %}
+      {% assign group = 'project' %}
+      {% include JB/pages_list %}
+    </ul>
+  </li>
+
+</ul>
+
+<div class="page-header">
+  <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+    {{ content }}
+  </div>
+</div>
