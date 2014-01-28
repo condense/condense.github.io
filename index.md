@@ -5,6 +5,8 @@ tagline: From Data Into Action
 ---
 {% include JB/setup %}
 
+![There's profit hiding in your data]({{ site.url }}/assets/slider-mouse.png)
+
 ### The Data Revolution is now.  Don't get left behind.
 
 Intelligent businesses know their data and how to use it. They have
@@ -16,7 +18,7 @@ The question is… how do you use data? Where do you start? What
 tools do you use? What are the best practices? How do you manage
 the data flowing into your business?
 
-That’ s where we come in.
+That's where we come in.
 
 We help businesses to take advantage of data. We create the
 processes to transform data into informed action. Moreover, we
