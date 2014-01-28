@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: thinking
 group: "project"
 title: "Personalised customer experience"
 description: "Modern machine learning techniques have opened the door for businesses to provide a more personalised service"

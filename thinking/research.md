@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: thinking
 group:
 title: "Research"
 description:
