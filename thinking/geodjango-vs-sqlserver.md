@@ -1,7 +1,8 @@
 ---
-layout: thinking
+layout: page
 group: "project"
 title: "SQL Server spatial backend for Django"
+heading: "SQL Server vs GeoDjango"
 description:
 tagline:
 thumbnail-class: ch-img-2
@@ -10,7 +11,7 @@ thumbnail-theme: "Software development"
 ---
 {% include JB/setup %}
 
-This project aims to facilitate tighter integration between Django and Microsoft SQL Server's spatial capabilities.  That is we can write Django queries which search by location, organise information geographically and, ultimately, work more efficiently with map based information.
+#### This project aims to facilitate tighter integration between Django and Microsoft SQL Server's spatial capabilities.  That is, we can write Django queries which search by location, organise information geographically and, ultimately, work more efficiently with map based information.
 
 We've been a big fan of Django for sometime.  It's allowed us to deliver some amazing websites and web applications which integrate with business databases.  More importantly, it's allowed us to do that quickly and reliably.
 
