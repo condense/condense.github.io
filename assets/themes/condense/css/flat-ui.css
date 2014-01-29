@@ -435,7 +435,7 @@ body {
   font-family: 'Quicksand', Helvetica, Arial, sans-serif;
   font-size: 14px;
   letter-spacing: -0.04em;
-  font-weight: 400px;
+  font-weight: 400;
   line-height: 1.231;
   color: #34495e;
   background-color: #ffffff;
@@ -454,6 +454,11 @@ a:focus {
   color: #1abc9c;
   text-decoration: none;
 }
+.navbar-brand a:hover,
+.navbar-brand a:focus {
+  color: black;
+  text-decoration: none;
+}
 .img-rounded {
   border-radius: 6px;
 }
@@ -463,14 +468,14 @@ a:focus {
   font-style: italic;
   margin: 24px 0;
 }
-p {
-  font-size: 18px;
-  line-height: 1.71109;
+p, li {
+  font-size: 12pt;
+
 }
 .lead {
   font-size: 28px;
   line-height: 1.4642745000000001;
-  font-weight: 700;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .lead {
@@ -1051,7 +1056,7 @@ address {
 }
 .navbar .navbar-brand:hover,
 .navbar .navbar-brand:focus {
-  color: #1abc9c;
+  color: #111;
 }
 .navbar .navbar-brand[class*="fui-"] {
   font-weight: normal;
