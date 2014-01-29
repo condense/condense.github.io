@@ -1,9 +1,29 @@
-<div class="page-header">
-  <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+
+<div class="container">
+  <div class="row">
+    <br>
+    <br>
+    <div class="col-lg-8">
+      <h3>{{ page.title }}</h3>
+      {% if page.description %}
+      <p class="lead">{{ page.description }}</p>
+      {% endif %}
+    </div>
+
+    {% if page.header-image %}
+    <br>
+    <div class="col-lg-10 col-lg-offset-1">
+      <img class="img-responsive" src="{{ page.header-image }}" alt="">
+    </div>
+    {% endif %}
+  </div>
 </div>
 
-<div class="row-fluid">
-  <div class="span12">
-    {{ content }}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      {{ content }}
+    </div>
   </div>
 </div>
