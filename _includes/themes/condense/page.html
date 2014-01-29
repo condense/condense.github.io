@@ -1,14 +1,17 @@
 
 <div class="container">
-  <div class="row">
-    <br>
-    <br>
-    <div class="col-lg-8">
-      <h3>{{ page.title }}</h3>
+  <div class="row centered">
+
+    {% if page.heading or page.description %}
+    <div class="col-lg-7 col-lg-offset-1">
+      {% if page.heading %}
+      <h3 class="heading">{{ page.heading }}</h3>
+      {% endif %}
       {% if page.description %}
       <p class="lead">{{ page.description }}</p>
       {% endif %}
     </div>
+    {% endif %}
 
     {% if page.header-image %}
     <br>
@@ -22,7 +25,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-9">
       {{ content }}
     </div>
   </div>

@@ -1,13 +1,14 @@
 ---
-layout: thinking
+layout: page
 group:
 title: "Research"
-description:
+heading: "RESEARCH"
+description: "We're a creative team who strive to develop innovative new products but this can't happen in a vacuum"
 tagline: ""
 ---
 {% include JB/setup %}
 
-We're a creative team who strive to develop innovative new products but this can't happen in a vacuum. We work closely with industry to build strong and enduring relationships so we can work with them to explore and solve important problems.
+We work closely with industry to build strong and enduring relationships so we can work with them to explore and solve important problems.
 
 These research projects are a great opportunity for businesses to push the envelope and pilot new initiatives in a low risk way.
 

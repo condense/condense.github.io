@@ -473,13 +473,13 @@ p, li {
 
 }
 .lead {
-  font-size: 28px;
+  font-size: 20px;
   line-height: 1.4642745000000001;
   font-weight: 400;
 }
 @media (min-width: 768px) {
   .lead {
-    font-size: 21px;
+    font-size: 20px;
   }
 }
 small {
@@ -538,19 +538,26 @@ a.text-muted:focus {
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
 .h1,
 .h2,
-.h3,
-.h4,
-.h5,
-.h6 {
+.h3 {
   font-family: 'Quicksand', Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height: 1.2;
 }
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+
 h1 small,
 h2 small,
 h3 small,
@@ -571,6 +578,11 @@ h3 {
   margin-top: 2px;
   margin-bottom: 4px;
 }
+
+.heading {
+  padding-top: 0.5em;
+}
+
 h4,
 h5,
 h6 {
@@ -594,7 +606,7 @@ h3,
 }
 h4,
 .h4 {
-  font-size: 29px;
+  font-size: 24px;
 }
 h5,
 .h5 {
