@@ -1,12 +1,12 @@
 ---
-layout: thinking
+layout: page
 group: "project"
 title: "Personalised customer experience"
 description: "Modern machine learning techniques have opened the door for businesses to provide a more personalised service"
 tagline:
 thumbnail-class: ch-img-4
 thumbnail-hover-msg: "Deliver a tailored experience"
-thumbnail-theme: "Machine learning"
+thumbnail-theme: "Analytics"
 ---
 {% include JB/setup %}
 

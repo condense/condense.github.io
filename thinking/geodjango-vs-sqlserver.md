@@ -7,7 +7,7 @@ description:
 tagline:
 thumbnail-class: ch-img-2
 thumbnail-hover-msg: "The best of both worlds"
-thumbnail-theme: "Software development"
+thumbnail-theme: "Software"
 ---
 {% include JB/setup %}
 
