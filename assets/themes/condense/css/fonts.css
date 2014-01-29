@@ -1,0 +1,37 @@
+/* Generated from http://fonts.googleapis.com/css?family=Quicksand:700,400,300 */
+
+@font-face {
+  font-family: 'Dock11';
+  font-weight: normal;
+  src: url("../fonts/heavy_dock11.otf") format("opentype");
+}
+/* Not using 300 on website - too light.  Note: lightest font seems to be the default weight.
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Quicksand Light'), local('Quicksand-Light'), url(http://themes.googleusercontent.com/static/fonts/quicksand/v3/qhfoJiLu10kFjChCCTvGlKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+*/
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Quicksand Regular'), local('Quicksand-Regular'), url(http://themes.googleusercontent.com/static/fonts/quicksand/v3/sKd0EMYPAh5PYCRKSryvW7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Quicksand Bold'), local('Quicksand-Bold'), url(http://themes.googleusercontent.com/static/fonts/quicksand/v3/32nyIRHyCu6iqEka_hbKsqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+
+.navbar-brand {
+  font-family: Dock11;
+}
+
+.navbar a.navbar-brand {
+  background: url(http://localhost:4000/assets/themes/condense/images/logo-c-x38.png) no-repeat 0px 18px;
+  padding-left: 30px
+}
+
