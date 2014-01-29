@@ -26,7 +26,7 @@
   src: local('Quicksand Bold'), local('Quicksand-Bold'), url(http://themes.googleusercontent.com/static/fonts/quicksand/v3/32nyIRHyCu6iqEka_hbKsqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
 }
 
-.navbar-brand {
+.navbar-brand, .logofont {
   font-family: Dock11;
 }
 

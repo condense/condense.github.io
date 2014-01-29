@@ -441,6 +441,7 @@ body {
 #sp1 h3 {
 	color: #ffffff;
 	font-weight: 100;
+  font-size: 24pt;
 }
 
 
@@ -524,13 +525,13 @@ body {
 }
 
 #f p {
-	font-weight: 300;
-	color: #677786;
+	font-weight: 400;
+	color: #A8B1B9;
 }
 
 #f h5 {
-	color: #677786;
-	font-weight: 300;
+	color: #A8B1B9;
+	font-weight: 400;
 }
 
 /***** Map Wrap *****/

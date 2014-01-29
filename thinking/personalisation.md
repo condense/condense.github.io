@@ -2,7 +2,8 @@
 layout: page
 group: "project"
 title: "Personalised customer experience"
-description: "Modern machine learning techniques have opened the door for businesses to provide a more personalised service"
+heading: "PERSONALISATION"
+description: "Modern machine learning techniques have opened the door for businesses to provide a more personalised service."
 tagline:
 thumbnail-class: ch-img-4
 thumbnail-hover-msg: "Deliver a tailored experience"

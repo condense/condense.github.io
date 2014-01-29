@@ -25,6 +25,8 @@ You can see our work in progress on GitHub.
 
 [https://github.com/condense/django-pyodbc-gis](https://github.com/condense/django-pyodbc-gis)
 
+We'd like to express our thanks to Microsoft for providing us Azure services to help with development and testing.
+
 TODO: Link in related posts by tag
 
 TODO: Add some definitions for key technologies and terms (django, sql server, spatial queries, python)
