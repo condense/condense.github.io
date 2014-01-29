@@ -1061,8 +1061,8 @@ address {
   font-size: 20px;
   line-height: 29.55px;
   font-weight: 900;
-  margin-left: -15px;
-  padding: 23px 28px 24px 17px;
+  /* margin-left: -15px; */
+  padding: 23px 28px 24px 30px;
   text-shadow: none;
   display: inline-block;
 }
@@ -1547,8 +1547,8 @@ address {
     margin-right: -15px;
   }
   .navbar .navbar-brand {
-    padding-left: 20px;
-    margin-left: -15px;
+    padding-left: 30px;
+    /* margin-left: -15px; */
     float: none;
   }
   .navbar .btn-navbar {
