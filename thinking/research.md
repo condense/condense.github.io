@@ -2,8 +2,8 @@
 layout: page
 group:
 title: "Research"
-heading: "RESEARCH"
-description: "We're a creative team who strive to develop innovative new products but this can't happen in a vacuum"
+heading: "RESEARCH PROJECTS"
+description: "We're a creative team who strive to develop innovative new products but this can't happen in a vacuum."
 tagline: ""
 ---
 {% include JB/setup %}
