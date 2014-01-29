@@ -4,6 +4,9 @@ group: "project"
 title: "SQL Server spatial backend for Django"
 description:
 tagline:
+thumbnail-class: ch-img-2
+thumbnail-hover-msg: "The best of both worlds"
+thumbnail-theme: "Software development"
 ---
 {% include JB/setup %}
 

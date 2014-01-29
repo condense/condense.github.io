@@ -4,6 +4,9 @@ group: "project"
 title: "Personalised customer experience"
 description: "Modern machine learning techniques have opened the door for businesses to provide a more personalised service"
 tagline:
+thumbnail-class: ch-img-4
+thumbnail-hover-msg: "Deliver a tailored experience"
+thumbnail-theme: "Machine learning"
 ---
 {% include JB/setup %}
 
@@ -18,7 +21,7 @@ We're interested in working with consumer retail and online businesses who belie
 **Related links:**
 
 * [Coles, Woolies and the big data arms race (BRW, June 2013)](http://www.brw.com.au/p/tech-gadgets/coles_woolies_and_the_big_data_arms_4I2P2oieDKZGdev5aY778H)
-* [](http://www.fastcodesign.com/1669551/how-companies-like-amazon-use-big-data-to-make-you-love-them)
+* [How Companies Like Amazon Use Big Data To Make You Love Them](http://www.fastcodesign.com/1669551/how-companies-like-amazon-use-big-data-to-make-you-love-them)
 * [Tesco uses customer data to stride ahead of competition ](http://www.computerweekly.com/news/1280095684/Tesco-uses-customer-data-to-stride-ahead-of-competition)
 * [The four Ps of Personalisation (Econsultancy, Jan 2013)](http://econsultancy.com/blog/11328-the-four-ps-of-personalisation)
 
