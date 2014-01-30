@@ -1,31 +1,40 @@
 
+{% if page.heading %}
 <div class="container">
   <div class="row centered">
     <br>
     <br>
-
-    {% if page.heading or page.description %}
-    {% if page.heading %}
-    <h3 class="heading">{{ page.heading }}</h3>
-    {% endif %}
-    {% if page.description %}
-    <p class="lead">{{ page.description }}</p>
-    {% endif %}
-    {% endif %}
+    <div class="col-lg-8 col-lg-offset-2">
+      <h3 class="heading">{{ page.heading }}</h3>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% if page.description %}
+<div class="container">
+  <div class="row centered">
+    <div class="col-lg-8 col-lg-offset-2">
+      <p class="lead">{{ page.description }}</p>
+    </div>
     <br>
-
-    {% if page.header-image %}
+  </div>
+</div>
+{% endif %}
+{% if page.header-image %}
+<div class="container">
+  <div class="row">
     <br>
     <div class="col-lg-10 col-lg-offset-1">
       <img class="img-responsive" src="{{ page.header-image }}" alt="">
     </div>
-    {% endif %}
   </div>
 </div>
+{% endif %}
 <div class="container">
   <div class="row">
-    {{ content }}
-
+    <div class="col-lg-10 col-lg-offset-1">
+      {{ content }}
+    </div>
   </div>
   <br>
   <br>
