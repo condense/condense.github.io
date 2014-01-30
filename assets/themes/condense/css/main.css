@@ -12,6 +12,7 @@ body{
   font-family: "Quicksand", Helvetica, Arial, sans-serif;
   font-size: 12pt;
   /* font-weight: 400px; */
+  line-height: inherit;
 }
 
 .navbar-brand a:hover,
@@ -22,6 +23,7 @@ body{
 
 p, li {
   /* font-size: 12pt; */
+  line-height: inherit;
 }
 
 .lead {
@@ -75,6 +77,10 @@ h6,
 }
 
 
+.lead {
+  font-size: 24px;
+}
+
 h4,
 .h4 {
   font-size: 24px;
@@ -84,6 +90,11 @@ h4,
   padding-top: 0.5em;
 }
 
+.centered {
+  text-align: center;
+}
+
+/* Brand & Logo */
 .navbar .navbar-brand {
   padding: 18px 28px 24px 30px;
 }
