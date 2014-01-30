@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 group:
 title: "Projects and initatives"
 heading: "PROJECTS AND INITIATIVES"
@@ -8,26 +8,66 @@ tagline: ""
 ---
 {% include JB/setup %}
 
-<div class="ch-grid">
 
-  {% assign pages_list = site.pages %}
-  {% assign group = 'project' %}
-  {% for node in pages_list %}
-  {% if group == null or group == node.group %}
-  <div class="col-lg-4">
-    <li>
-      <a href="{{ BASE_PATH }}{{node.url}}">
-        <div class="ch-item {{ node.thumbnail-class }}">
-          <div class="ch-info">
-            <h3>{{ node.thumbnail-hover-msg }}</h3>
-            <p>by Good Team <a href="{{ BASE_PATH }}{{node.url}}">View Project</a></p>
-          </div>
-        </div><!-- /ch-img-1 -->
-        <h6><b>{{node.title}}</b><br/> {{node.thumbnail-theme}}</h6>
-      </a>
-    </li>
-  </div><!-- /col-lg-4 -->
+{% if page.heading %}
+<div class="container">
+  <div class="row centered">
+    <br>
+    <br>
+    <div class="col-lg-8 col-lg-offset-2">
+      <h3 class="heading">{{ page.heading }}</h3>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% if page.description %}
+<div class="container">
+  <div class="row centered">
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+      <p class="lead">{{ page.description }}</p>
+    </div>
+    <br>
+  </div>
+</div>
+{% endif %}
+{% if page.header-image %}
+<div class="container">
+  <div class="row">
+    <br>
+    <div class="col-lg-10 col-lg-offset-1">
+      <img class="img-responsive" src="{{ page.header-image }}" alt="">
+    </div>
+  </div>
+</div>
+{% endif %}
+<div class="container">
+  <div class="row">
+    <div class="ch-grid">
 
-  {% endif %}
-  {% endfor %}
-</div><!-- /ch-igrid -->
+      {% assign pages_list = site.pages %}
+      {% assign group = 'project' %}
+      {% for node in pages_list %}
+      {% if group == null or group == node.group %}
+      <div class="col-sm-4">
+        <li>
+          <a href="{{ BASE_PATH }}{{node.url}}">
+            <div class="ch-item {{ node.thumbnail-class }}">
+              <div class="ch-info">
+                <h3>{{ node.thumbnail-hover-msg }}</h3>
+                <p>by Good Team <a href="{{ BASE_PATH }}{{node.url}}">View Project</a></p>
+              </div>
+            </div><!-- /ch-img-1 -->
+            <h6><b>{{node.title}}</b><br/> {{node.thumbnail-theme}}</h6>
+          </a>
+        </li>
+      </div><!-- /col-lg-4 -->
+
+      {% endif %}
+      {% endfor %}
+    </div><!-- /ch-igrid -->
+  </div>
+  <br>
+  <br>
+</div>
+
+
