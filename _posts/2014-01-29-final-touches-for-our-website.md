@@ -7,7 +7,7 @@ author: Oliver George
 ---
 {% include JB/setup %}
 
-It's late January and we are putting final touches on our website.  No doubt it will involve overtime but for now we're quite proud of the structure.
+It's late January and we are putting final touches on our website.  No doubt it will evolve over time but for now we're quite proud of the structure.
 
 Let me take you on a quick tour.
 
