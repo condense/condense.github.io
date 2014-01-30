@@ -2,7 +2,7 @@
 layout: post
 category : thinking
 tagline: "Final touches for our website"
-tags : [test, one, two, three]
+tags : [newsletter]
 author: Oliver George
 ---
 {% include JB/setup %}
