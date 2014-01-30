@@ -10,7 +10,10 @@
         <img class="img-responsive" src="{{ page.img-responsive }}" alt="">
         {% endif %}
         <h6>{{ page.title }}</h6>
-        <small><span class="fui-user"></span> {{ page.author }} | <span class="fui-calendar"></span> {{ page.date | date_to_long_string }} | <span class="fui-chat"></span> 4 Comments</small>
+        <small><span class="fui-user"></span> {{ page.author }}
+          | <span class="fui-calendar"></span> {{ page.date | date_to_long_string }}
+          <!-- | <span class="fui-chat"></span> 4 Comments -->
+        </small>
         {% if page.tag_line %}
         <p class="lead">{{ page.tag_line }}</p>
         {% endif %}
