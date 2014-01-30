@@ -8,13 +8,12 @@ tagline: ""
 ---
 {% include JB/setup %}
 
-
 <div class="ch-grid">
+
   {% assign pages_list = site.pages %}
   {% assign group = 'project' %}
   {% for node in pages_list %}
   {% if group == null or group == node.group %}
-
   <div class="col-lg-4">
     <li>
       <a href="{{ BASE_PATH }}{{node.url}}">
@@ -31,5 +30,4 @@ tagline: ""
 
   {% endif %}
   {% endfor %}
-
-</div>
+</div><!-- /ch-igrid -->
