@@ -689,6 +689,10 @@ body {
 	margin-top: 15px;
 }
 
+.blogcontent h6 a {
+	color: #34495e;
+}
+
 .blogcontent p {
 	margin-top: 10px;
 }
