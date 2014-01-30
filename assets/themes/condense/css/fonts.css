@@ -28,10 +28,11 @@
 
 .navbar-brand, .logofont {
   font-family: Dock11;
+  font-size: 20px;
 }
 
 .navbar a.navbar-brand {
-  background: url(../images/logo-c-x38.png) no-repeat 0px 18px;
+  background: url(../images/logo-c-x38.png) no-repeat 0px 9px;
   padding-left: 45px
   margin-left: 0px;
 }

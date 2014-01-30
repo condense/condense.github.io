@@ -7,14 +7,129 @@
  * URL: http://alvarez.is
  */
 
-body {
+body{
   padding-top: 75px;
+  font-family: "Quicksand", Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+  /* font-weight: 400px; */
 }
 
-.centered {
-	text-align: center;
+.navbar-brand a:hover,
+.navbar-brand a:focus {
+  color: black;
+  text-decoration: none;
 }
 
+p, li {
+  /* font-size: 12pt; */
+}
+
+.lead {
+  /* font-size: 20px; */
+  /* line-height: 1.46; */
+  /* font-weight: 400; */
+}
+
+.h3 {
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Quicksand", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.form-control {
+  font-family: "Quicksand", Helvetica, Arial, sans-serif;
+}
+.tagsinput input {
+  font-family: "Quicksand", Helvetica, Arial, sans-serif;
+}
+.tt-query,
+.tt-hint {
+  font-family: "Quicksand", Helvetica, Arial, sans-serif;
+}
+.navbar-unread,
+.navbar-new {
+  font-family: "Quicksand", Helvetica, Arial, sans-serif;
+}
+
+
+h4,
+.h4 {
+  font-size: 24px;
+}
+
+.heading {
+  padding-top: 0.5em;
+}
+
+.navbar .navbar-brand {
+  padding: 18px 28px 24px 30px;
+}
+
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  color: #111;
+}
+
+.navbar .navbar-brand {
+  padding-left: 30px;
+}
+
+/* Sorting out menu colours */
+/*
+.navbar .nav ul {
+  border-radius: 0px;
+}
+.navbar .nav ul li:first-child {
+  border-radius: 6px 6px 0 0;
+  padding-top: 3px;
+}
+.navbar .nav ul li:last-child {
+  border-radius: 0 0 6px 6px;
+}
+.navbar .nav ul li {
+  background-color: #34495e;
+  padding: 0 3px 3px;
+}
+.navbar .nav ul li.active > a,
+.navbar .nav ul li.active > a:hover,
+.navbar .nav ul li.active > a:focus {
+  background-color: #1abc9c;
+  color: #ffffff;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+.navbar .nav ul a {
+  color: #ffffff;
+}
+.navbar .nav ul a:hover {
+  background-color: #1abc9c;
+}
+*/
+
+/*  */
 .panel-default > .panel-heading {
 	color: #ffffff;
 	background-color: #1abc9c;
