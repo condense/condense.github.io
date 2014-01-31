@@ -43,7 +43,7 @@ h2,
 .h2 {
   font-family: "Quicksand", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.06em;
 }
 h3,
 h4,
@@ -240,6 +240,9 @@ h6,
 }
 .ch-img-kungfu-chicken {
 	background-image: url(../images/graffiti/kungfu-chicken.jpg);
+}
+.ch-img-bendy-man {
+	background-image: url(../images/graffiti/bendy-man.jpg);
 }
 .ch-img-1 {
 	background-image: url(../images/1.jpg);
