@@ -39,28 +39,25 @@ p, li {
 }
 h1,
 h2,
+.h1,
+.h2 {
+  font-family: "Quicksand", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+}
 h3,
 h4,
 h5,
 h6,
-.h1,
-.h2,
 .h3,
-.h4,
-.h5,
-.h6 {
-  font-family: "Quicksand", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-}
-h4,
-h5,
-h6,
 .h4,
 .h5,
 .h6 {
   font-family: 'Quicksand', Helvetica, Arial, sans-serif;
   font-weight: 400;
+  letter-spacing: -0.05em;
 }
+
 .form-control {
   font-family: "Quicksand", Helvetica, Arial, sans-serif;
 }
@@ -78,11 +75,6 @@ h6,
 
 
 .lead {
-  font-size: 24px;
-}
-
-h4,
-.h4 {
   font-size: 24px;
 }
 
