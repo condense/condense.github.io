@@ -229,6 +229,18 @@ h6,
 }
 
 /***** DEFINE HERE YOUR IMAGES *****/
+.ch-img-brown-elephant {
+	background-image: url(../images/graffiti/brown-elephant.jpg);
+}
+.ch-img-creepy-eyes {
+	background-image: url(../images/graffiti/creepy-eyes.jpg);
+}
+.ch-img-flower-girl {
+	background-image: url(../images/graffiti/flower-girl.jpg);
+}
+.ch-img-kungfu-chicken {
+	background-image: url(../images/graffiti/kungfu-chicken.jpg);
+}
 .ch-img-1 {
 	background-image: url(../images/1.jpg);
 }

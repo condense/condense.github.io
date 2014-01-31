@@ -5,7 +5,7 @@ title: "SQL Server spatial backend for Django"
 heading: "SQL Server vs GeoDjango"
 description:
 tagline:
-thumbnail-class: ch-img-2
+thumbnail-class: ch-img-brown-elephant
 thumbnail-hover-msg: "The best of both worlds"
 thumbnail-theme: "Software"
 ---

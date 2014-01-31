@@ -5,7 +5,7 @@ title: "Personalised customer experience"
 heading: "PERSONALISATION"
 description: "Modern machine learning techniques have opened the door for businesses to provide a more personalised service."
 tagline:
-thumbnail-class: ch-img-4
+thumbnail-class: ch-img-flower-girl
 thumbnail-hover-msg: "Deliver a tailored experience"
 thumbnail-theme: "Analytics"
 ---
