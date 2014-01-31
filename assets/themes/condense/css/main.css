@@ -22,7 +22,7 @@ body{
 }
 
 p, li {
-  /* font-size: 12pt; */
+  font-size: 12pt;
   line-height: inherit;
 }
 
