@@ -3,6 +3,9 @@ layout: default
 ---
 {% include JB/setup %}
 
+<script src="{{ ASSET_PATH }}condense/js/Chart.js"></script>
+<link href="{{ ASSET_PATH }}condense/css/pricing-table-global.css" rel="stylesheet">
+
 <style>
   .demo-row {
     margin-bottom: 20px;
@@ -360,73 +363,73 @@ layout: default
         Disabled radio is on
       </label>
     </div> <!-- /radios col-md-3 -->
-<!--
-    <div class="col-md-3">
-      <h3 class="demo-panel-title">Switches</h3>
+    <!--
+<div class="col-md-3">
+<h3 class="demo-panel-title">Switches</h3>
 
-      <table width="100%">
-        <tbody><tr>
-          <td width="50%" class="pbm">
-            <div class="switch has-switch"><div class="switch-animate switch-on"><input type="checkbox" checked="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
-          </td>
+<table width="100%">
+<tbody><tr>
+<td width="50%" class="pbm">
+<div class="switch has-switch"><div class="switch-animate switch-on"><input type="checkbox" checked="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
+</td>
 
-          <td class="pbm">
-            <div class="switch has-switch"><div class="switch-animate switch-off"><input type="checkbox" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
-          </td>
-          </tr>
-          <tr>
-            <td class="pbm">
-              <div class="switch switch-square has-switch" data-on-label="&lt;i class='fui-check'&gt;&lt;/i&gt;" data-off-label="&lt;i class='fui-cross'&gt;&lt;/i&gt;">
-                <div class="switch-animate switch-off"><input type="checkbox"><span class="switch-left"><i class="fui-check"></i></span><label>&nbsp;</label><span class="switch-right"><i class="fui-cross"></i></span></div>
-              </div>
-            </td>
+<td class="pbm">
+<div class="switch has-switch"><div class="switch-animate switch-off"><input type="checkbox" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
+</td>
+</tr>
+<tr>
+<td class="pbm">
+<div class="switch switch-square has-switch" data-on-label="&lt;i class='fui-check'&gt;&lt;/i&gt;" data-off-label="&lt;i class='fui-cross'&gt;&lt;/i&gt;">
+<div class="switch-animate switch-off"><input type="checkbox"><span class="switch-left"><i class="fui-check"></i></span><label>&nbsp;</label><span class="switch-right"><i class="fui-cross"></i></span></div>
+</div>
+</td>
 
-            <td class="pbm">
-              <div class="switch switch-square has-switch" data-on-label="&lt;i class='fui-check'&gt;&lt;/i&gt;" data-off-label="&lt;i class='fui-cross'&gt;&lt;/i&gt;">
-                <div class="switch-animate switch-on"><input type="checkbox" checked=""><span class="switch-left"><i class="fui-check"></i></span><label>&nbsp;</label><span class="switch-right"><i class="fui-cross"></i></span></div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="switch has-switch deactivate"><div class="switch-animate switch-off"><input type="checkbox" disabled="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
-            </td>
+<td class="pbm">
+<div class="switch switch-square has-switch" data-on-label="&lt;i class='fui-check'&gt;&lt;/i&gt;" data-off-label="&lt;i class='fui-cross'&gt;&lt;/i&gt;">
+<div class="switch-animate switch-on"><input type="checkbox" checked=""><span class="switch-left"><i class="fui-check"></i></span><label>&nbsp;</label><span class="switch-right"><i class="fui-cross"></i></span></div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="switch has-switch deactivate"><div class="switch-animate switch-off"><input type="checkbox" disabled="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
+</td>
 
-            <td>
-              <div class="switch has-switch deactivate"><div class="switch-animate switch-on"><input type="checkbox" checked="" disabled="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
-            </td>
-          </tr>
-        </tbody></table>
-    </div> --> <!-- /toggles col-md-3 -->
+<td>
+<div class="switch has-switch deactivate"><div class="switch-animate switch-on"><input type="checkbox" checked="" disabled="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
+</td>
+</tr>
+</tbody></table>
+</div> --> <!-- /toggles col-md-3 -->
 
     <div class="col-md-3">
       <h3 class="demo-panel-title">Tags</h3>
       <input name="tagsinput" id="tagsinput" class="tagsinput" value="Clean,Fresh,Modern,Unique" style="display: none;"><div id="tagsinput_tagsinput" class="tagsinput " style="height: 100%;"><span class="tag"><span>Clean&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span><span class="tag"><span>Fresh&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span><span class="tag"><span>Modern&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span><span class="tag"><span>Unique&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span><div class="tagsinput-add-container" id="tagsinput_addTag"><div class="tagsinput-add"></div><input id="tagsinput_tag" value="" data-default="" style="color: rgb(102, 102, 102); width: 7px;"></div></div>
     </div>
-<!--
-  </div>
+    <!--
+</div>
 
-  <div class="row">
+<div class="row">
 <div class="col-md-3">
-      <h3 class="demo-panel-title">Share</h3>
-      <div class="share mrl">
-        <ul>
-          <li>
-            <label class="share-label" for="share-toggle2">Facebook</label>
-            <div class="switch has-switch"><div class="switch-animate switch-off"><input type="checkbox" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
-          </li>
-          <li>
-            <label class="share-label" for="share-toggle4">Twitter</label>
-            <div class="switch has-switch"><div class="switch-animate switch-on"><input type="checkbox" checked="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
-          </li>
-          <li>
-            <label class="share-label" for="share-toggle6">Pinterest</label>
-            <div class="switch has-switch"><div class="switch-animate switch-off"><input type="checkbox" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
-          </li>
-        </ul>
-        <a href="#" class="btn btn-primary btn-block btn-large">Share</a>
-      </div> /share
-    </div> -->
+<h3 class="demo-panel-title">Share</h3>
+<div class="share mrl">
+<ul>
+<li>
+<label class="share-label" for="share-toggle2">Facebook</label>
+<div class="switch has-switch"><div class="switch-animate switch-off"><input type="checkbox" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
+</li>
+<li>
+<label class="share-label" for="share-toggle4">Twitter</label>
+<div class="switch has-switch"><div class="switch-animate switch-on"><input type="checkbox" checked="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
+</li>
+<li>
+<label class="share-label" for="share-toggle6">Pinterest</label>
+<div class="switch has-switch"><div class="switch-animate switch-off"><input type="checkbox" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div></div>
+</li>
+</ul>
+<a href="#" class="btn btn-primary btn-block btn-large">Share</a>
+</div> /share
+</div> -->
 
     <div class="col-md-3">
       <div class="demo-tooltips">
@@ -624,3 +627,1175 @@ For your convenience we also provide <strong>Swatches Preset</strong> <span>(fla
   </div> <!-- /download area -->
 
 </div>
+
+<div class="container">
+  <h1>Template blocks</h1>
+</div>
+
+<div class="container">
+  <div class="row centered">
+    <br>
+    <br>
+    <div class="col-lg-8 col-lg-offset-2">
+      <h3>PROJECT NAME</h3>
+      <p class="lead">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+    </div><!-- col-lg-8 -->
+    <br>
+
+    <div class="col-lg-10 col-lg-offset-1">
+      <img class="img-responsive" src="{{ ASSET_PATH }}condense/images/portfolio01.jpg" alt="">
+    </div><!-- col-lg-10 -->
+  </div><!-- row -->
+</div>
+
+<div class="container">
+  <div class="row sinfo">
+    <div class="col-lg-3 col-lg-offset-1">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>
+    </div>
+
+    <div class="col-lg-4">
+      <h6>Warren Design</h6>
+      <p>
+        Date: Oct 20, 2013 <br>
+        Work: Web Design &amp; Development <br>
+        Leader: Brad Frost<br><br>
+        <button class="btn btn-primary">Visit Site</button>
+
+      </p>
+    </div>
+  </div><!-- row -->
+</div>
+
+<div class="container sinfo">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                <span class="fui-plus"></span> Does Good work on small projects?
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <p>Generally speaking, no project is too small. We may however refer some extremely small projects to a contemporary or affiliate. Some projects might be too big. But they would have to be really, really gigantic for us to consider them too big. We’ll be honest. Always the best result.</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                <span class="fui-plus"></span> What is a digital agency?
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>We call Good a digital agency because we work predominantly in the digital world. While we do occasionally enjoy a great analog experience, most of our work is digital, digital and even more digital.</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                <span class="fui-plus"></span> Can I look at the Good portfolio online
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>We provide portfolios to prospective clients on a limited basis to protect the privacy of our clients. So, the answer is yes…</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                <span class="fui-plus"></span> What does it cost to hire Good?
+              </a>
+            </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>All projects are different. We provide a full analysis of the project and no work is executed without a clear price that is agreed upon by you and Good.</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                <span class="fui-plus"></span> When can Good start my project?
+              </a>
+            </h4>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Projects start on a first come, first serve basis. We do limit the number of projects we take on at one time. We do not believe in starting several projects just to lock down a client..not our style.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- panel-group -->
+    </div><!-- col-lg-8 -->
+
+    <div class="col-lg-4">
+      <div class="alert alert-success">
+        <h4>More About Us?</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+        <a href="#" class="btn btn-primary btn-wide"><i class="fui-link"></i> Get It Now!</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="col-lg-4 sidebar">
+    <h6><span class="fui-arrow-right"></span> Categories</h6>
+    <p>
+      <span class="fui-folder"></span> Wordpress<br>
+      <span class="fui-folder"></span> Web Design<br>
+      <span class="fui-folder"></span> Marketing<br>
+      <span class="fui-folder"></span> Social Media<br>
+      <span class="fui-folder"></span> Agency<br>
+    </p>
+    <br>
+  </div>
+  <div class="col-lg-4 sidebar">
+    <h6><span class="fui-arrow-right"></span> Popular Posts</h6>
+    <br>
+    <div class="pop-posts">
+      <p><img src="{{ ASSET_PATH }}condense/images/post-thumb02.jpg" width="70" height="70" alt=""> <b>GAME ON!</b> <br> By: C. Alvarez <br> 12 comments</p>
+    </div>
+    <div class="pop-posts">
+      <p><img src="{{ ASSET_PATH }}condense/images/post-thumb03.jpg" width="70" height="70" alt=""> <b>RED DIAMOND</b> <br> By: C. Alvarez <br> 12 comments</p>
+    </div>
+    <div class="pop-posts">
+      <p><img src="{{ ASSET_PATH }}condense/images/post-thumb01.jpg" width="70" height="70" alt=""> <b>FLAT DESIGN ALWAYS</b> <br> By: C. Alvarez <br> 12 comments</p>
+    </div>
+    <br>
+  </div>
+  <div class="col-lg-4 sidebar">
+    <h6><span class="fui-arrow-right"></span> Archives</h6>
+    <p>
+      <span class="fui-calendar"></span> October <span class="label label-default">12</span><br>
+      <span class="fui-calendar"></span> September <span class="label label-default">10</span><br>
+      <span class="fui-calendar"></span> August <span class="label label-default">19</span><br>
+      <span class="fui-calendar"></span> July <span class="label label-default">8</span><br>
+      <span class="fui-calendar"></span> June <span class="label label-default">12</span><br>
+    </p>
+    <br>
+
+  </div>
+  <div class="col-lg-4 sidebar">
+    <h6><span class="fui-arrow-right"></span> Tags Cloud</h6>
+    <div class="tagsinput " style="height: 100%;">
+      <span class="tag"><span>Design&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
+      <span class="tag"><span>Wordpress&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
+      <span class="tag"><span>Media&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
+      <span class="tag"><span>Agency&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
+      <span class="tag"><span>Javascript&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
+      <span class="tag"><span>Flat&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
+      <span class="tag"><span>Photo&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
+      <span class="tag"><span>Audio&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
+      <span class="tag"><span>Tips&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
+      <input id="tags1382559408818_tag" value="" data-default="" style="color: rgb(102, 102, 102); width: 7px;">
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="col-lg-8">
+    <div class="alert">
+      <button class="close fui-cross"></button>
+      <h3>Like This Post?</h3>
+      <p>Consider to register to our newsletter. Weekly, we share our thoughts and cool information. Don't miss a thing. Subscribe Now!</p>
+      <p><input type="text" placeholder="YOUR EMAIL" class="form-control flat"></p>
+      <button class="btn btn-warning">SUBSCRIBE</button>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row sinfo centered">
+    <div class="col-lg-3">
+      <img class="img-circle" src="{{ ASSET_PATH }}condense/images/pic.jpg" width="100" height="100" alt="">
+      <h5>Paul Harris</h5>
+      <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+      <p><a href="#"><span class="fui-dribbble"></span></a> <a href="#"><span class="fui-mail"></span></a> <a href="#"><span class="fui-twitter"></span></a></p>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <img class="img-circle" src="{{ ASSET_PATH }}condense/images/pic2.jpg" width="100" height="100" alt="">
+      <h5>Daniel Patt</h5>
+      <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+      <p><a href="#"><span class="fui-dribbble"></span></a> <a href="#"><span class="fui-mail"></span></a> <a href="#"><span class="fui-twitter"></span></a></p>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <img class="img-circle" src="{{ ASSET_PATH }}condense/images/pic3.jpg" width="100" height="100" alt="">
+      <h5>Mark Smith</h5>
+      <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+      <p><a href="#"><span class="fui-dribbble"></span></a> <a href="#"><span class="fui-mail"></span></a> <a href="#"><span class="fui-twitter"></span></a></p>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <img class="img-circle" src="{{ ASSET_PATH }}condense/images/pic4.jpg" width="100" height="100" alt="">
+      <h5>Sharon Lee</h5>
+      <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+      <p><a href="#"><span class="fui-dribbble"></span></a> <a href="#"><span class="fui-mail"></span></a> <a href="#"><span class="fui-twitter"></span></a></p>
+    </div><!-- col-lg-3 -->
+
+  </div><!-- /row -->
+</div>
+
+<div class="container sinfo">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 centered">
+      <img src="{{ ASSET_PATH }}condense/images/icons/shield.svg" alt="">
+      <h3>I love what these guys did for our company. We became the brand that we always wanted. They worked so hard to achieve our goals, that they seemed part of our own company.</h3>
+
+    </div>
+  </div><!-- /row -->
+</div>
+
+<div class="container sinfo">
+  <div class="row">
+    <div class="col-lg-5 col-lg-offset-1">
+      <div class="testi-container">
+        <div class="testi-text">
+          <p>There’s more to design than meets the eye. It’s when it meets the heart that design creates a meaningful, lasting connection with the audience. First, your brand has to matter to consumers. This is where your emotional connection begins...</p>
+        </div>
+      </div><!-- /testi-container -->
+      <p><img class="img-circle" src="{{ ASSET_PATH }}condense/images/pic.jpg" alt="" height="80" width="80"> - <small>Paul Hudson - BlackTie.co</small></p>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="testi-container">
+        <div class="testi-text">
+          <p>There’s more to design than meets the eye. It’s when it meets the heart that design creates a meaningful, lasting connection with the audience. First, your brand has to matter to consumers. This is where your emotional connection begins...</p>
+        </div>
+      </div><!-- /testi-container -->
+      <p><img class="img-circle" src="{{ ASSET_PATH }}condense/images/pic3.jpg" alt="" height="80" width="80"> - <small>David Wayne - BlackTie.co</small></p>
+    </div>
+
+  </div><!-- /row -->
+</div>
+<div class="container">
+  <br><br>
+  <div class="row">
+    <div class="col-md-9 span-centered">
+      <div class="row">
+        <div class="col-md-4 pricing-table turquoise bordered plain">
+          <ul class="centered">
+            <li class="title">
+              Basic
+            </li>
+            <li class="price">
+              <span class="currency-symbol">$</span>
+              <strong>4</strong>
+              <sup>99</sup>
+              <em>/mo</em>
+            </li>
+            <li>
+              1 GB Diskspace
+            </li>
+            <li>
+              10 GB Bandwidth
+            </li>
+            <li>
+              1 Domain
+            </li>
+            <li>
+              3 Subdomain
+            </li>
+            <li>
+              5 Email Accounts
+            </li>
+            <li class="button">
+              <button class="btn btn-large">
+                <i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 pricing-table turquoise bordered plain">
+          <ul class="centered alt">
+            <li class="title">
+              Standard
+            </li>
+            <li class="price">
+              <span class="currency-symbol">$</span>
+              <strong>19</strong>
+              <sup>99</sup>
+              <em>/mo</em>
+            </li>
+            <li>
+              25 GB Diskspace
+            </li>
+            <li>
+              500 GB Bandwidth
+            </li>
+            <li>
+              5 Domain
+            </li>
+            <li>
+              25 Subdomain
+            </li>
+            <li>
+              100 Email Accounts
+            </li>
+            <li class="button">
+              <button class="btn btn-large">
+                <i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 pricing-table turquoise bordered plain">
+          <ul class="centered alt-dark">
+            <li class="title">
+              Advance
+            </li>
+            <li class="price">
+              <span class="currency-symbol">$</span>
+              <strong>49</strong>
+              <sup>99</sup>
+              <em>/mo</em>
+            </li>
+            <li>
+              100 GB Diskspace
+            </li>
+            <li>
+              <strong>Unlimited</strong> Bandwidth
+            </li>
+            <li>
+              25 Domain
+            </li>
+            <li>
+              100 Subdomain
+            </li>
+            <li>
+              500 Email Accounts
+            </li>
+            <li class="button">
+              <button class="btn btn-large">
+                <i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 pricing-table turquoise bordered hover-animation">
+      <ul>
+        <li class="title">
+          Basic
+        </li>
+        <li class="price">
+          <span class="currency-symbol">$</span>
+          <strong>4</strong>
+          <sup>99</sup>
+          <em>/mo</em>
+        </li>
+        <li>
+          <span class="pull-right">1 GB</span>Diskspace
+        </li>
+        <li>
+          <span class="pull-right">10 GB</span>Bandwidth
+        </li>
+        <li>
+          <span class="pull-right">1</span>Domain
+        </li>
+        <li>
+          <span class="pull-right">3</span>Subdomain
+        </li>
+        <li>
+          <span class="pull-right">5</span>Email Accounts
+        </li>
+        <li class="button">
+          <button class="btn btn-large">
+            <i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3 pricing-table turquoise bordered hover-animation">
+      <ul>
+        <li class="title">
+          Standard
+        </li>
+        <li class="price">
+          <span class="currency-symbol">$</span>
+          <strong>19</strong>
+          <sup>99</sup>
+          <em>/mo</em>
+        </li>
+        <li>
+          <span class="pull-right">25 GB</span>Diskspace
+        </li>
+        <li>
+          <span class="pull-right">500 GB</span>Bandwidth
+        </li>
+        <li>
+          <span class="pull-right">5</span>Domain
+        </li>
+        <li>
+          <span class="pull-right">25</span>Subdomain
+        </li>
+        <li>
+          <span class="pull-right">100</span>Email Accounts
+        </li>
+        <li class="button">
+          <button class="btn btn-large">
+            <i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3 pricing-table turquoise bordered standout hover-animation">
+      <ul>
+        <li class="title">
+          Advance
+        </li>
+        <li class="price">
+          <span class="currency-symbol">$</span>
+          <strong>49</strong>
+          <sup>99</sup>
+          <em>/mo</em>
+        </li>
+        <li class="label">
+          Most Popular!
+        </li>
+        <li>
+          <span class="pull-right">100 GB</span>Diskspace
+        </li>
+        <li>
+          <span class="pull-right"><strong>Unlimited</strong></span>Bandwidth
+        </li>
+        <li>
+          <span class="pull-right">25</span>Domain
+        </li>
+        <li>
+          <span class="pull-right">100</span>Subdomain
+        </li>
+        <li>
+          <span class="pull-right">500</span>Email Accounts
+        </li>
+        <li class="button">
+          <button class="btn btn-large">
+            <i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3 pricing-table turquoise bordered hover-animation">
+      <ul>
+        <li class="title">
+          Professional
+        </li>
+        <li class="price">
+          <span class="currency-symbol">$</span>
+          <strong>99</strong>
+          <sup>99</sup>
+          <em>/mo</em>
+        </li>
+        <li>
+          <span class="pull-right"><i class="icon-ok"></i></span>
+          <strong>Unlimited</strong> Diskspace
+        </li>
+        <li>
+          <span class="pull-right"><i class="icon-ok"></i></span>
+          <strong>Unlimited</strong> Bandwidth
+        </li>
+        <li>
+          <span class="pull-right"><i class="icon-ok"></i></span>
+          <strong>Unlimited</strong> Domain
+        </li>
+        <li>
+          <span class="pull-right"><i class="icon-ok"></i></span>
+          <strong>Unlimited</strong> Subdomain
+        </li>
+        <li>
+          <span class="pull-right"><i class="icon-ok"></i></span>
+          <strong>Unlimited</strong> Email Accounts
+        </li>
+        <li class="button">
+          <button class="btn btn-large">
+            <i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br><br><br><br>
+</div>
+<div class="container sinfo">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h3>Here are some of the things we do on a day-to-day basis for our clients. It distills down to six big things, but wow does it keep us busy.</h3>
+    </div>
+  </div><!-- /row -->
+</div>
+
+<div class="container sinfo">
+  <div class="row svgicons centered">
+    <div class="col-lg-4">
+      <img src="{{ ASSET_PATH }}condense/images/icons/lettersymbol.svg">
+      <h4>Bootstrap Design</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-4 -->
+
+    <div class="col-lg-4">
+      <img src="{{ ASSET_PATH }}condense/images/icons/pencils.svg">
+      <h4>Planning</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-4 -->
+
+    <div class="col-lg-4">
+      <img src="{{ ASSET_PATH }}condense/images/icons/flask.svg">
+      <h4>Development</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-4 -->
+  </div><!-- /row -->
+
+  <div class="row svgicons centered">
+    <div class="col-lg-4">
+      <img src="{{ ASSET_PATH }}condense/images/icons/loop.svg">
+      <h4>Testing</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-4 -->
+
+    <div class="col-lg-4">
+      <img src="{{ ASSET_PATH }}condense/images/icons/mountain.svg">
+      <h4>Media</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-4 -->
+
+    <div class="col-lg-4">
+      <img src="{{ ASSET_PATH }}condense/images/icons/touch.svg">
+      <h4>Multi-Devices</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-4 -->
+  </div><!-- /row -->
+</div>
+
+<div class="container sinfo">
+  <div class="row centered">
+    <h3>Our Capabilities</h3>
+    <br>
+
+    <!-- First Chart -->
+    <div class="col-lg-3">
+      <canvas id="canvas" height="130" width="130" style="width: 130px; height: 130px;"></canvas>
+      <br>
+      <script>
+        var doughnutData = [
+          {
+            value: 70,
+            color:"#1abc9c"
+          },
+          {
+            value : 30,
+            color : "#ecf0f1"
+          }
+        ];
+        var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
+      </script>
+      <p><b>DESIGN &amp; BRAND</b></p>
+      <p><small>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</small></p>
+    </div><!-- /col-lg-3 -->
+
+    <!-- Second Chart -->
+    <div class="col-lg-3">
+      <canvas id="canvas2" height="130" width="130" style="width: 130px; height: 130px;"></canvas>
+      <br>
+      <script>
+        var doughnutData = [
+          {
+            value: 90,
+            color:"#1abc9c"
+          },
+          {
+            value : 10,
+            color : "#ecf0f1"
+          }
+        ];
+        var myDoughnut = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
+      </script>
+      <p><b>WEB DEVELOPMENT</b></p>
+      <p><small>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</small></p>
+    </div><!-- /col-lg-3 -->
+
+    <!-- Third Chart -->
+    <div class="col-lg-3">
+      <canvas id="canvas3" height="130" width="130" style="width: 130px; height: 130px;"></canvas>
+      <br>
+      <script>
+        var doughnutData = [
+          {
+            value: 50,
+            color:"#1abc9c"
+          },
+          {
+            value : 50,
+            color : "#ecf0f1"
+          }
+        ];
+        var myDoughnut = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutData);
+      </script>
+      <p><b>SEO SERVICES</b></p>
+      <p><small>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</small></p>
+    </div><!-- /col-lg-3 -->
+
+    <!-- Fourth Chart -->
+    <div class="col-lg-3">
+      <canvas id="canvas4" height="130" width="130" style="width: 130px; height: 130px;"></canvas>
+      <br>
+      <script>
+        var doughnutData = [
+          {
+            value: 80,
+            color:"#1abc9c"
+          },
+          {
+            value : 20,
+            color : "#ecf0f1"
+          }
+        ];
+        var myDoughnut = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutData);
+      </script>
+      <p><b>PRINTING</b></p>
+      <p><small>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</small></p>
+    </div><!-- /col-lg-3 -->
+
+  </div><!-- /row -->
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2">
+      <div class="tabbable">
+        <ul class="nav nav-stacked" id="myTab">
+          <li class="active"><a href="#tab4">David Harrison</a></li>
+          <li class=""><a href="#tab5">Patrick Dawson</a></li>
+          <li class=""><a href="#tab6">Paul Smith</a></li>
+        </ul> <!-- /tabs -->
+      </div><!-- /tabbable -->
+    </div><!-- /col-lg-2 -->
+
+    <div class="col-lg-10 ab">
+      <div class="tab-content">
+
+        <div class="tab-pane active" id="tab4">
+          <div class="tabmod-a">
+            <!-- FIRST PROFILE -->
+            <div class="row">
+              <div class="col-md-4">
+                <h2><b>David Harrison</b></h2>
+                <h6>Co-Funder | CEO</h6>
+                <br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              </div>
+              <div class="col-md-8">
+                <img class="img-responsive" src="{{ ASSET_PATH }}condense/images/team/david.jpg" alt="">
+              </div>
+            </div><!-- /row -->
+          </div><!-- /tabmod-a -->
+        </div><!-- /tab-pane -->
+
+        <div class="tab-pane" id="tab5">
+          <div class="tabmod-a">
+            <!-- SECOND PROFILE -->
+            <div class="row">
+              <div class="col-md-4">
+                <h2><b>Patrick Dawson</b></h2>
+                <h6>Co-Funder | Director</h6>
+                <br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+              </div>
+              <div class="col-md-8">
+                <img class="img-responsive" src="{{ ASSET_PATH }}condense/images/team/patrick.jpg" alt="">
+              </div>
+            </div><!-- /row -->
+          </div><!-- /tabmod-a -->
+        </div><!-- /tab-pane -->
+
+        <div class="tab-pane" id="tab6">
+          <div class="tabmod-a">
+            <!-- THIRD PROFILE -->
+            <div class="row">
+              <div class="col-md-4">
+                <h2><b>Paul Smith</b></h2>
+                <h6>Co-Funder | Creative Director</h6>
+                <br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+              </div>
+              <div class="col-md-8">
+                <img class="img-responsive" src="{{ ASSET_PATH }}condense/images/team/paul.jpg" alt="">
+              </div>
+            </div><!-- /row -->
+          </div><!-- /tabmod-a -->
+        </div><!-- /tab-pane -->
+      </div> <!-- /tab-content -->
+
+    </div><!-- col-lg-10 -->
+  </div><!-- /row -->
+</div>
+<div class="container sinfo">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h4><b>Good</b> is a digital creative agency. We focus on design, consulting, and technology. We’ve been building unique digital products, platforms, and experiences for the past 4 years. <p>Each of our endeavours is guided by a strong sense of craftsmanship and passion for the web. We strive to create meaning and value for our customers and their users and seek to imbue our products with a sense of wonder. We are a diverse team of creatives from many backgrounds with a shared desire to help make the web a better place by crafting the best digital experiences.</p></h4>
+    </div>
+  </div><!-- /row -->
+  <hr>
+</div>
+
+
+<div id="aboutwrap">
+  <div class="container">
+    <div class="row">
+      <h1><br> <b>GOOD</b> is a family<br> of digital thinkers &amp; makers.</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <br>
+    <br>
+    <br>
+    <div class="col-lg-6">
+      <div class="tabbable">
+        <ul class="nav nav-tabs nav-append-content" id="myTab">
+          <li class="active"><a href="#tab4">Connect</a></li>
+          <li class=""><a href="#tab5">Design</a></li>
+          <li class=""><a href="#tab6">Create</a></li>
+        </ul> <!-- /tabs -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="tab4">
+            <div class="tabmod">
+              <h4><span class="fui-plus"></span> Connected with you</h4>
+              <br>
+              <p>We start by digging into the client’s brand and business situation to build a bridge between the brand and the audience. By looking at the world through the eyes of our audience, we open ourselves up to new inspiration and opportunities for problem solving.</p>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab5">
+            <div class="tabmod">
+              <h4><span class="fui-plus"></span> Designed by humans </h4>
+              <br>
+              <p>Armed with insight, we embark on designing the right brand experience that engages the audience. It encompasses both the strategic direction and creative execution that solves a business problem and brings the brand to life.</p>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab6">
+            <div class="tabmod">
+              <h4><span class="fui-plus"></span> Created to succeed</h4>
+              <br>
+              <p>In the create phase, the big idea is unleashed to the world through different media touchpoints. This is when we watch the audience fall in love all over again with our client’s brand.</p>
+            </div>
+          </div>
+        </div> <!-- /tab-content -->
+      </div><!-- /Tabbable -->
+    </div><!-- /col-lg-6 -->
+
+    <div class="col-lg-5 col-lg-offset-1">
+      <div class="testi-container">
+        <div class="testi-text">
+          <p>There’s more to design than meets the eye. It’s when it meets the heart that design creates a meaningful, lasting connection with the audience. First, your brand has to matter to consumers. This is where your emotional connection begins...</p>
+        </div>
+      </div><!-- /testi-container -->
+      <p><img class="img-circle" src="{{ ASSET_PATH }}condense/images/pic.jpg" alt="" height="80" width="80"> - <small>Paul Hudson - BlackTie.co</small></p>
+    </div><!-- col-lg-5 -->
+
+  </div><!-- /row -->
+  <br>
+  <br>
+  <br>
+</div>
+
+
+<div class="container sinfo">
+  <div class="row svgicons centered">
+
+    <div class="col-lg-3">
+      <h4>Using the awesome<br> <b>Bootstrap 3</b></h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+      <button class="btn btn-warning"><span class="fui-plus"></span> More Info</button>
+      <br><br>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <h4>Works incredible on<br> <b>Retina Devices</b></h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+      <button class="btn btn-warning"><span class="fui-plus"></span> More Info</button>
+      <br><br>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <h4>Handsomely crafted<br> <b>Flat Design</b></h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+      <button class="btn btn-warning"><span class="fui-plus"></span> More Info</button>
+      <br><br>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <h4>Exclusive on<br> <b>Wrapbootstrap</b></h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+      <button class="btn btn-warning"><span class="fui-plus"></span> More Info</button>
+      <br><br>
+    </div><!-- col-lg-3 -->
+
+  </div><!-- /row -->
+  <br>
+  <hr>
+</div>
+
+<div class="container">
+  <div class="row wb centered">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h3>Our <b>Awesome</b> Team</h3>
+      <br>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div>
+    <div class="col-lg-10 col-lg-offset-1 centered">
+      <img class="img-responsive" src="{{ ASSET_PATH }}condense/images/team.png" alt="">
+    </div>
+
+  </div><!-- /row -->
+</div>
+
+<div id="sp1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <br>
+        <h3>WE ARE <b>STORYTELLERS</b>. BRANDS ARE OUR SUBJECTS. DESIGN IS <b>OUR VOICE</b>.</h3>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="g">
+  <div class="container">
+    <div class="row">
+      <h4 class="centered">What We Are <b>Talking?</b></h4>
+      <br>
+      <div class="col-md-4">
+        <div class="bc">
+          <img class="img-responsive" src="{{ ASSET_PATH }}condense/images/bc01.jpg" alt="">
+          <p><a href="#">Blog Post 1</a></p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
+          <p><date>Sep. 24, 2013</date></p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="bc">
+          <img class="img-responsive" src="{{ ASSET_PATH }}condense/images/bc02.jpg" alt="">
+          <p><a href="#">Blog Post 2</a></p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
+          <p><date>Sep. 24, 2013</date></p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="bc">
+          <img class="img-responsive" src="{{ ASSET_PATH }}condense/images/bc03.jpg" alt="">
+          <p><a href="#">Blog Post 3</a></p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
+          <p><date>Sep. 24, 2013</date></p>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+  </div><!-- /container -->
+</div>
+
+<div class="container">
+  <div class="row">
+    <br>
+    <div class="col-lg-6">
+      <img class="img-responsive" src="{{ ASSET_PATH }}condense/images/half-mac2.png" alt="">
+    </div><!-- /col-lg-6 -->
+
+    <div class="col-lg-6">
+      <h4>We Craft <b>Awesome</b> Sites</h4>
+      <div class="sinfo">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+    </div><!-- /col-lg-6 -->
+
+  </div><!-- /row -->
+  <br>
+</div>
+
+<div class="container sinfo">
+  <div class="row centered">
+    <h4>Welcome, we are <b>GOOD</b>, a flat design, responsive &amp; super flexible theme</h4>
+    <br>
+    <br>
+    <div class="col-lg-3">
+      <p><img src="{{ ASSET_PATH }}condense/images/icons/touch.svg" alt=""></p>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+      <p><button class="btn btn-primary">Read More</button></p>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <p><img src="{{ ASSET_PATH }}condense/images/icons/spray.svg" alt=""></p>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+      <p><button class="btn btn-primary">Read More</button></p>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <p><img src="{{ ASSET_PATH }}condense/images/icons/rocket.svg" alt=""></p>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+      <p><button class="btn btn-primary">Read More</button></p>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <p><img src="{{ ASSET_PATH }}condense/images/icons/pencil.svg" alt=""></p>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+      <p><button class="btn btn-primary">Read More</button></p>
+    </div><!-- col-lg-3 -->
+
+  </div><!-- /row -->
+  <br>
+  <hr>
+</div>
+
+<div class="container sinfo">
+  <div class="row">
+    <div class="col-lg-7">
+      <h4>Need More Information?</h4>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-2">
+          <div class="alert alert-success">
+            <p>You can download our company profile to learn more about us.</p>
+            <a href="#" class="btn btn-primary btn-wide"><i class="fui-link"></i> Get It Now!</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="sp1">
+  <div class="container">
+    <div class="row">
+      <h3>We Craft Awesome Sites</h3>
+      <img class="img-responsive" src="{{ ASSET_PATH }}condense/images/half-mac.png">
+    </div>
+  </div><!-- container -->
+</div>
+
+<div class="container sinfo">
+  <div class="row centered">
+    <h4>Welcome, we are <b>GOOD</b>, a flat design, responsive &amp; super flexible theme</h4>
+    <br>
+    <hr>
+    <br>
+    <div class="col-lg-3">
+      <h4>Design</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <h4>Development</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <h4>Wordpress</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-3 -->
+
+    <div class="col-lg-3">
+      <h4>Infrastructure</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-3 -->
+
+  </div><!-- /row -->
+  <br>
+</div>
+
+<div id="g">
+  <div class="container">
+    <div class="row centered">
+      <h4>SOME <b>GOOD</b> STATS</h4>
+
+      <div class="col-lg-3">
+        <span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><br>
+        <span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><br>
+        <span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><br>
+        <span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-new"></span><span class="fui-plus"></span><br>
+        <h5>23.000 +</h5>
+        <p>Completed Projects</p>
+      </div>
+
+      <div class="col-lg-3">
+        <span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><br>
+        <span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><br>
+        <span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><br>
+        <span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-user"></span><span class="fui-plus"></span><br>
+        <h5>190 +</h5>
+        <p>Professionals</p>
+      </div>
+
+      <div class="col-lg-3">
+        <span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><br>
+        <span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><br>
+        <span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><br>
+        <span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-chat"></span><span class="fui-plus"></span><br>
+        <h5>50.000 +</h5>
+        <p>Client Meetings</p>
+      </div>
+
+      <div class="col-lg-3">
+        <span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><br>
+        <span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><br>
+        <span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><br>
+        <span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-photo"></span><span class="fui-plus"></span><br>
+        <h5>92.450 +</h5>
+        <p>Pictures Taken</p>
+      </div>
+
+      <div class="col-lg-12">
+        <br>
+        <p><small>Want to be part of our team? <a href="#">Write to us</a></small></p>
+      </div>
+
+    </div><!-- /row centered -->
+  </div><!-- /container -->
+</div>
+
+<div class="container">
+  <div class="row centered">
+    <h4>LATEST WORKS</h4>
+    <br>
+    <div class="ch-grid">
+      <div class="col-lg-4">
+        <li>
+          <div class="ch-item ch-img-1">
+            <div class="ch-info">
+              <h3>Nice Hover Effect</h3>
+              <p>by Good Team <a href="project-single.html">View Project</a></p>
+            </div>
+          </div><!-- /ch-img-1 -->
+          <h6><b>Project Title</b><br> Web Design</h6>
+        </li>
+      </div><!-- /col-lg-4 -->
+
+      <div class="col-lg-4">
+        <li>
+          <div class="ch-item ch-img-2">
+            <div class="ch-info">
+              <h3>Use what you have</h3>
+              <p>by Good Team <a href="project-single.html">View Project</a></p>
+            </div>
+          </div><!-- /ch-img-2 -->
+          <h6><b>Project Title</b><br> Wordpress</h6>
+        </li>
+      </div><!-- /col-lg-4 -->
+
+      <div class="col-lg-4">
+        <li>
+          <div class="ch-item ch-img-3">
+            <div class="ch-info">
+              <h3>Use what you have</h3>
+              <p>by Good Team <a href="project-single.html">View Project</a></p>
+            </div>
+          </div><!-- /ch-img-3 -->
+          <h6><b>Project Title</b><br> Development</h6>
+        </li>
+      </div><!-- /col-lg-4 -->
+    </div><!-- /ch-igrid -->
+    <br>
+    <br>
+    <br>
+  </div><!-- /row -->
+</div>
+
+
+<div class="container sinfo">
+  <div class="row svgicons centered">
+
+    <div class="col-lg-4">
+      <img src="{{ ASSET_PATH }}condense/images/icons/lettersymbol.svg">
+      <h4>Using the awesome<br> <b>Bootstrap 3</b></h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-4 -->
+
+    <div class="col-lg-4">
+      <img src="{{ ASSET_PATH }}condense/images/icons/pencils.svg">
+      <h4>Works incredible on<br> <b>Retina Devices</b></h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-4 -->
+
+    <div class="col-lg-4">
+      <img src="{{ ASSET_PATH }}condense/images/icons/flask.svg">
+      <h4>Handsomely crafted with<br> <b>Flat Design</b></h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div><!-- col-lg-4 -->
+
+  </div><!-- /row -->
+  <br>
+  <hr>
+</div>
+
+
+<div id="cta">
+  <div class="container centered">
+    <h3>Lorem Ipsum has been the industry.</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <br>
+    <a href="about.html"><button class="btn btn-embossed btn-primary">Lorem ipsum</button></a>
+  </div><!-- /container -->
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ ASSET_PATH }}condense/js/jquery.js"></script>
+<script src="{{ ASSET_PATH }}condense/js/bootstrap.min.js"></script>
+<script src="{{ ASSET_PATH }}condense/js/retina.js"></script>
+
+<script>
+  $('#myTab a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+</script>
