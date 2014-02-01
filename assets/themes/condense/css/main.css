@@ -680,6 +680,11 @@ h6,
 	font-weight: 400;
 }
 
+#f a {
+	font-weight: 400;
+	color: #A8B1B9;
+}
+
 /***** Map Wrap *****/
 
 #mapwrap {
