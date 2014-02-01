@@ -18,9 +18,10 @@ tagline: From Data Into Action
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <h3>Welcome to Condense.</h3>
-        <p>At <b>Condense</b> we think creatively about how data-driven decisions or
-          analyses can lead to new product ideas and strategies for improving key business
-          operations.</p>
+        <p>At <b>Condense</b> we think creatively about how data-driven decisions
+          can lead to new product ideas and strategies for improving key business operations.
+          In other words, we make business better with data.</p>
+
         <br>
         <a href="mailto:hello@condense.com.au" class="btn btn-embossed btn-primary">Contact us</a>
       </div>
@@ -29,42 +30,111 @@ tagline: From Data Into Action
 </div>
 
 <div class="container sinfo">
-  <div class="row centered">
-    <h4>At <b>Condense</b> we think creatively about how data-driven decisions or
-      analyses can lead to new product ideas and strategies for improving key business
-      operations.</h4>
-    <br>
-    <hr>
-    <br>
-    <div class="col-sm-4">
+  <div class="row svgicons centered">
+    <div class="col-lg-4">
+      <a href="/work.html">
+        <img src="/assets/themes/condense/images/icons/pencils.svg">
+      </a>
       <h4>Processes</h4>
       <p>Make it easier for your team to capture, process and understand business data.</p>
-    </div><!-- col-lg-3 -->
+      <!-- <a href="/work.html" class="btn btn-warning"><span class="fui-plus"></span> More Info</a> -->
+    </div><!-- col-lg-4 -->
 
-    <div class="col-sm-4">
+    <div class="col-lg-4">
+      <img src="/assets/themes/condense/images/icons/bulb.svg">
       <h4>Decisions</h4>
       <p>Help executives and managers monitor business performance to support better decisions and align action with strategy.</p>
-    </div><!-- col-lg-3 -->
+      <!-- <a href="/work.html" class="btn btn-warning"><span class="fui-plus"></span> More Info</a> -->
+    </div><!-- col-lg-4 -->
 
-    <div class="col-sm-4">
+    <div class="col-lg-4">
+      <img src="/assets/themes/condense/images/icons/goal.svg">
       <h4>Competiencies</h4>
       <p>Helping your business develop core competencies in data management and business analytics.</p>
-    </div><!-- col-lg-3 -->
-
+      <!-- <a href="/work.html" class="btn btn-warning"><span class="fui-plus"></span> More Info</a> -->
+    </div><!-- col-lg-4 -->
   </div><!-- /row -->
-  <br>
 </div>
 
-
+<script src="/assets/themes/condense/js/Chart.js"></script>
+<script>
+  chart_options = {
+    segmentShowStroke : false,
+    percentageInnerCutout : 70,
+  };
+</script>
 <div id="sp1">
   <div class="container">
-    <div class="row">
+    <div class="row centered">
       <h3>The Data Revolution is now.  Don't get left behind.</h3>
-      <img class="img-responsive" src="http://placehold.it/1170x412">
-    </div>
+
+      <!-- First Chart -->
+      <div class="col-sm-4">
+        <canvas id="canvas" height="130" width="130" style="width: 130px; height: 130px;"></canvas>
+        <br>
+        <script>
+          var doughnutData = [
+            {
+              value: 90,
+              color:"#34495e"
+            },
+            {
+              value : 10,
+              color : "#bdc3c7"
+            }
+          ];
+          var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData, chart_options);
+        </script>
+        <p><b>BIG DATA</b></p>
+        <p>90% of data in the world has been created in the last 2 years alone.</p>
+      </div><!-- /col-sm-4 -->
+
+      <!-- Second Chart -->
+      <div class="col-sm-4 ">
+        <canvas id="canvas2" height="130" width="130" style="width: 130px; height: 130px;"></canvas>
+        <br>
+        <script>
+          var doughnutData = [
+            {
+              value: 70,
+              color:"#34495e"
+            },
+            {
+              value : 30,
+              color : "#bdc3c7"
+            }
+          ];
+          var myDoughnut = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData, chart_options);
+        </script>
+        <p><b>BIG RETURNS</b></p>
+        <p>Over 70% of Australian businesses believe data can deliver gains in productivity and innovation.</p>
+      </div><!-- /col-sm-4 -->
+
+      <!-- Third Chart -->
+      <div class="col-sm-4">
+        <canvas id="canvas3" height="130" width="130" style="width: 130px; height: 130px;"></canvas>
+        <br>
+        <script>
+          var doughnutData = [
+            {
+              value: 81,
+              color:"#34495e"
+            },
+            {
+              value : 19,
+              color : "#bdc3c7"
+            }
+          ];
+          var myDoughnut = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutData, chart_options);
+        </script>
+        <p><b>BIG NEED</b></p>
+        <p>81% of employees say that critical data resources are not available to them.</p>
+      </div><!-- /col-sm-4 -->
+
+    </div><!-- /row -->
+    <br>
   </div><!-- container -->
 </div>
-
 
 <div class="container sinfo">
   <div class="row">
@@ -76,20 +146,11 @@ tagline: From Data Into Action
         to make the right decisions for stronger returns and more
         opportunities, with more accurate insights into their best customers.
       </p>
+
       <p>The question is... how do you use data? Where do you start? What
-        tools do you use? What are the best practices? How do you manage
-        the data flowing into your business?
-      </p>
-      <p>That's where we come in.
-      </p>
-      <p>We help businesses to take advantage of data. We create the
-        processes to transform data into informed action. Moreover, we
-        empower people with the tools and know-how to leverage their own
-        data assets, even if they aren’ t stats savvy.
-      </p>
-      <p>Want to know more?
-        <a href="mailto:hello@condense.com.au">Talk to us today</a>
-      </p>
+        tools do you use? What are the best practices?</p>
+
+      <p>That's where we come in.</p>
 
     </div>
 
@@ -97,7 +158,7 @@ tagline: From Data Into Action
       <div class="row">
         <div class="col-md-10 col-md-offset-2">
           <div class="alert alert-success">
-            <p>You can read our company profile to learn more about us.</p>
+            <p>Find out more about how Condense can work for you.</p>
             <a href="/about.html" class="btn btn-primary btn-wide"><i class="fui-link"></i> Company Profile</a>
           </div>
         </div>
