@@ -97,7 +97,7 @@ h6,
 }
 
 .navbar .navbar-brand {
-  padding-left: 30px;
+  padding-left: 35px;
 }
 
 /* Sorting out menu colours */
@@ -424,7 +424,7 @@ h6,
 #aboutwrap {
 	background: url(../images/about-bg.jpg) no-repeat center top;
 	margin-top: 0px;
-	padding-top:80px;
+	padding-top:100px;
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
