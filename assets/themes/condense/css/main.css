@@ -381,6 +381,16 @@ h6,
     background-size: cover;
 }
 
+@media (max-width: 480px) {
+  #headerwrap {
+    padding-top:100px;
+    min-height: 500px;
+  }
+  #headerwrap h1 {
+    font-size: 3.5em;
+  }
+}
+
 #headerwrap h1 {
 	color: #ffffff;
 }
