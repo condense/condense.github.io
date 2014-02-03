@@ -13,7 +13,7 @@ thumbnail-theme: "Software"
 
 #### This project aims to facilitate tighter integration between Django and Microsoft SQL Server's spatial capabilities.  That is, we can write Django queries which search by location, organise information geographically and, ultimately, work more efficiently with map based information.
 
-We've been a big fan of Django for sometime.  It's allowed us to deliver some amazing websites and web applications which integrate with business databases.  More importantly, it's allowed us to do that quickly and reliably.
+We've been a big fan of Django for sometime.  It has allowed us to deliver some amazing websites and web applications which integrate with business databases.  More importantly, it hass allowed us to do that quickly and reliably.
 
 This lead us to work on a driver which translates GeoDjango's spatial query capabilities into queries which are compatible with Microsoft SQL Server databases.
 
