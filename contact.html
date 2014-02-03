@@ -7,63 +7,56 @@ tagline:
 
 <div id="mapwrap">
   <iframe height="450" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-          src="https://maps.google.com/?ie=UTF8&amp;ll=-36.985003,138.076172&amp;spn=17.280977,40.737305&amp;t=m&amp;z=5&amp;output=embed"></iframe>
+          src="https://maps.google.com/?ie=UTF8&amp;ll=-37.985003,136.076172&amp;spn=17.280977,40.737305&amp;t=m&amp;z=5&amp;output=embed"></iframe>
 </div>
+
+<style>
+  .cinfo img {
+    margin-bottom: 1em;
+  }
+  .sinfo .row p {
+    padding-top: 1em;
+  }
+</style>
 
 <div class="container">
   <div class="row sinfo">
-    <div class="col-lg-4 vcard">
-      <h4>Our Information</h4>
-      <br>
-      <div class="cinfo">
-        <img src="{{ ASSET_PATH }}condense/images/icons/clocks.svg" alt="">
-      </div>
-      <p>
-        Monday to Friday / 9:00 - 15:30<br>
-      </p>
-      <hr>
-      <div class="cinfo">
-        <img src="{{ ASSET_PATH }}condense/images/icons/rss.svg" alt="">
-      </div>
-      <p class="adr">
-        Hobart<br>
-        Tasmania, AUS.
-      </p>
-      <hr>
-      <div class="cinfo">
-        <img src="{{ ASSET_PATH }}condense/images/icons/android.svg" alt="">
-      </div>
-      <p>
-        <span class="tel">0428 740 978</span><br>
-        <a href="mailto:hello@condense.com.au">hello@condense.com.au</a>
-      </p>
-      <hr>
-    </div><!-- col-lg-4 -->
+    <div class="col-sm-offset-1 col-sm-6">
+      <div class="alert">
+        <div class="row">
+          <h4>Contact us</h4>
+        </div>
 
-    <div class="col-lg-8">
-      <h4>Need To Contact Us?</h4>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-      <br>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Your Name">
-        <span class="input-icon fui-check-inverted"></span>
+        <div class="row">
+          <div class="cinfo">
+            <img src="{{ ASSET_PATH }}condense/images/icons/clocks.svg" alt="">
+          </div>
+          <p>
+            Monday to Friday / 8:30 - 18:00<br>
+          </p>
+
+        </div>
+
+        <div class="row">
+          <div class="cinfo">
+            <img style="margin-left: 10px; margin-right: 0px;" src="{{ ASSET_PATH }}condense/images/icons/iphone.svg" alt="">
+          </div>
+          <p>By phone:
+            <span class="tel"><a class="nolink" href="tel:0428740978">0428 740 978</a></span><br>
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="cinfo">
+            <img src="{{ ASSET_PATH }}condense/images/icons/mail.svg" alt="">
+          </div>
+          <p>Or email:
+            <a href="mailto:hello@condense.com.au">hello@condense.com.au</a>
+          </p>
+        </div>
+
       </div>
-
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Your Email">
-        <span class="input-icon fui-check-inverted"></span>
-      </div>
-
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Subject">
-        <span class="input-icon fui-check-inverted"></span>
-      </div>
-
-      <textarea class="form-control" rows="5" placeholder="Enter Something"></textarea>
-      <br>
-      <button class="btn btn-wide btn-primary">Submit</button>
-
-    </div><!-- col-lg-8 -->
-  </div><!-- row -->
+    </div>
+  </div>
 </div>
 

@@ -15,6 +15,10 @@ body{
   line-height: inherit;
 }
 
+.nolink, .nolink:hover {
+  color: #34495e;
+}
+
 .navbar-brand a:hover,
 .navbar-brand a:focus {
   color: black;
