@@ -18,10 +18,15 @@ body{
 .navbar-brand {
   background: url(/assets/themes/condense/images/logo_gen.svg) no-repeat;
   background-size:100%;
-  font-size: 0;
   width: 146px;
   margin-top: 7px;
   margin-right: 30px;
+  /* text-hide */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
 }
 
 .nolink, .nolink:hover {
