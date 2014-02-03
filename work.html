@@ -16,7 +16,7 @@ description:
   </div>
 </div>
 
-<div class="container sinfo">
+<div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
 
@@ -32,75 +32,37 @@ description:
   </div><!-- /row -->
 </div>
 
+
 <div class="container">
+  <br>
+  <div class="row hidden-xs">
+    <div class="col-sm-5 col-md-offset-1  col-lg-offset-2">
+      <b>Your objectives&hellip;</b>
+    </div>
+    <div class="col-sm-5">
+      <b>We can deliver&hellip;</b>
+    </div>
+
+  </div>
+
+  {% for service in site.data.services %}
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-
-      <table class="table table-hover">
-
-        <thead>
-          <tr>
-            <th></th>
-            <th>Your objectives&hellip;</th>
-            <th>We can deliver&hellip;</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>
-              <img src="/assets/themes/condense/images/icons/pencils.svg">
-            </td>
-            <th width="45%">
-              Make it easier for your team to capture, process and understand business
-              data.
-            </th>
-            <td>
-              <ul>
-                <li>Interactive data visualisations</li>
-                <li>Web applications</li>
-                <li>Data integration</li>
-                <li>Process automation</li>
-              </ul>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <img src="/assets/themes/condense/images/icons/bulb.svg">
-            </td>
-            <th>
-              Help executives and managers monitor business performance to support
-              better decisions and align action with strategy.
-            </th>
-            <td>
-              <ul>
-                <li>Dashboards and reports</li>
-                <li>Business analytics</li>
-              </ul>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <img src="/assets/themes/condense/images/icons/goal.svg">
-            </td>
-            <th>
-              Gain a competitive advantage with core competencies in data management and business analytics.
-            </th>
-            <td>
-              <ul>
-                <li>Data strategy</li>
-                <li>Data audits</li>
-                <li>Analytics training</li>
-              </ul>
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
+    <div class="col-sm-1 col-lg-offset-1 hidden-sm hidden-xs">
+      <img width="60" src="{{ service.img }}">
+    </div>
+    <div class="col-sm-5">
+      <p>{{ service.benefit }}</p>
+    </div>
+    <div class="col-sm-5">
+      <ul>
+        {% for feature in service.features %}
+        <li>{{ feature }}</li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
+  {% endfor %}
+
 </div>
 
 <br>
