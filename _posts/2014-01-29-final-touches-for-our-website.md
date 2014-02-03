@@ -11,7 +11,7 @@ It's late January and we are putting final touches on our website.  No doubt it 
 
 Let me take you on a quick tour.
 
-Right now you're in the ["thinking" section](/thinking.html) this is where you'll discover what we're actively taking interest in.  The blog will include synthesis and opinion alongside other fresh content related to our industry.  We straddle several spheres so not all articles will appeal - we plan evolve a few key subcategories to let people tuning topics of interest.
+Right now you're in the ["thinking" section](/thinking.html) this is where you'll discover what we're actively taking interest in.  The blog will include synthesis and opinion alongside other fresh content related to our industry.  We straddle several spheres so not all articles will appeal &mdash; we plan evolve a few key subcategories to let people tuning topics of interest.
 
 Within the thinking section we've included active [research interests](/thinking/research.html).  These are things which push the envelope for us and help us grow as a business.  If you see something of interested there please get in touch.
 
