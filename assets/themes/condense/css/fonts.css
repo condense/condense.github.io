@@ -1,10 +1,4 @@
 /* Generated from http://fonts.googleapis.com/css?family=Quicksand:700,400,300 */
-
-@font-face {
-  font-family: 'Dock11';
-  font-weight: normal;
-  src: url("../fonts/heavy_dock11.otf") format("opentype");
-}
 /* Not using 300 on website - too light.  Note: lightest font seems to be the default weight.
 @font-face {
   font-family: 'Quicksand';
@@ -24,16 +18,5 @@
   font-style: normal;
   font-weight: 700;
   src: local('Quicksand Bold'), local('Quicksand-Bold'), url(http://themes.googleusercontent.com/static/fonts/quicksand/v3/32nyIRHyCu6iqEka_hbKsqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
-}
-
-.navbar-brand, .logofont {
-  font-family: Dock11;
-  font-size: 20px;
-}
-
-.navbar a.navbar-brand {
-  background: url(../images/logo-c-x38.png) no-repeat 5px 9px;
-  padding-left: 45px
-  margin-left: 0px;
 }
 
