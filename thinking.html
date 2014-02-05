@@ -10,85 +10,39 @@ tagline:
 
 <div class="container">
 
-<div class="row">
-  <!-- Content Section -->
-  <div class="sinfo col-sm-8 col-lg-offset-1 col-lg-6">
+  <div class="row">
+    <!-- Content Section -->
+    <div class="sinfo col-sm-8 col-lg-offset-1 col-lg-6">
 
-    {% for post in site.categories.thinking %}
+      {% for post in site.categories.thinking %}
 
-    <div class="blogcontent">
-      <!-- First Post -->
-      {% if post.img-responsive %}
-      <img class="img-responsive" src="{{ post.img-responsive }}" alt="">
-      {% endif %}
-      <h6><a href="{{ post.url }}">{{ post.title }}</a></h6>
-      <small><span class="fui-user"></span> {{ post.author }} | <span class="fui-calendar"></span> {{ post.date | date_to_long_string }}
-      </small>
-      {% if post.tag_line %}
-      <p class="lead">{{ post.tag_line }}</p>
-      {% endif %}
+      <div class="blogcontent">
+        <!-- First Post -->
+        {% if post.img-responsive %}
+        <img class="img-responsive" src="{{ post.img-responsive }}" alt="">
+        {% endif %}
+        <h6><a href="{{ post.url }}">{{ post.title }}</a></h6>
+        <small><span class="fui-user"></span> {{ post.author }} | <span class="fui-calendar"></span> {{ post.date | date_to_long_string }}
+        </small>
+        {% if post.tag_line %}
+        <p class="lead">{{ post.tag_line }}</p>
+        {% endif %}
 
-      {{ post.content }}
+        {{ post.content }}
 
-      <br>
+        <br>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
+
+
+    <!-- Sidebar Section -->
+    <div class="sidebar sinfo col-sm-4">
+      {% include themes/condense/sidebar.html %}
+    </div><!-- col-lg-4 / Sidebar -->
+
+
+
   </div>
-
-
-  <!-- Sidebar Section -->
-  <div class="sidebar sinfo col-sm-4">
-    <h6><span class="fui-arrow-right"></span> Categories</h6>
-    <p>
-      <span class="fui-folder"></span> <a href="/thinking/analytics/">Analytics</a><br>
-      <span class="fui-folder"></span> <a href="/thinking/software/">Software</a><br>
-      <span class="fui-folder"></span> <a href="/thinking/strategy/">Strategy</a><br>
-    </p>
-    <br>
-    <h6><span class="fui-arrow-right"></span> Recent Posts</h6>
-    <br>
-    {% for post in site.posts %}
-    <div class="pop-posts">
-      <p>
-        <a href="{{ post.url }}">
-          <!-- <img class="img-thumbnail " src="{{ post.img-responsive }}" width="70" height="70" alt=""> -->
-          <b>{{ post.title }}</b>
-          <br> By: {{ post.author }}
-          <br> {{ post.date | date_to_long_string }}
-        </a></p>
-    </div>
-    {% endfor %}
-    <!--
-    <br>
-    <h6><span class="fui-arrow-right"></span> Archives</h6>
-    <p>
-      <span class="fui-calendar"></span> October <span class="label label-default">12</span><br>
-      <span class="fui-calendar"></span> September <span class="label label-default">10</span><br>
-      <span class="fui-calendar"></span> August <span class="label label-default">19</span><br>
-      <span class="fui-calendar"></span> July <span class="label label-default">8</span><br>
-      <span class="fui-calendar"></span> June <span class="label label-default">12</span><br>
-    </p>
-    <br>
-    <h6><span class="fui-arrow-right"></span> Tags Cloud</h6>
-    <div class="tagsinput " style="height: 100%;">
-      <span class="tag"><span>Design&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
-      <span class="tag"><span>Wordpress&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
-      <span class="tag"><span>Media&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
-      <span class="tag"><span>Agency&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
-      <span class="tag"><span>Javascript&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
-      <span class="tag"><span>Flat&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
-      <span class="tag"><span>Photo&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
-      <span class="tag"><span>Audio&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
-      <span class="tag"><span>Tips&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
-      <input id="tags1382559408818_tag" value="" data-default="" style="color: rgb(102, 102, 102); width: 7px;">
-    </div>
-     -->
-
-  </div><!-- col-lg-4 / Sidebar -->
-
-
-
-</div>
 </div>
 
-TODO: Finish sidebar

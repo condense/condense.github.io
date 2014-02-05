@@ -1,0 +1,29 @@
+<h6><span class="fui-arrow-right"></span> Recent Posts</h6>
+{% for post in site.posts limit:3 %}
+<div class="pop-posts">
+  <p>
+    <a class="nolink" href="{{ post.url }}">
+      <b>{{ post.title }}</b>
+      <br> By: {{ post.author }}
+      <br> {{ post.date | date_to_long_string }}
+    </a></p>
+</div>
+{% endfor %}
+
+<h6><span class="fui-arrow-right"></span> Research projects</h6>
+
+{% assign pages_list = site.pages %}
+{% assign group = 'project' %}
+{% for node in pages_list %}
+{% if group == null or group == node.group %}
+<div class="pop-posts">
+  <p>
+    <a class="nolink" href="{{ BASE_PATH }}{{ node.url }}">
+      <b>{{ node.title }}</b>
+      <br>{{ node.thumbnail-hover-msg }}
+      <br>{{ node.thumbnail-theme }}
+    </a>
+  </p>
+</div>
+{% endif %}
+{% endfor %}
