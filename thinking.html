@@ -40,24 +40,25 @@ tagline:
   <div class="sidebar sinfo col-sm-4">
     <h6><span class="fui-arrow-right"></span> Categories</h6>
     <p>
-      <span class="fui-folder"></span> Analytics<br>
-      <span class="fui-folder"></span> Web Design<br>
-      <span class="fui-folder"></span> Marketing<br>
-      <span class="fui-folder"></span> Social Media<br>
-      <span class="fui-folder"></span> Agency<br>
+      <span class="fui-folder"></span> <a href="/thinking/analytics/">Analytics</a><br>
+      <span class="fui-folder"></span> <a href="/thinking/software/">Software</a><br>
+      <span class="fui-folder"></span> <a href="/thinking/strategy/">Strategy</a><br>
     </p>
     <br>
-    <h6><span class="fui-arrow-right"></span> Popular Posts</h6>
+    <h6><span class="fui-arrow-right"></span> Recent Posts</h6>
     <br>
+    {% for post in site.posts %}
     <div class="pop-posts">
-      <p><img src="assets/images/post-thumb02.jpg" width="70" height="70" alt=""> <b>GAME ON!</b> <br> By: C. Alvarez <br> 12 comments</p>
+      <p>
+        <a href="{{ post.url }}">
+          <!-- <img class="img-thumbnail " src="{{ post.img-responsive }}" width="70" height="70" alt=""> -->
+          <b>{{ post.title }}</b>
+          <br> By: {{ post.author }}
+          <br> {{ post.date | date_to_long_string }}
+        </a></p>
     </div>
-    <div class="pop-posts">
-      <p><img src="assets/images/post-thumb03.jpg" width="70" height="70" alt=""> <b>RED DIAMOND</b> <br> By: C. Alvarez <br> 12 comments</p>
-    </div>
-    <div class="pop-posts">
-      <p><img src="assets/images/post-thumb01.jpg" width="70" height="70" alt=""> <b>FLAT DESIGN ALWAYS</b> <br> By: C. Alvarez <br> 12 comments</p>
-    </div>
+    {% endfor %}
+    <!--
     <br>
     <h6><span class="fui-arrow-right"></span> Archives</h6>
     <p>
@@ -81,6 +82,7 @@ tagline:
       <span class="tag"><span>Tips&nbsp;&nbsp;</span><a class="tagsinput-remove-link"></a></span>
       <input id="tags1382559408818_tag" value="" data-default="" style="color: rgb(102, 102, 102); width: 7px;">
     </div>
+     -->
 
   </div><!-- col-lg-4 / Sidebar -->
 

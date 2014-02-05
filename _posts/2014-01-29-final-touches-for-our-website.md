@@ -4,6 +4,7 @@ category : thinking
 tagline: "Final touches for our website"
 tags : [newsletter]
 author: Oliver George
+img-responsive: /assets/thinking-image-1.png
 ---
 {% include JB/setup %}
 
@@ -15,6 +16,6 @@ Right now you're in the ["thinking" section](/thinking.html) this is where you'l
 
 Within the thinking section we've included active [research interests](/thinking/research.html).  These are things which push the envelope for us and help us grow as a business.  If you see something of interested there please get in touch.
 
-The final tab is ["inspiration"](/inspiration.html) where we link out to articles and quotes from around the world which relate to the data-driven revolution.  It is primarily focused on bubbling up interesting data-points and less about our commentary.
+Finally, we've added an ["inspiration"](/inspiration.html) page where we link out to articles and quotes from around the world which relate to the data-driven revolution.  It is primarily focused on bubbling up interesting data-points and less about our commentary.
 
 The other content is much as you would expect from a consulting company.  Just enough information to make you want to call us!

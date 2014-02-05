@@ -56,6 +56,19 @@
           </ul>
       </div>
       <hr>
+      <h6><span class="fui-arrow-right"></span> Recent Posts</h6>
+      <br>
+      {% for post in site.posts %}
+      <div class="pop-posts">
+      <p>
+        <a href="{{ post.url }}">
+          <!-- <img class="img-thumbnail " src="{{ post.img-responsive }}" width="70" height="70" alt=""> -->
+          <b>{{ post.title }}</b>
+          <br> By: {{ post.author }}
+          <br> {{ post.date | date_to_long_string }}
+        </a></p>
+      </div>
+      {% endfor %}
       <!--
       <h6><span class="fui-arrow-right"></span> Categories</h6>
       <p>

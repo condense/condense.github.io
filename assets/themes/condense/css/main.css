@@ -15,6 +15,13 @@ body{
   line-height: inherit;
 }
 
+/* Blog template */
+
+.pop-posts b {
+  font-size: 14px
+}
+
+
 /* Contact wrapper */
 
 #contactwrap h1 {
