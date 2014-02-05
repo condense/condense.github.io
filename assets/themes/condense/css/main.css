@@ -671,6 +671,10 @@ h6,
 	color: #ffffff;
 }
 
+.oldie #sp1 { background: none }
+.oldie #sp1 p { color: black }
+.oldie #sp1 h3 { color: black }
+
 
 /***** Call To Action *****/
 

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 9]><html lang="en" class="oldie"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
     <link rel="shortcut icon" href="{{ ASSET_PATH }}/images/favicon/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>{{ page.title }}</title>
 
@@ -47,7 +49,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">CONDENSE</a>
+          <a class="navbar-brand" href="/">
+            CONDENSE
+            <!--[if lt IE 9]> <img src="{{ ASSET_PATH }}/images/logo_gen.png" width="146" alt=""> <![endif]-->
+          </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">

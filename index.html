@@ -62,6 +62,9 @@ tagline: From Data Into Action
     percentageInnerCutout : 70,
   };
 </script>
+<style>
+  .oldie canvas { display: none; }
+</style>
 <div id="sp1">
   <div class="container">
     <div class="row centered">
@@ -69,6 +72,7 @@ tagline: From Data Into Action
       <br>
       <!-- First Chart -->
       <div class="col-sm-4">
+        <!--[if lt IE 9]> <img src="{{ ASSET_PATH }}condense/images/do90.png" width="130" alt=""><![endif]-->
         <canvas id="canvas" height="130" width="130" style="width: 130px; height: 130px;"></canvas>
         <br>
         <script>
@@ -90,6 +94,7 @@ tagline: From Data Into Action
 
       <!-- Second Chart -->
       <div class="col-sm-4 ">
+        <!--[if lt IE 9]> <img src="{{ ASSET_PATH }}condense/images/do70.png" width="130" alt=""> <![endif]-->
         <canvas id="canvas2" height="130" width="130" style="width: 130px; height: 130px;"></canvas>
         <br>
         <script>
@@ -111,6 +116,7 @@ tagline: From Data Into Action
 
       <!-- Third Chart -->
       <div class="col-sm-4">
+        <!--[if lt IE 9]> <img src="{{ ASSET_PATH }}condense/images/do81.png" width="130" alt=""> <![endif]-->
         <canvas id="canvas3" height="130" width="130" style="width: 130px; height: 130px;"></canvas>
         <br>
         <script>
