@@ -71,7 +71,7 @@ body{
 
 .navbar .nav ul {
   min-width: 200px;
-  padding: 2px;
+  /* padding: 2px; */
   border-radius: 0;
 }
 
