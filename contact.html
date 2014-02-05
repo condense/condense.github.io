@@ -5,58 +5,45 @@ tagline:
 ---
 {% include JB/setup %}
 
-<div id="mapwrap">
-  <iframe height="450" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-          src="https://maps.google.com/?ie=UTF8&amp;daddr=Hobart,+Tasmania&amp;t=m&amp;z=3&amp;output=embed"></iframe>
-</div>
-
-<style>
-  .cinfo img {
-    margin-bottom: 1em;
-  }
-  .sinfo .row p {
-    padding-top: 1em;
-  }
-</style>
-
-<div class="container">
-  <div class="row sinfo">
-    <div class="col-sm-offset-1 col-sm-6">
-      <div class="alert">
-        <div class="row">
-          <h4>Contact us</h4>
-        </div>
-
-        <div class="row">
-          <div class="cinfo">
-            <img src="{{ ASSET_PATH }}condense/images/icons/clocks.svg" alt="">
-          </div>
-          <p>
-            Monday to Friday / 8:30 - 18:00<br>
-          </p>
-
-        </div>
-
-        <div class="row">
-          <div class="cinfo">
-            <img style="margin-left: 10px; margin-right: 0px;" src="{{ ASSET_PATH }}condense/images/icons/iphone.svg" alt="">
-          </div>
-          <p>By phone:
-            <span class="tel"><a class="nolink" href="tel:0428740978">0428 740 978</a></span><br>
-          </p>
-        </div>
-
-        <div class="row">
-          <div class="cinfo">
-            <img src="{{ ASSET_PATH }}condense/images/icons/mail.svg" alt="">
-          </div>
-          <p>Or email:
-            <a href="mailto:hello@condense.com.au">hello@condense.com.au</a>
-          </p>
-        </div>
-
-      </div>
+<div id="contactwrap">
+  <div class="container">
+    <div class="row">
+      <h1>Great minds discuss ideas.</h1>
     </div>
   </div>
 </div>
 
+<div class="container">
+		<div class="row sinfo">
+			<div class="col-sm-6 hidden-xs">
+        <img class="img-rounded img-responsive" src="http://maps.google.com/maps/api/staticmap?center=-41.913163,146.397873&zoom=7&markers=label:C|-42.881903,147.323814|-42.881903,147.323814&path=color:0x0000FF80|weight:5|-40.44695,149.76563&size=500x500&sensor=false" alt="">
+			</div><!-- col-lg-8 -->
+			<div class="col-sm-6 col-lg-4">
+				<h4>Contact us today</h4>
+        <br>
+				<div class="cinfo">
+					<img src="{{ ASSET_PATH }}condense/images/icons/clocks.svg" alt="">
+				</div>
+				<p>
+					Monday to Friday <br> 9:00 - 18:00
+          <!-- <br>Saturday / 9:00 - 15:00 -->
+				</p>
+				<hr>
+				<div class="cinfo">
+					<img src="{{ ASSET_PATH }}condense/images/icons/android.svg" alt="">
+				</div>
+				<p>Phone: <br>
+					+428 740 978
+				</p>
+				<hr>
+				<div class="cinfo">
+					<img src="{{ ASSET_PATH }}condense/images/icons/mail.svg" alt="">
+				</div>
+				<p>Email: <br>
+          <a href="mailto:hello@condense.com.au">hello@condense.com.au</a>
+				</p>
+				<hr>
+			</div><!-- col-lg-4 -->
+
+		</div><!-- row -->
+	</div>

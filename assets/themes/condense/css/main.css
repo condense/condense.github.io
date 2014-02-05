@@ -15,6 +15,68 @@ body{
   line-height: inherit;
 }
 
+/* Contact wrapper */
+
+#contactwrap h1 {
+  color: #ffffff;
+}
+
+#contactwrap {
+  background: url(../images/faq-bg.jpg) no-repeat center top;
+  margin-top: 0px;
+  padding: 100px 50px;
+  text-align: center;
+  background-attachment: relative;
+  background-position: center center;
+  width: 100%;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*  */
+
+.navbar .nav ul li {
+  background-color: #34495e;
+  padding: 0 3px 3px;
+}
+
+.navbar .nav ul li:first-child {
+  padding-top: 3px;
+}
+
+.navbar .nav ul li:last-child {
+}
+
+.navbar .nav ul a:hover {
+  background-color: #1abc9c;
+}
+
+.navbar .nav li.dropdown .dropdown-menu>li>a {
+  border-radius: 3px;
+  color: #fff;
+}
+
+.navbar .nav ul {
+  min-width: 200px;
+  padding: 2px;
+  border-radius: 0;
+}
+
+.navbar-nav > li > .dropdown-menu {
+}
+
+.open > .dropdown-menu {
+  margin-top: 10px !important;
+}
+
+
+/*  */
 .navbar-brand {
   background: url(/assets/themes/condense/images/logo_gen.svg) no-repeat;
   background-size:100%;
