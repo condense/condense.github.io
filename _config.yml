@@ -9,7 +9,7 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : Condense
-tagline: From Data Into Action
+tagline: From data to action
 author :
   name : Condense Pty Ltd
   email : hello@condense.com.au
