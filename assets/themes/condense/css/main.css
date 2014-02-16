@@ -21,6 +21,14 @@ body{
   font-size: 14px
 }
 
+blockquote p, blockquote li {
+  font-size: 12pt;
+  font-style: italic;
+}
+
+pre {
+  font-size: 12px
+}
 
 /* Contact wrapper */
 
