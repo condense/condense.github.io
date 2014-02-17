@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 group: navigation
 title : Inspiration
 heading : INSPIRATION
@@ -7,13 +7,26 @@ description: "A collection of links and tweets from around the web."
 tagline:
 ---
 {% include JB/setup %}
-
-<div class="centered">
-  <a class="twitter-timeline" data-dnt="true"
-   href="https://twitter.com/condensehq/favorites"
-   data-widget-id="428692080890630145"
-   data-chrome="nofooter noheader noborders "
-   >Favorite Tweets by @condensehq</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
+{% if page.heading %}
+<div class="container">
+  <div class="row centered">
+    <br>
+    <br>
+    <div class="col-lg-8 col-lg-offset-2">
+      <h3 class="heading">{{ page.heading }}</h3>
+    </div>
+  </div>
 </div>
+{% endif %}
+{% if page.description %}
+<div class="container">
+  <div class="row centered">
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+      <p class="lead">{{ page.description }}</p>
+    </div>
+    <br>
+  </div>
+</div>
+{% endif %}
+
+<script async src="https://d36hc0p18k1aoc.cloudfront.net/public/js/modules/tintembed.js"></script><div class="tintup" data-id="condense-1392599809/twitter" data-columns=""  style="height:800px;width:100%;"><a href="http://www.tintup.com/blog/the-best-facebook-widget" style="width:118px;height:31px;background-image:url(//d33w9bm0n1egwm.cloudfront.net/assets/logos/poweredbytintsmall.png);position:absolute;bottom:10px;right: 20px;text-indent: -9999px;z-index:9;">facebook widget</a></div>
