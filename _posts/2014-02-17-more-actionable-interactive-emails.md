@@ -18,7 +18,7 @@ In the example above you can see that my tripit email has a "view itinerary" but
 
 **Types**
 
-It's worth skimming through the [different types actions](https://developers.google.com/gmail/actions/actions/actions-overview) available.  They range from a one click action which doesn't take the user out of their inbox through two more interactivity such as a review action which would allow users to provide feedback, again, without leaving inbox.  You can or also RSVP to something or jump out to webpage.
+It's worth skimming through the [different types of actions](https://developers.google.com/gmail/actions/actions/actions-overview) available.  They range from a one click action which doesn't take the user out of their inbox through two more interactivity such as a review action which would allow users to provide feedback, again, without leaving inbox.  You can or also RSVP to something or jump out to webpage.
 
 Condense is data focused and, as you might expect, these interactions are trackable.
 
