@@ -40,7 +40,7 @@ Essentially you add some additional tag attributes to your HTML source code.  In
 
 Here’s the related HTML from the TripIt email example.  I’ve pulled out the style attributes but otherwise copied it here verbatim:
 
-```
+{% highlight html %}
 <p itemscope itemprop="about"
    itemtype="http://schema.org/CreativeWork">
   <span itemscope itemprop="action"
@@ -53,7 +53,7 @@ Here’s the related HTML from the TripIt email example.  I’ve pulled out the 
     </a>
   </span>
 </p>
-```
+{% endhighlight %}
 
 **Compatibility**
 
