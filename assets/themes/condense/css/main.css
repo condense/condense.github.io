@@ -26,6 +26,11 @@ blockquote p, blockquote li {
   font-style: italic;
 }
 
+.blogcontent blockquote p {
+  font-style: normal;
+  font-size: 18pt;
+}
+
 pre {
   font-size: 12px
 }
