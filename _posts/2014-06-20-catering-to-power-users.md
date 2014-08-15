@@ -43,7 +43,7 @@ underlying data, computational algorithms, etc.  Exactly how this
 access is granted is fairly case-specific, and we'll look at some
 possibilities in a future post.
 
-## A data analyst's perspective
+**A data analyst's perspective**
 
 Let's start by considering a simple motivating example: a web
 application for internal use to manage customer complaints.  This is a
@@ -103,7 +103,7 @@ and let them get to work on their own terms.  If necessary,
 interesting queries or metrics they unearth can then be implemented in
 the application itself.
 
-## A Data Manager's Perspective
+**A Data Manager's Perspective**
 
 In addition to the consumer of this service, we also need to consult
 with the data manager, and anyone involved in its operation.
@@ -118,7 +118,7 @@ A range of questions need to be addressed, such as:
 * How to controlling access to sensitive data?  How to track usage for
   reporting / cost sharing?
 
-## What's Next?
+**What's Next?**
 
 In future posts we'll look at a few options for the questions raised
 here, other considerations, and potentially some case-studies.

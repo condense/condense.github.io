@@ -22,7 +22,7 @@ analysis, summaries), and future prospects (predictive analytics,
 decision strategies).  These also have a corresponding increase in
 implementation complexity.
 
-### What happened?
+**What happened?**
 
 This tends to be the simplest question to answer.  People have been
 generating reports and querying databases since the 1970s.
@@ -35,7 +35,7 @@ Data warehousing tools help to pre-process this operational data to
 allow efficient reporting.  Business intelligence solutions help to
 build and share reports, queries and dashboards.
 
-### Why did it happen?
+**Why did it happen?**
 
 Working out "why" tends to require a more exploratory approach.  It
 requires analytical tools suited to ad-hoc queries which let you
@@ -50,7 +50,7 @@ business compete effectively.
 Business analytics tools provide rich interfaces for exploring data
 interactively.
 
-### What might happen?
+**What might happen?**
 
 Decision-makers look at what has happened in the past and the insights
 uncovered through analysis to inform plans for the future.  They also

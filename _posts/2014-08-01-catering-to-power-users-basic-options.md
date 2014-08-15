@@ -8,7 +8,7 @@ tags: []
 ---
 {% include JB/setup %}
 
-### Recap
+**Recap**
 
 A [few weeks ago]({% post_url 2014-06-20-catering-to-power-users %})
 we started looking at the frequently-encountered balancing act around
@@ -25,7 +25,7 @@ this installment we'll begin examining some concrete options for
 addressing it.  If you would like a copy of the full whitepaper on the
 topic, please [drop us a line](mailto:hello@condense.com.au).
 
-### Basic Options
+**Basic Options**
 
 The options that we'll cover in this post should be the first ones
 considered, due to the completeness of access, and (relative)
@@ -33,7 +33,7 @@ simplicity of implementation.  Naturally, the full decision needs to
 also consider the users' exact needs and technical sophistication,
 security and privacy considerations, and so on.
 
-#### Read-only Database Access
+**Read-only Database Access**
 
 In the most straight-forward scenario, we simply provide select users
 with direct access the underlying database.
@@ -57,7 +57,7 @@ Many tools are available for querying the data---even office tools
 such as Microsoft Excel---but it does require a certain amount of
 sophistication from the user.
 
-#### APIs
+**APIs**
 
 A related approach is instead to provide access to an API.[^1] The API
 can be simple low-level data access, in a similar fashion to that
@@ -102,7 +102,7 @@ are various techniques which address these issues ranging from quotas
 and thresholds, isolating API services to dedicated resources, and
 careful design of API processes.
 
-### Wrapping Up
+**Wrapping Up**
 
 We have examined the simplest options available, which should also be
 the default approaches.  While they are simple to implement (database
