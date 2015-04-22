@@ -22,7 +22,7 @@ tagline:
         <img class="img-responsive" src="{{ post.img-responsive }}" alt="">
         {% endif %}
         <h6><a href="{{ post.url }}">{{ post.title }}</a></h6>
-        <small><span class="fui-user"></span> {{ post.author }} | <span class="fui-calendar"></span> {{ post.date | date_to_long_string }}
+        <small><span class="fui-user"></span> {{ post.author }} 
         </small>
         {% if post.tag_line %}
         <p class="lead">{{ post.tag_line }}</p>
