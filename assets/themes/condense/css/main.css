@@ -544,9 +544,9 @@ background-color: #1abc9c;
 }
 
 
-/***** About Wrap *****/
-#aboutwrap {
-  background: url(../images/about-bg.jpg) no-repeat center top;
+/***** Awards Wrap *****/
+#awardswrap {
+  background: url(../images/awards-bg.jpg) no-repeat center top;
   margin-top: 0px;
   padding: 80px 20px;
   text-align:center;
@@ -563,9 +563,10 @@ background-color: #1abc9c;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  min-height: 380px;
 }
 
-#aboutwrap h1 {
+#awardswrap h1 {
   color: #ffffff;
 }
 
