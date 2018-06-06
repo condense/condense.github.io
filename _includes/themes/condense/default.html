@@ -54,7 +54,8 @@
           </a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
+            {% assign link_url = "/" %}<li class='{% include active_class %}'><a href="{{ link_url }}">Home</a></li>
             {% assign link_url = "/services.html" %}<li class='{% include active_class %}'><a href="{{ link_url }}">Services</a></li>
             {% assign link_url = "/awards.html" %}<li class='{% include active_class %}'><a href="{{ link_url }}">Awards</a></li>
             {% assign link_url = "/about.html" %}<li class='{% include active_class %}'><a href="{{ link_url }}">About</a></li>
