@@ -543,6 +543,32 @@ background-color: #1abc9c;
   color: #ffffff;
 }
 
+
+/***** About Wrap *****/
+#aboutwrap {
+  background: url(../images/about-bg.jpg) no-repeat center top;
+  margin-top: 0px;
+  padding: 80px 20px;
+  text-align:center;
+  background-attachment: relative;
+  background-position: center center;
+  width: 100%;
+
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#aboutwrap h1 {
+  color: #ffffff;
+}
+
 /***** Service Wrap *****/
 #servicewrap {
   background: url(../images/service-bg.jpg) no-repeat center top;
