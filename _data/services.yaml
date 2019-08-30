@@ -1,10 +1,10 @@
-- img: /assets/themes/condense/images/icons/pencils.png
+S- img: /assets/themes/condense/images/icons/pencils.png
   area: Processes
   benefit: Make it easier for your team to capture, process and understand business data.
   features:
   - Web and mobile applications
   - Data integration
-  - Process automation
+  - Process mapping and design
 
 - img: /assets/themes/condense/images/icons/bulb.png
   area: Decisions
@@ -20,4 +20,4 @@
   features:
   - Digital strategy
   - Data audits
-  - Process mapping and design
+  - Training and coaching
