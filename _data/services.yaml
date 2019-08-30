@@ -2,8 +2,7 @@
   area: Processes
   benefit: Make it easier for your team to capture, process and understand business data.
   features:
-  - Interactive data visualisations
-  - Web applications
+  - Web and mobile applications
   - Data integration
   - Process automation
 
@@ -11,6 +10,7 @@
   area: Decisions
   benefit: Help executives and managers monitor business performance to support better decisions and align action with strategy.
   features:
+  - Interactive data visualisations
   - Dashboards and reports
   - Business analytics
 
@@ -18,6 +18,6 @@
   area: Competencies
   benefit: Helping your business develop core competencies in data management and business analytics.
   features:
-  - Data strategy
+  - Digital strategy
   - Data audits
-  - Analytics training
+  - Process mapping and design
