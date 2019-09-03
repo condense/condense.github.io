@@ -1,4 +1,4 @@
-- img: /assets/themes/condense/images/icons/user-interface.png
+- img: /assets/themes/condense/images/icons/user-interface.svg
   area: Processes
   benefit: Helping your business design effective systems and processes.
   features:
@@ -6,7 +6,7 @@
   - Process mapping
   - Interface design
   
-- img: /assets/themes/condense/images/icons/clipboard.png
+- img: /assets/themes/condense/images/icons/clipboard.svg
   area: Processes
   benefit: Develop tools which make it easier for your team to capture, process and understand business data.
   features:
@@ -14,7 +14,7 @@
   - Data integration
   - Process automation 
 
-- img: /assets/themes/condense/images/icons/graph.png
+- img: /assets/themes/condense/images/icons/graph.svg
   area: Decisions
   benefit: Help executives and managers monitor business performance to support better decisions and align action with strategy.
   features:
@@ -22,7 +22,7 @@
   - Dashboards and reports
   - Business analytics
 
-- img: /assets/themes/condense/images/icons/goal.png
+- img: /assets/themes/condense/images/icons/goal.svg
   area: Competencies
   benefit: Helping your business develop core competencies in data management and business analytics.
   features:
