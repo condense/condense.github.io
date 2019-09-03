@@ -1,13 +1,20 @@
-- img: /assets/themes/condense/images/icons/pencils.png
+- img: /assets/themes/condense/images/icons/user-interface.png
   area: Processes
-  benefit: Make it easier for your team to capture, process and understand business data.
+  benefit: Helping your business design effective systems and processes.
+  features:
+  - Business needs analysis
+  - Process mapping
+  - Interface design
+  
+- img: /assets/themes/condense/images/icons/clipboard.png
+  area: Processes
+  benefit: Develop tools which make it easier for your team to capture, process and understand business data.
   features:
   - Web and mobile applications
   - Data integration
   - Process automation 
-  - Process mapping and design
 
-- img: /assets/themes/condense/images/icons/bulb.png
+- img: /assets/themes/condense/images/icons/graph.png
   area: Decisions
   benefit: Help executives and managers monitor business performance to support better decisions and align action with strategy.
   features:
