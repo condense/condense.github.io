@@ -1,4 +1,4 @@
-- img: /assets/themes/condense/images/icons/user-interface.svg
+- img: /assets/themes/condense/images/icons/map.svg
   area: Processes
   benefit: Helping your business design effective systems and processes.
   features:
@@ -22,7 +22,7 @@
   - Dashboards and reports
   - Business analytics
 
-- img: /assets/themes/condense/images/icons/map.svg
+- img: /assets/themes/condense/images/icons/goal.svg
   area: Competencies
   benefit: Helping your business develop core competencies in data management and business analytics.
   features:
