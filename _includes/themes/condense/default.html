@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
+    <meta name="aut hor" content="{{ site.author.name }}">
     <link rel="shortcut icon" href="{{ ASSET_PATH }}/images/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{{ page.title }} | {{ page.tagline }}</title>
+    <title>{{ page.title }} {% if page.tagline %} | {{ page.tagline }} {% endif %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ ASSET_PATH }}/css/bootstrap.css" rel="stylesheet">
