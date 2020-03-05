@@ -34,6 +34,17 @@ Translation : it might take a bit longer so please be patient! (but sincerely th
 
 The documentation website at <http://jekyllbootstrap.com> is maintained at https://github.com/plusjade/jekyllbootstrap.com
 
+## Docker build
+
+```
+export JEKYLL_VERSION=3.8
+docker run --rm \
+  --volume="$PWD:/srv/jekyll" \
+  -it jekyll/jekyll:$JEKYLL_VERSION \
+  jekyll build
+```
+
+Ref: https://github.com/envygeeks/jekyll-docker/blob/master/README.md
 
 ## License
 
