@@ -1,0 +1,9 @@
+---
+// Legacy URL preserved (was /about.html on the old Jekyll site). Renders the
+// one-page site; canonical points home so search engines consolidate ranking.
+import Base from '../layouts/Base.astro';
+import Home from '../components/Home.astro';
+---
+<Base canonical="https://condense.com.au/">
+  <Home />
+</Base>

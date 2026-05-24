@@ -1,51 +1,41 @@
-# Jekyll-Bootstrap
+# condense.com.au
 
-The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
+Marketing site for **Condense Pty Ltd** — an independent software studio in Hobart, Tasmania.
 
-## Usage
+Built with [Astro](https://astro.build) as a static one-page site (the "Clear"
+variant of the 2026 design refresh). Replaces the previous 15-year-old
+Jekyll-Bootstrap site.
 
-For all usage and documentation please see: <http://jekyllbootstrap.com>
+## Develop
 
-## Version
-
-0.3.0 - stable and versioned using [semantic versioning](http://semver.org/).
-
-**NOTE:** 0.3.0 introduces a new theme which is not backwards compatible in the sense it won't _look_ like the old version.
-However, the actual API has not changed at all.
-You might want to run 0.3.0 in a branch to make sure you are ok with the theme design changes.
-
-## Contributing
-
-
-To contribute to the framework please make sure to checkout your branch based on `jb-development`!!
-This is very important as it allows me to accept your pull request without having to publish a public version release.
-
-Small, atomic Features, bugs, etc.
-Use the `jb-development` branch but note it will likely change fast as pull requests are accepted.
-Please rebase as often as possible when working.
-Work on small, atomic features/bugs to avoid upstream commits affecting/breaking your development work.
-
-For Big Features or major API extensions/edits:
-This is the one case where I'll accept pull-requests based off the master branch.
-This allows you to work in isolation but it means I'll have to manually merge your work into the next public release.
-Translation : it might take a bit longer so please be patient! (but sincerely thank you).
-
-**Jekyll-Bootstrap Documentation Website.**
-
-The documentation website at <http://jekyllbootstrap.com> is maintained at https://github.com/plusjade/jekyllbootstrap.com
-
-## Docker image
-
-```
-export JEKYLL_VERSION=3.8
-docker run --rm \
-  --volume="$PWD:/srv/jekyll" \
-  -it jekyll/jekyll:$JEKYLL_VERSION \
-  jekyll build --watch
+```sh
+npm install
+npm run dev        # local dev server at http://localhost:4321
+npm run build      # static build into dist/
+npm run preview    # serve the built dist/ locally
 ```
 
-Ref: https://github.com/envygeeks/jekyll-docker/blob/master/README.md
+Requires Node 20.3+ (Astro 5).
 
-## License
+## Structure
 
-[MIT](http://opensource.org/licenses/MIT)
+- `src/pages/index.astro` — the home page.
+- `src/pages/{about,services,portfolio,awards,contact}.astro` — legacy URLs from
+  the old site, preserved as real pages that render the same content and
+  `canonical` to the homepage (so 15 years of inbound links and ranking are kept,
+  with no flimsy redirects). `build.format: 'file'` emits `/about.html` etc. to
+  match the old URL scheme exactly.
+- `src/components/*.astro` — the page sections (Nav, Hero, Services, Stats, …).
+- `src/styles/site.css` — design tokens + component styles, ported from the
+  Claude Design "Clear" prototype.
+- `src/content.config.ts` — type-safe `journal` collection, wired but empty.
+  Re-enable the journal by adding Markdown under `src/content/journal/` and
+  rendering it (see the commented-out section refs in `Nav`/`Footer`).
+- `public/` — static assets, `CNAME` (custom domain), `robots.txt`, `.nojekyll`.
+
+## Deploy
+
+Pushing to `master` triggers `.github/workflows/deploy.yml`, which builds the
+site and publishes `dist/` to GitHub Pages. The Pages source must be set to
+**GitHub Actions** (Settings → Pages). The custom domain `condense.com.au` is
+carried by `public/CNAME`; DNS is unchanged.

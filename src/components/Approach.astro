@@ -1,0 +1,25 @@
+---
+const steps = [
+  { num: 1, title: 'Listen, then look.', body: 'We start with stakeholder workshops and a hard look at the data you already have. Most engagements unlock value here before any code is written.' },
+  { num: 2, title: 'Prototype to learn.', body: 'Small, ugly, fast prototypes — built in front of the users they\'re for. Decisions get cheaper when you can touch the thing.' },
+  { num: 3, title: 'Ship and keep shipping.', body: 'We build production systems we can stand behind and stay close long enough to see what really works in the wild.' },
+];
+---
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">How we work</span>
+      <h2 class="section-title">Slow at the start, careful all the way through.</h2>
+      <p class="section-lede">A three-phase rhythm we've used on almost every engagement. Long enough to do it well, short enough to ship.</p>
+    </div>
+    <div class="steps-grid">
+      {steps.map((s) => (
+        <div class="step">
+          <div class="num">{s.num}</div>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

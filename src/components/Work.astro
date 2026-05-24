@@ -1,0 +1,33 @@
+---
+const work = [
+  { client: 'University of Tasmania', title: 'ISD Connect — asset management on the go', desc: 'Native iOS and Android app extending a whole-of-university Asset Management Information System for contractors and maintenance staff in the field.', cat: 'Mobile', yr: '2024' },
+  { client: 'IMAS / AODN',            title: 'Redmap & Kelp Tracker',                    desc: 'Two award-winning citizen-science apps capturing range-shifting species sightings around the Australian coast.', cat: 'Citizen science', yr: '2023' },
+  { client: 'Tas DPIPWE',             title: 'Fisheries Digital Transition',             desc: 'A comprehensive review of data sources, processing and reporting standards for the $5M Tas Fisheries Digital Transition program.', cat: 'Strategy', yr: '2022' },
+  { client: 'University of Tasmania', title: 'Research data publishing platform',         desc: 'A whole-of-university data-publishing application integrating with national research-data infrastructure and international identifier standards.', cat: 'Enterprise', yr: '2021' },
+  { client: 'University of Tasmania', title: 'Built-environment reporting',               desc: 'Tracking and reporting on the university built environment, energy and emissions — used to forward-plan the property portfolio.', cat: 'Dashboards', yr: '2020' },
+];
+---
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">Selected work</span>
+      <h2 class="section-title">Ten years of shipping things that get used.</h2>
+      <p class="section-lede">A small slice of our portfolio. Most of our work is bespoke — talk to us about your problem and we'll be straight about whether we're the right fit.</p>
+    </div>
+    <div class="work-list">
+      {work.map((w) => (
+        <div class="work-row">
+          <div>
+            <h3>{w.title}</h3>
+            <div class="client">{w.client}</div>
+          </div>
+          <p class="desc">{w.desc}</p>
+          <div class="meta">
+            <span class="cat">{w.cat}</span>
+            <span>{w.yr}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

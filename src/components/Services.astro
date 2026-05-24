@@ -1,0 +1,30 @@
+---
+import Icon from './Icon.astro';
+
+const services = [
+  { icon: 'strategy',  title: 'Data strategy & discovery', body: 'Workshops, requirements and roadmap work that turn data ambition into a concrete plan you can act on.', tags: ['Discovery', 'Roadmap'] },
+  { icon: 'dashboard', title: 'Dashboards & reporting',    body: 'Interactive analytics designed to surface the right number at the right time — for the right reader.', tags: ['BI', 'Reporting'] },
+  { icon: 'data',      title: 'Data engineering',          body: 'Pipelines, integration and metadata systems built on .NET, Azure and modern open-source. Boring, by design.', tags: ['.NET', 'Azure'] },
+  { icon: 'mobile',    title: 'Web & mobile applications', body: 'Beautiful, useable applications across web, iOS and Android — built for the field, the boardroom, and everywhere between.', tags: ['Web', 'iOS', 'Android'] },
+] as const;
+---
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">What we do</span>
+      <h2 class="section-title">Four practices, one outcome.</h2>
+      <p class="section-lede">We combine engineering, research, strategy and design under one small senior team. No farm-outs, no juniors learning on your dime.</p>
+    </div>
+    <div class="svc-grid">
+      {services.map((s) => (
+        <div class="svc-card">
+          <div class="svc-icon"><Icon name={s.icon} /></div>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+          <div class="tags">{s.tags.map((t) => <span class="tag">{t}</span>)}</div>
+          <span class="more">Learn more <Icon name="arrow" size={14} /></span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+const clients = [
+  'University of Tasmania',
+  'CSIRO',
+  'IMAS',
+  'AODN',
+  'Redmap',
+  'Tas Fisheries',
+];
+---
+<section class="trusted">
+  <div class="wrap">
+    <div class="inner">
+      <span class="label">Selected clients</span>
+      <div class="logos">
+        {clients.map((c) => <span>{c}</span>)}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+---
+const stats = [
+  { to: 90, label: 'Big data',    body: "of the world's data has been created in the last two years alone." },
+  { to: 70, label: 'Big returns', body: 'of Australian businesses believe data can deliver gains in productivity.' },
+  { to: 81, label: 'Big need',    body: 'of employees say critical data resources are not available to them today.' },
+];
+---
+<section class="section section-dark">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">By the numbers</span>
+      <h2 class="section-title">The data revolution is now.</h2>
+      <p class="section-lede">Australian organisations sit on more data than ever — and use less of it than they should. Three numbers we keep coming back to:</p>
+    </div>
+    <div class="stats-grid">
+      {stats.map((s) => (
+        <div class="stat">
+          <div class="big"><span class="count" data-count={s.to}>{s.to}</span><sup>%</sup></div>
+          <div class="label">{s.label}</div>
+          <p>{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Count-up on first scroll into view (ported from the prototype's CountUp).
+  // Final values are already in the DOM, so this is purely progressive
+  // enhancement — with JS off or reduced motion, the real numbers show.
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const counters = document.querySelectorAll<HTMLElement>('.count');
+  if (!reduce && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target as HTMLElement;
+        obs.unobserve(el);
+        const to = Number(el.dataset.count ?? '0');
+        const start = performance.now();
+        const dur = 1400;
+        const tick = (t: number) => {
+          const k = Math.min(1, (t - start) / dur);
+          const eased = 1 - Math.pow(1 - k, 3);
+          el.textContent = String(Math.round(eased * to));
+          if (k < 1) requestAnimationFrame(tick);
+        };
+        el.textContent = '0';
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach((c) => io.observe(c));
+  }
+</script>
