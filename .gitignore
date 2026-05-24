@@ -1,6 +1,7 @@
 # Astro build output
 dist/
 .astro/
+.serena/
 
 # dependencies
 node_modules/
