@@ -1,0 +1,41 @@
+---
+// Copy lives in src/copy/site.ts. The Contact column and the © line are assembled
+// here from the shared contact details and the current year.
+import { site } from '../copy/site.ts';
+const { brand, tagline, contact, footer } = site;
+// `tagline` still renders under the wordmark (top-left); the bottom bar no longer repeats it.
+const year = new Date().getFullYear();
+---
+<footer class="foot">
+  <div class="wrap">
+    <div class="top">
+      <div class="brand-col">
+        <div class="wordmark">
+          <img src="/assets/c-element.svg" alt="" width="28" height="28" />
+          <span>{brand}</span>
+        </div>
+        <div class="tagline">{tagline}</div>
+        <p class="desc">{footer.desc}</p>
+      </div>
+      {footer.columns.map((col) => (
+        <div>
+          <h5>{col.title}</h5>
+          <ul>
+            {col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          </ul>
+        </div>
+      ))}
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
+          <li><a href={contact.phoneHref}>{contact.phoneLabel}</a></li>
+          <li>{contact.addressShort}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© {year} {footer.legalName} · {footer.location} · {footer.established}</span>
+    </div>
+  </div>
+</footer>

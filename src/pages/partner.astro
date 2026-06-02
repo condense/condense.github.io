@@ -1,0 +1,9 @@
+---
+// "Partner with us" page. Linked from the footer (Practice column); not in the top nav.
+import Base from '../layouts/Base.astro';
+import Partner from '../components/Partner.astro';
+import { partner } from '../copy/partner.ts';
+---
+<Base title={partner.meta.title} description={partner.meta.description}>
+  <Partner />
+</Base>

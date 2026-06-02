@@ -1,0 +1,57 @@
+---
+const parked = {
+  eyebrow: 'By the numbers',
+  title: 'Built to still be here in another decade.',
+  lede: 'We judge our work by how long it lasts. Our earliest platforms are still live, and the team that built them is still here to keep them that way.',
+  items: [
+    { to: 12, suffix: '+ yrs', label: 'Founder-led', body: 'building data systems since 2013, across changing tools, funding models and expectations.' },
+    { to: 8, suffix: '+ yrs', label: 'Still running', body: 'platforms we built years ago are still live, still maintained, still earning their keep.' },
+    { to: 6, suffix: '', label: 'Senior people', body: "a small team with low turnover — the people you brief are the people who build, and they're still here years later." },
+  ],
+} as const;
+const { eyebrow, title, lede, items } = parked;
+---
+<section class="section section-dark">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-lede">{lede}</p>
+    </div>
+    <div class="stats-grid">
+      {items.map((s) => (
+        <div class="stat">
+          <div class="big"><span class="count" data-count={s.to}>{s.to}</span>{s.suffix && <sup>{s.suffix}</sup>}</div>
+          <div class="label">{s.label}</div>
+          <p>{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const counters = document.querySelectorAll<HTMLElement>('.count');
+  if (!reduce && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target as HTMLElement;
+        obs.unobserve(el);
+        const to = Number(el.dataset.count ?? '0');
+        const start = performance.now();
+        const dur = 1400;
+        const tick = (t: number) => {
+          const k = Math.min(1, (t - start) / dur);
+          const eased = 1 - Math.pow(1 - k, 3);
+          el.textContent = String(Math.round(eased * to));
+          if (k < 1) requestAnimationFrame(tick);
+        };
+        el.textContent = '0';
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach((c) => io.observe(c));
+  }
+</script>

@@ -1,0 +1,27 @@
+---
+// Copy lives in src/copy/site.ts.
+import { site } from '../copy/site.ts';
+const { brand, nav } = site;
+---
+<nav class="nav" id="nav">
+  <div class="inner">
+    <a class="brand" href="/">
+      <img src="/assets/c-element.svg" alt="" width="28" height="28" />
+      <span class="word">{brand}</span>
+    </a>
+    <div class="links">
+      {nav.links.map((l) => <a href={l.href}>{l.label}</a>)}
+      <a href={nav.cta.href} class="cta">{nav.cta.label}</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Nav gains a hairline border once the page is scrolled (ported from the prototype).
+  const nav = document.getElementById('nav');
+  if (nav) {
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+</script>

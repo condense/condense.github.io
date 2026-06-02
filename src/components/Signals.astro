@@ -1,0 +1,30 @@
+---
+// "Is this you?" symptom strip — lets a buyer self-identify by the moment
+// they're in rather than learning our positioning vocabulary. Copy lives in
+// src/copy/home.ts. Numbered-list styling matches the design system v2
+// (.signals-list / .section-signals in site.css).
+import { home } from '../copy/home.ts';
+const { eyebrow, title, lede, items } = home.signals;
+const midpoint = Math.ceil(items.length / 2);
+const columns = [items.slice(0, midpoint), items.slice(midpoint)];
+---
+<section class="section section-signals" id="signals">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-lede">{lede}</p>
+    </div>
+    <div class="signals-list">
+      {
+        columns.map((column) => (
+          <ul>
+            {column.map((s) => (
+              <li>{s}</li>
+            ))}
+          </ul>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+---
+// Sparkline — inline mini sparkline chip.
+// Props: points (0..1), label?, w?, h?, stroke?
+const { points, label, w = 64, h = 14, stroke = '#009B8F' } = Astro.props;
+const step = w / (points.length - 1);
+const yOf = (p: number) => h - 1 - p * (h - 2);
+const d = points.map((p: number, i: number) => `${i === 0 ? 'M' : 'L'}${(i * step).toFixed(1)},${yOf(p).toFixed(1)}`).join(' ');
+const lastX = w;
+const lastY = yOf(points[points.length - 1]);
+---
+<span class="viz-spark">
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`}>
+    <path d={d} fill="none" stroke={stroke} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx={lastX} cy={lastY} r="2" fill={stroke} />
+  </svg>
+  {label && <span>{label}</span>}
+</span>

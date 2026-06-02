@@ -1,0 +1,13 @@
+---
+// StatTile — three-figure dashboard tile.
+// Props: figures – [{ n, suffix?, lbl }, …]
+const { figures } = Astro.props;
+---
+<div class="viz-tile">
+  {figures.map((f: any) => (
+    <div class="f">
+      <div class="n">{f.n}{f.suffix && <sup>{f.suffix}</sup>}</div>
+      <div class="lbl">{f.lbl}</div>
+    </div>
+  ))}
+</div>

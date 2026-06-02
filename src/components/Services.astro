@@ -1,0 +1,28 @@
+---
+// Homepage Services — the four ways live data goes bad, and what we build in against each.
+// Posture: we build the system so the client's team can stay on top of it — we don't run
+// their data-ops for them. Copy lives in src/copy/home.ts. Card bodies lead with the
+// payoff, then the mechanism — so the reader gets the point before the technical detail.
+import Icon from './Icon.astro';
+import { home } from '../copy/home.ts';
+const { eyebrow, title, lede, cards } = home.services;
+---
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-lede">{lede}</p>
+    </div>
+    <div class="svc-grid">
+      {cards.map((s) => (
+        <div class="svc-card" id={s.anchor}>
+          <div class="svc-icon"><Icon name={s.icon} /></div>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+          <div class="tags">{s.tags.map((t) => <span class="tag">{t}</span>)}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

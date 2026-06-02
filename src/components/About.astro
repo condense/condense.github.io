@@ -1,0 +1,34 @@
+---
+// Copy lives in src/copy/home.ts. Lede paragraphs may carry inline markup (e.g. <b>),
+// so they render via set:html. Social links beyond email are added once real URLs exist.
+import { home } from '../copy/home.ts';
+const { eyebrow, title, lede, team } = home.about;
+---
+<section class="section" id="practice">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-lede">
+        {lede.map((para) => <p set:html={para} />)}
+      </div>
+      <div class="team">
+        {team.map((m) => (
+          <div class="member">
+            <img src={m.photo} alt={m.name} width="80" height="80" />
+            <div>
+              <h4>{m.name}</h4>
+              <div class="role">{m.role}</div>
+              <p>{m.bio}</p>
+              <div class="socials">
+                <a href={`mailto:${m.email}`}>Email</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,13 +1,17 @@
-_site/*
-_theme_packages/*
+# Astro build output
+dist/
+.astro/
+.serena/
 
-Thumbs.db
+# dependencies
+node_modules/
+
+# generated / environment
+.env
+.env.production
+
+# macOS / editors
 .DS_Store
-
-!.gitkeep
-
-.rbenv-version
-.rvmrc
+Thumbs.db
 .idea
 *.iml
-node_modules

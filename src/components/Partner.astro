@@ -1,0 +1,61 @@
+---
+// "Partner with us" page (/partner). Copy + rationale live in src/copy/partner.ts.
+// Linked from the footer (Practice column); not in the top nav.
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+import Icon from './Icon.astro';
+import { partner } from '../copy/partner.ts';
+const { hero, offers, fit } = partner;
+---
+<Nav />
+<main>
+  <section class="hero" id="top">
+    <div class="wrap">
+      <h1>{hero.heading.before}<span class="accent">{hero.heading.accent}</span>{hero.heading.after}</h1>
+      <p class="lede">{hero.lede}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href={hero.actions.primary.href}>
+          {hero.actions.primary.label}
+          <span class="arr"><Icon name="arrow" size={16} /></span>
+        </a>
+        <a class="btn btn-ghost" href={hero.actions.ghost.href}>{hero.actions.ghost.label}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">{offers.eyebrow}</span>
+        <h2 class="section-title">{offers.title}</h2>
+        <p class="section-lede">{offers.lede}</p>
+      </div>
+      <div class="svc-grid">
+        {offers.cards.map((o) => (
+          <div class="svc-card">
+            <div class="svc-icon"><Icon name={o.icon} /></div>
+            <h3>{o.title}</h3>
+            <p>{o.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">{fit.eyebrow}</span>
+        <h2 class="section-title">{fit.title}</h2>
+        <p class="section-lede">{fit.lede}</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href={fit.action.href}>
+          {fit.action.label}
+          <span class="arr"><Icon name="arrow" size={16} /></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+<Footer />

@@ -1,0 +1,968 @@
+/* ============================================================
+   Condense — Clear variant
+   Google-content-website aesthetic: white space, large readable
+   type, restrained color, content-first.
+   Ported from the Claude Design "Clear" prototype (site-clear.css).
+   Inter is loaded via <link> in Base.astro; all --c-* tokens are
+   defined below so this stylesheet is self-contained.
+   ============================================================ */
+
+:root {
+  --c-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --c-ink: #1F2328;
+  --c-ink-2: #424A53;
+  --c-mute: #656D76;
+  --c-line: #E5E7EB;
+  --c-line-2: #F0F1F3;
+  --c-paper: #FFFFFF;
+  --c-soft:  #F8F9FA;
+  --c-soft-2: #F2F4F6;
+  --c-accent: #009B8F;   /* Condense teal preserved */
+  --c-accent-soft: rgba(0,155,143,0.08);
+  --c-accent-hover: #007A70;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--c-paper);
+  color: var(--c-ink);
+  font-family: var(--c-font);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+}
+
+::selection { background: var(--c-accent-soft); color: var(--c-ink); }
+
+a { color: var(--c-accent); text-decoration: none; text-underline-offset: 3px; }
+a:hover { text-decoration: underline; text-decoration-thickness: 1.5px; }
+a:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+img { display: block; max-width: 100%; }
+
+/* Respect reduced-motion preference (added in port) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Skip link for keyboard users (added in port) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--c-ink);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+.skip-link:focus { left: 16px; top: 16px; text-decoration: none; }
+
+/* ============================================================
+   Container — generous, content-first
+   ============================================================ */
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.wrap-narrow {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 720px) {
+  .wrap, .wrap-narrow { padding: 0 24px; }
+}
+
+/* ============================================================
+   Navigation
+   ============================================================ */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease;
+}
+.nav.scrolled { border-bottom-color: var(--c-line); }
+.nav .inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 720px) { .nav .inner { padding: 14px 24px; } }
+.nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--c-ink);
+  font-weight: 500;
+}
+.nav .brand img { width: 28px; height: 28px; }
+.nav .brand .word { font-size: 19px; letter-spacing: -0.01em; }
+.nav .links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav .links a {
+  color: var(--c-ink-2);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
+.nav .links a:hover { background: var(--c-soft); color: var(--c-ink); text-decoration: none; }
+.nav .links a.cta {
+  background: var(--c-ink);
+  color: white;
+  padding: 10px 20px;
+  margin-left: 8px;
+  border-radius: 999px;
+}
+.nav .links a.cta:hover { background: #000; color: white; text-decoration: none; }
+@media (max-width: 760px) {
+  .nav .links a:not(.cta) { display: none; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  padding: 112px 0 120px;
+}
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--c-accent);
+  margin: 0 0 20px;
+  letter-spacing: -0.005em;
+}
+.hero h1 {
+  font-family: var(--c-font);
+  font-weight: 500;
+  font-size: clamp(48px, 6.5vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--c-ink);
+  margin: 0 0 32px;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+.hero h1 .accent { color: var(--c-accent); }
+.hero .lede {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.5;
+  color: var(--c-ink-2);
+  font-weight: 400;
+  max-width: 40ch;
+  margin: 0 0 48px;
+  text-wrap: pretty;
+}
+.hero .lede p {
+  margin: 0 0 20px;
+}
+.hero .lede p:last-child {
+  margin-bottom: 0;
+}
+.hero .actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+/* The hero's "promise" row is now the numbered .hero-pillars strip (see the v2
+   block below), not the old dotted .meta row — which the design system retired. */
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--c-font);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  letter-spacing: -0.005em;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 100ms ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn .arr { display: inline-flex; transition: transform 180ms ease; }
+.btn:hover .arr { transform: translateX(3px); }
+
+.btn-primary { background: var(--c-ink); color: white; }
+.btn-primary:hover { background: #000; color: white; text-decoration: none; }
+.btn-accent { background: var(--c-accent); color: white; }
+.btn-accent:hover { background: var(--c-accent-hover); color: white; text-decoration: none; }
+.btn-ghost { background: white; color: var(--c-ink); border-color: var(--c-line); }
+.btn-ghost:hover { background: var(--c-soft); border-color: var(--c-mute); text-decoration: none; }
+.btn-text { background: transparent; color: var(--c-ink); padding: 14px 8px; }
+.btn-text:hover { color: var(--c-accent); text-decoration: none; }
+.btn-text:hover .arr { transform: translateX(3px); }
+
+/* ============================================================
+   Section atoms
+   ============================================================ */
+
+.section {
+  padding: 120px 0;
+}
+.section-soft { background: var(--c-soft); }
+.section-dark { background: var(--c-ink); color: white; }
+
+@media (max-width: 720px) {
+  .section { padding: 72px 0; }
+}
+
+.section-header {
+  margin-bottom: 64px;
+  max-width: 720px;
+}
+.section-eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--c-accent);
+  margin-bottom: 16px;
+  letter-spacing: -0.005em;
+}
+.section-title {
+  font-family: var(--c-font);
+  font-weight: 500;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--c-ink);
+  margin: 0 0 20px;
+  text-wrap: balance;
+}
+.section-dark .section-title { color: white; }
+.section-lede {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--c-ink-2);
+  max-width: 56ch;
+  margin: 0;
+  text-wrap: pretty;
+}
+.section-dark .section-lede { color: rgba(255,255,255,0.75); }
+
+/* ============================================================
+   Trusted by — minimalist row
+   ============================================================ */
+
+.trusted {
+  padding: 64px 0;
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+}
+.trusted .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.trusted .label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-mute);
+}
+
+/* ============================================================
+   Services — clean card grid
+   ============================================================ */
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (max-width: 760px) { .svc-grid { grid-template-columns: 1fr; } }
+
+.svc-card {
+  background: white;
+  border: 1px solid var(--c-line);
+  border-radius: 20px;
+  padding: 40px;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Clear the sticky nav when linked to from the footer's "What we build" anchors. */
+  scroll-margin-top: 90px;
+}
+.svc-card:hover {
+  border-color: var(--c-ink);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+.svc-icon {
+  width: 48px; height: 48px;
+  background: var(--c-accent-soft);
+  color: var(--c-accent);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.svc-icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.svc-card h3 {
+  font-family: var(--c-font);
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--c-ink);
+  line-height: 1.2;
+}
+.svc-card p {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--c-ink-2);
+  margin: 0;
+  flex: 1;
+}
+.svc-card .tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.svc-card .tag {
+  font-size: 13px;
+  color: var(--c-ink-2);
+  background: var(--c-soft);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.svc-card .more {
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--c-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.svc-card:hover .more { text-decoration: underline; }
+
+/* ============================================================
+   Stats — dark band, big numbers
+   ============================================================ */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+  margin-top: 64px;
+}
+@media (max-width: 760px) { .stats-grid { grid-template-columns: 1fr; gap: 48px; } }
+.stat .big {
+  font-family: var(--c-font);
+  font-weight: 500;
+  font-size: clamp(72px, 9vw, 124px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: white;
+  margin-bottom: 16px;
+}
+.stat .big sup {
+  font-size: 0.4em;
+  font-weight: 400;
+  color: var(--c-accent);
+  vertical-align: top;
+  margin-left: 4px;
+}
+.stat .label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--c-accent);
+  margin-bottom: 8px;
+}
+.stat p {
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+  max-width: 30ch;
+}
+
+/* ============================================================
+   Work — clean list with hover preview
+   ============================================================ */
+
+.work-list {
+  border-top: 1px solid var(--c-line);
+}
+.work-row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 200px;
+  gap: 48px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--c-line);
+  align-items: baseline;
+}
+@media (max-width: 900px) {
+  .work-row { grid-template-columns: 1fr; gap: 12px; padding: 32px 0; }
+  .work-row .meta { order: -1; font-size: 14px; }
+}
+.work-row h3 {
+  font-family: var(--c-font);
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  color: var(--c-ink);
+  line-height: 1.2;
+}
+.work-row .client {
+  font-size: 14px;
+  color: var(--c-mute);
+  font-weight: 500;
+}
+.work-row .desc {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--c-ink-2);
+  margin: 0;
+}
+.work-row .meta {
+  text-align: right;
+  font-size: 14px;
+  color: var(--c-mute);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.work-row .meta .cat {
+  color: var(--c-ink);
+  font-weight: 500;
+}
+@media (max-width: 900px) {
+  .work-row .meta { text-align: left; flex-direction: row; gap: 12px; }
+}
+
+/* ============================================================
+   Approach — numbered steps
+   ============================================================ */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+}
+@media (max-width: 760px) { .steps-grid { grid-template-columns: 1fr; gap: 40px; } }
+.step .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--c-soft);
+  color: var(--c-ink);
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+.step h3 {
+  font-family: var(--c-font);
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  color: var(--c-ink);
+  line-height: 1.25;
+}
+.step p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--c-ink-2);
+  margin: 0;
+  max-width: 36ch;
+}
+
+/* ============================================================
+   About / team
+   ============================================================ */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+.about-lede p {
+  font-size: 21px;
+  line-height: 1.5;
+  color: var(--c-ink);
+  margin: 0 0 24px;
+  text-wrap: pretty;
+  font-weight: 400;
+}
+.about-lede p:last-child {
+  font-size: 17px;
+  color: var(--c-ink-2);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.about-lede b { font-weight: 500; }
+
+.team { display: flex; flex-direction: column; gap: 32px; }
+.member {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid var(--c-line);
+  border-radius: 16px;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.member:hover { border-color: var(--c-ink-2); box-shadow: 0 4px 16px rgba(0,0,0,0.03); }
+.member img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.member h4 {
+  font-family: var(--c-font);
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--c-ink);
+}
+.member .role {
+  font-size: 14px;
+  color: var(--c-accent);
+  font-weight: 500;
+  margin: 2px 0 8px;
+}
+.member p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--c-ink-2);
+  margin: 0;
+}
+.member .socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+.member .socials a { color: var(--c-mute); font-weight: 500; }
+.member .socials a:hover { color: var(--c-accent); }
+
+/* ============================================================
+   Contact CTA — soft panel
+   ============================================================ */
+
+.contact-panel {
+  background: var(--c-soft);
+  border-radius: 24px;
+  padding: 80px 64px;
+  text-align: center;
+}
+@media (max-width: 760px) { .contact-panel { padding: 56px 32px; border-radius: 20px; } }
+.contact-panel h2 {
+  font-family: var(--c-font);
+  font-weight: 500;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--c-ink);
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+.contact-panel h2 .accent { color: var(--c-accent); }
+.contact-panel p {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--c-ink-2);
+  margin: 0 auto 36px;
+  max-width: 44ch;
+}
+.contact-panel .actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-panel .info {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--c-line);
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  font-size: 15px;
+  color: var(--c-mute);
+}
+.contact-panel .info a { color: var(--c-ink); font-weight: 500; }
+.contact-panel .info a:hover { color: var(--c-accent); }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.foot {
+  border-top: 1px solid var(--c-line);
+  padding: 64px 0 32px;
+  background: white;
+}
+.foot .top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+@media (max-width: 760px) { .foot .top { grid-template-columns: 1fr 1fr; gap: 32px; } }
+
+.foot .brand-col { display: flex; flex-direction: column; gap: 12px; }
+.foot .wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--c-ink);
+}
+.foot .wordmark img { width: 28px; height: 28px; }
+.foot .tagline {
+  font-size: 14px;
+  color: var(--c-mute);
+  font-style: italic;
+}
+.foot .desc {
+  font-size: 14px;
+  color: var(--c-mute);
+  line-height: 1.55;
+  margin: 8px 0 0;
+  max-width: 280px;
+}
+
+.foot h5 {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--c-ink);
+  margin: 0 0 16px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.foot ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.foot li {
+  color: var(--c-mute);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.foot ul a { color: var(--c-mute); font-size: 14px; font-weight: 400; }
+.foot ul a:hover { color: var(--c-ink); }
+
+.foot .bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid var(--c-line);
+  font-size: 13px;
+  color: var(--c-mute);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.foot .bottom a { color: var(--c-mute); text-decoration: underline; text-underline-offset: 3px; }
+.foot .bottom a:hover { color: var(--c-ink); }
+
+/* ============================================================
+   v2 additions — ported from the design system's site-v2.css.
+   The new 2-column hero (text + combined viz, pillar strip below),
+   capability-line Trusted strip, and numbered Signals list. These
+   rules come AFTER the originals so they override the single-column
+   .hero block above. See condense-design-system-remix/site-v2.css.
+   ============================================================ */
+
+/* HERO — asymmetric full-bleed (style basis: eg3.html "Direction A").
+   An oversized blueprint bleeds off the right edge behind a feathered radial
+   mask; a left→right scrim keeps the copy legible. Pillar strip below. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 72px 0 64px;
+}
+
+/* 1. The oversized asset — anchored to the right, bled past the viewport. */
+.hero-art {
+  position: absolute;
+  top: 50%;
+  /* Bleed further right as the viewport narrows so the art clears the copy:
+     0 at >=1600px, ramping to -250px around 1100px (slope ~0.5), floored so it
+     can't run away before the narrow-screen rule below takes over. */
+  right: clamp(-300px, calc((100vw - 1600px) * 0.5), 0px);
+  width: min(70vw, 880px);
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-blueprint {
+  width: 100%;
+  height: auto;
+  /* Push further right + scale up so the map fills the right field. */
+  transform: scale(1.16) translateX(7%);
+  transform-origin: center right;
+  filter: saturate(0.92) contrast(1.04);
+  mix-blend-mode: multiply;
+  /* Feathered radial mask — focal point upper-right, fading to transparent. */
+  -webkit-mask-image: radial-gradient(circle at 68% 34%, #000 28%, transparent 70%);
+  mask-image: radial-gradient(circle at 68% 34%, #000 28%, transparent 70%);
+}
+
+/* 2. The soft scrim — protects the typography safe-zone on the left. */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    var(--c-paper) 0%,
+    var(--c-paper) 34%,
+    rgba(255, 255, 255, 0.72) 52%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* 3. Safe typography layer — sits above art + scrim. */
+.hero .wrap-hero {
+  position: relative;
+  z-index: 3;
+  /* Match the 1120px content/nav grid so the hero's left edge lines up with the
+     menu and the sections below. */
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+/* Sentence-case Inter eyebrow, matching the section eyebrows. */
+.hero-content .eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--c-accent);
+  letter-spacing: -0.005em;
+  margin: 0 0 28px;
+}
+
+.hero h1 {
+  font-family: var(--c-font);
+  font-weight: 500;
+  font-size: clamp(40px, 4.4vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  color: var(--c-ink);
+  margin: 0 0 24px;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.hero h1 .accent { color: var(--c-accent); }
+.hero .lede {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--c-ink-2);
+  max-width: 46ch;
+  margin: 0 0 12px;
+  text-wrap: pretty;
+}
+.hero .lede + .lede { color: var(--c-mute); margin-bottom: 32px; }
+.hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Tablet — copy goes full width while the art keeps the same right-side
+   composition as wider screens (no size/opacity snap); a heavier scrim
+   protects the now-longer text lines. */
+@media (max-width: 880px) {
+  .hero { padding: 48px 0 56px; }
+  .hero-content { max-width: none; }
+  .hero-scrim {
+    background: linear-gradient(
+      to right,
+      var(--c-paper) 0%,
+      var(--c-paper) 46%,
+      rgba(255, 255, 255, 0.82) 66%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+}
+
+/* Phone — drop the illustration for a clean, fast, fully legible hero. */
+@media (max-width: 720px) {
+  .hero-art,
+  .hero-scrim { display: none; }
+}
+
+/* Pillar strip — full-width row below the grid */
+.hero-pillars {
+  max-width: 1120px;
+  margin: 56px auto 0;
+  padding: 28px 32px 0;
+  border-top: 1px solid var(--c-line);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 760px) {
+  .hero-pillars { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+.hero-pillars .pillar { display: flex; flex-direction: column; gap: 4px; }
+.hero-pillars .pillar .k {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--c-accent);
+  letter-spacing: 0.04em;
+}
+.hero-pillars .pillar .v {
+  color: var(--c-ink);
+  font-weight: 500;
+}
+
+/* TRUSTED — domain chips (stand in for the logo strip). Centred, wrap-safe,
+   reusing the service-card .tag pill language so the strip ties into the page. */
+.trusted .lines {
+  display: flex;
+  gap: 10px 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.trusted .lines span {
+  font-size: 14px;
+  color: var(--c-ink-2);
+  background: var(--c-soft);
+  border: 1px solid var(--c-line);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+/* SIGNALS — "Is this you?" numbered symptom strip */
+.section-signals { background: var(--c-soft); }
+.signals-list {
+  margin: 0;
+  display: flex;
+  gap: 48px;
+  counter-reset: signal;
+}
+.signals-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 760px) {
+  .signals-list {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .signals-list ul {
+    gap: 18px;
+  }
+}
+.signals-list li {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--c-ink);
+  padding-left: 44px;
+  position: relative;
+  counter-increment: signal;
+  text-wrap: pretty;
+}
+.signals-list li::before {
+  content: counter(signal, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 4px;
+  font-size: 12px;
+  color: var(--c-accent);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.signals-list li::after {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 14px;
+  width: 8px;
+  height: 1px;
+  background: var(--c-accent);
+}
+
+/* ABOUT — bigger first lede paragraph; allow inline <b> */
+.about-lede p:first-child { font-size: 22px; }
+.about-lede p b { font-weight: 500; }
+
+/* CONTACT — minor copy-driven tweaks */
+.contact-panel .info {
+  margin-top: 40px;
+  padding-top: 28px;
+}

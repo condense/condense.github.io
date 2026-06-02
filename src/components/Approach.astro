@@ -1,0 +1,23 @@
+---
+// Copy lives in src/copy/home.ts.
+import { home } from '../copy/home.ts';
+const { eyebrow, title, lede, steps } = home.approach;
+---
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-lede">{lede}</p>
+    </div>
+    <div class="steps-grid">
+      {steps.map((s) => (
+        <div class="step">
+          <div class="num">{s.num}</div>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

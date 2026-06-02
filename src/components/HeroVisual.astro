@@ -1,0 +1,36 @@
+---
+import Fig from './viz/Fig.astro';
+import MapAU from './viz/MapAU.astro';
+import TimelineBars from './viz/TimelineBars.astro';
+
+const PLATFORM_ROWS = [
+  { n: '01', label: 'Research records',     start: 1975, sub: 'Hobart' },
+  { n: '02', label: 'Research catalogues',  start: 2010, sub: 'Sydney' },
+  { n: '03', label: 'Marine biodiversity',  start: 2014, sub: 'Perth' },
+  { n: '04', label: 'Hazards atlas',        start: 2019, sub: 'Canberra' },
+  { n: '05', label: 'Blue-carbon platform', start: 2021, sub: 'Darwin' },
+];
+const PLATFORM_MARKERS = [
+  { n: '01', x: 322, y: 288 },
+  { n: '02', x: 340, y: 205 },
+  { n: '03', x: 60,  y: 200 },
+  { n: '04', x: 330, y: 222 },
+  { n: '05', x: 192, y: 70  },
+];
+---
+<Fig
+  n="04"
+  title="Platforms in service"
+  status={{ label: '5 live', live: true }}
+  caption="One — research records — running since 1975"
+  captionRhs="● = still in service"
+>
+  <div class="hero-viz-stack">
+    <MapAU markers={PLATFORM_MARKERS} pulse="01" />
+    <TimelineBars domain={[1975, 2026]} axisStep={10} rows={PLATFORM_ROWS} />
+  </div>
+</Fig>
+
+<style>
+  .hero-viz-stack { display: flex; flex-direction: column; gap: 20px; }
+</style>

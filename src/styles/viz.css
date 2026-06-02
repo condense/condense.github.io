@@ -1,0 +1,364 @@
+/* ============================================================
+   Condense Viz Framework
+   ------------------------------------------------------------
+   Hand-rolled SVG primitives sharing one frame, palette, type.
+   Designed so the SPEC for each chart is a tight array of data —
+   easy for an LLM (or a person) to author and edit.
+
+   Ported from the design system (viz.css). The --viz-* tokens are
+   aliased onto the site's existing --c-* tokens (defined in
+   site.css) so the framework adopts our palette automatically.
+   Inter-only: the design system dropped JetBrains Mono, so --viz-mono
+   now resolves to Inter too (weight/tracking carry the label look).
+   ============================================================ */
+
+:root {
+  --viz-font:    var(--c-font);
+  --viz-mono:    var(--c-font);
+
+  --viz-ink:     var(--c-ink);
+  --viz-ink-2:   var(--c-ink-2);
+  --viz-mute:    var(--c-mute);
+  --viz-mute-2:  #8B939B;          /* no --c- equivalent; literal */
+  --viz-line:    var(--c-line);
+  --viz-line-2:  var(--c-line-2);
+  --viz-paper:   var(--c-paper);
+  --viz-soft:    var(--c-soft);
+
+  --viz-accent:       var(--c-accent);
+  --viz-accent-soft:  var(--c-accent-soft);
+  --viz-accent-line:  rgba(0,155,143,0.25);
+
+  /* Type scale used inside figures */
+  --viz-label:     11px;  /* uppercase mono — captions, axis labels, fig numbers */
+  --viz-tick:      10px;  /* axis ticks */
+  --viz-annot:     11px;  /* callouts, leader-line labels */
+  --viz-figtitle:  13px;  /* the inline title inside a Fig */
+  --viz-stat:      28px;  /* a stat number */
+
+  --viz-tracking:  0.08em; /* tracking for uppercase mono labels */
+}
+
+/* ============================================================
+   Fig — the consistent wrapper.
+   Optional header (title + status), optional footer (caption).
+   Everything inside speaks the same visual language.
+   ============================================================ */
+
+.fig {
+  font-family: var(--viz-font);
+  color: var(--viz-ink);
+  background: var(--viz-paper);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.fig * { box-sizing: border-box; }
+
+.fig-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--viz-ink);
+  margin-bottom: 16px;
+}
+.fig-head .lhs { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+.fig-head .n {
+  font-family: var(--viz-mono);
+  font-size: var(--viz-label);
+  letter-spacing: var(--viz-tracking);
+  text-transform: uppercase;
+  color: var(--viz-mute);
+  font-weight: 500;
+  flex: 0 0 auto;
+}
+.fig-head .title {
+  font-size: var(--viz-figtitle);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--viz-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fig-head .rhs {
+  font-family: var(--viz-mono);
+  font-size: var(--viz-label);
+  letter-spacing: var(--viz-tracking);
+  text-transform: uppercase;
+  color: var(--viz-mute);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+.fig-head .rhs.live { color: var(--viz-accent); }
+.fig-head .rhs .pulse {
+  width: 8px; height: 8px;
+  background: currentColor;
+  border-radius: 50%;
+  position: relative;
+}
+.fig-head .rhs .pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fig-pulse 2.2s ease-out infinite;
+}
+@keyframes fig-pulse {
+  0%   { opacity: 0.7; transform: scale(0.7); }
+  100% { opacity: 0;   transform: scale(1.8); }
+}
+
+.fig-body { flex: 1 1 auto; min-height: 0; }
+
+.fig-foot {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--viz-line-2);
+  font-family: var(--viz-mono);
+  font-size: var(--viz-label);
+  letter-spacing: var(--viz-tracking);
+  text-transform: uppercase;
+  color: var(--viz-mute);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ============================================================
+   TimelineBars — horizontal bars over a year axis
+   ============================================================ */
+
+.viz-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--viz-font);
+}
+.viz-timeline .axis {
+  position: relative;
+  height: 18px;
+  border-bottom: 1px solid var(--viz-ink);
+  font-family: var(--viz-mono);
+  font-size: var(--viz-tick);
+  color: var(--viz-mute);
+  margin-bottom: 4px;
+}
+.viz-timeline .axis .tick {
+  position: absolute;
+  bottom: 0;
+  width: 1px;
+  height: 5px;
+  background: var(--viz-mute-2);
+  transform: translateX(-0.5px);
+}
+.viz-timeline .axis .tick.major { height: 8px; background: var(--viz-ink); }
+.viz-timeline .axis .tlabel {
+  position: absolute;
+  bottom: 8px;
+  transform: translateX(-50%);
+  letter-spacing: 0.04em;
+  color: var(--viz-mute);
+}
+.viz-timeline .row {
+  display: grid;
+  /* Label column wide enough for typical platform names ("Blue-carbon platform")
+     so they don't ellipsis-clip; bar takes the rest. */
+  grid-template-columns: 165px 1fr 56px;
+  gap: 12px;
+  align-items: center;
+}
+.viz-timeline .row .num {
+  font-family: var(--viz-mono);
+  font-size: 10px;
+  color: var(--viz-mute);
+  letter-spacing: 0.06em;
+  margin-right: 6px;
+}
+.viz-timeline .row .label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--viz-ink);
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.viz-timeline .row .bar {
+  position: relative;
+  height: 10px;
+  background: var(--viz-line-2);
+  border-radius: 999px;
+  overflow: visible;
+}
+.viz-timeline .row .bar .fill {
+  position: absolute;
+  top: 0; bottom: 0;
+  background: var(--viz-accent);
+  border-radius: 999px;
+}
+.viz-timeline .row .bar .endpt {
+  position: absolute;
+  top: 50%;
+  width: 10px; height: 10px;
+  margin-top: -5px;
+  background: var(--viz-accent);
+  border-radius: 50%;
+  border: 2px solid var(--viz-paper);
+  box-shadow: 0 0 0 1px var(--viz-accent);
+}
+.viz-timeline .row .yrs {
+  font-family: var(--viz-mono);
+  font-size: 10px;
+  text-align: right;
+  letter-spacing: 0.04em;
+  color: var(--viz-ink);
+  font-weight: 500;
+}
+.viz-timeline .row.muted .bar .fill,
+.viz-timeline .row.muted .bar .endpt { background: var(--viz-mute-2); box-shadow: 0 0 0 1px var(--viz-mute-2); }
+.viz-timeline .row.muted .yrs { color: var(--viz-mute); }
+
+/* ============================================================
+   MapAU — Australia outline + numbered markers
+   ============================================================ */
+
+.viz-map { position: relative; width: 100%; }
+.viz-map svg { width: 100%; height: auto; display: block; }
+.viz-map text { font-family: var(--viz-mono); }
+
+/* ============================================================
+   Lineage — node graph
+   ============================================================ */
+
+.viz-lineage { width: 100%; }
+.viz-lineage svg { width: 100%; height: auto; display: block; }
+.viz-lineage text { font-family: var(--viz-mono); }
+
+/* ============================================================
+   Sparkline + small inline stat (used inside paragraphs etc.)
+   ============================================================ */
+
+.viz-spark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border: 1px solid var(--viz-line);
+  border-radius: 6px;
+  background: var(--viz-soft);
+  font-family: var(--viz-mono);
+  font-size: 11px;
+  color: var(--viz-mute);
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+.viz-spark svg { display: block; }
+
+/* ============================================================
+   StatTile — a small dashboard-style card
+   ============================================================ */
+
+.viz-tile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.viz-tile .f {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.viz-tile .f .n {
+  font-size: var(--viz-stat);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.viz-tile .f .n sup {
+  font-size: 0.4em;
+  vertical-align: top;
+  color: var(--viz-accent);
+  margin-left: 2px;
+  font-weight: 400;
+}
+.viz-tile .f .lbl {
+  font-family: var(--viz-mono);
+  font-size: 10px;
+  letter-spacing: var(--viz-tracking);
+  text-transform: uppercase;
+  color: var(--viz-mute);
+}
+
+/* ============================================================
+   Distribution — small bar histogram
+   ============================================================ */
+
+.viz-dist {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 100px;
+  border-bottom: 1px solid var(--viz-ink);
+  position: relative;
+}
+.viz-dist .bin {
+  flex: 1;
+  background: var(--viz-line);
+  position: relative;
+  border-radius: 2px 2px 0 0;
+}
+.viz-dist .bin.hi { background: var(--viz-accent); }
+.viz-dist .bin .v {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--viz-mono);
+  font-size: 9px;
+  color: var(--viz-mute);
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+.viz-dist-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.viz-dist-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--viz-mono);
+  font-size: 9px;
+  color: var(--viz-mute);
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+
+/* ============================================================
+   Callout — leader line + mono caption (used inside maps etc.)
+   Reused via inline SVG; styles below are for HTML-only callouts.
+   ============================================================ */
+
+.viz-callout {
+  position: absolute;
+  font-family: var(--viz-mono);
+  font-size: var(--viz-annot);
+  letter-spacing: 0.02em;
+  color: var(--viz-ink);
+}
+.viz-callout .lead {
+  display: block;
+  height: 1px;
+  background: var(--viz-ink);
+}
+.viz-callout .sub { color: var(--viz-mute); font-size: 10px; letter-spacing: 0.04em; }

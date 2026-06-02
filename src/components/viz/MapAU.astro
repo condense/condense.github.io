@@ -1,0 +1,74 @@
+---
+// MapAU — Australia outline + numbered markers.
+// Props:
+//   markers – [{ n, x, y, label?, sub?, side? }, …]
+//             x,y in viewBox coords (0..400 / 0..320)
+//             side: 'r' | 'l' — which way the leader points
+//   pulse   – n of marker to pulse (string)
+const { markers = [], pulse } = Astro.props;
+
+// Simplified Australia outline — hand-traced to hit the recognisable
+// landmarks: Kimberley (NW bulge), Arnhem Land (Top End), Gulf of
+// Carpentaria (shallow north notch), Cape York (narrow NE finger),
+// Great Australian Bight (south scoop), Cape Leeuwin (SW). ViewBox 400×320.
+const AU_PATH = `
+M 60 102 L 82 92 L 110 80 L 132 84 L 152 72 L 172 60 L 195 56 L 212 60
+L 224 76 L 232 92 L 240 102 L 250 100 L 258 84 L 266 66 L 272 54 L 278 64
+L 284 80 L 292 92 L 300 100 L 314 118 L 326 142 L 338 168 L 346 196 L 348 220
+L 336 234 L 316 242 L 292 246 L 266 248 L 238 250 L 208 258 L 178 256 L 148 252
+L 118 246 L 90 236 L 66 220 L 54 202 L 48 182 L 44 162 L 36 142 L 38 124 L 48 112 Z
+`;
+// Tasmania — south of Bass Strait, slightly oversized for legibility.
+const TAS_PATH = `
+M 304 270 L 322 268 L 338 280 L 340 298 L 326 310 L 308 308 L 296 296 L 296 278 Z
+`;
+---
+<div class="viz-map">
+  <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet">
+    {/* faint lat/long grid */}
+    <g stroke="#F0F1F3" stroke-width="0.75">
+      {[60, 120, 180, 240, 300].map((x) => <line x1={x} y1="0" x2={x} y2="320" />)}
+      {[60, 120, 180, 240].map((y) => <line x1="0" y1={y} x2="400" y2={y} />)}
+    </g>
+    {/* coast — mainland + Tas */}
+    <path d={AU_PATH} fill="#FAFBFC" stroke="#1F2328" stroke-width="1.2" stroke-linejoin="round" />
+    <path d={TAS_PATH} fill="#FAFBFC" stroke="#1F2328" stroke-width="1.2" stroke-linejoin="round" />
+
+    {/* markers */}
+    {markers.map((m: any) => {
+      const isPulse = pulse != null && String(m.n) === String(pulse);
+      const side = m.side ?? 'r';
+      const lx = side === 'r' ? m.x + 14 : m.x - 14;
+      const tx = side === 'r' ? m.x + 50 : m.x - 50;
+      const anchor = side === 'r' ? 'start' : 'end';
+      return (
+        <g>
+          {/* glow */}
+          <circle cx={m.x} cy={m.y} r="10" fill="rgba(0,155,143,0.10)" />
+          {/* dot */}
+          <circle cx={m.x} cy={m.y} r="4.5" fill="#009B8F" stroke="#fff" stroke-width="1.5" />
+          {/* number badge */}
+          <text x={m.x} y={m.y + 1.5} font-size="6" fill="#fff" text-anchor="middle" font-weight="500">{m.n}</text>
+          {/* leader + label */}
+          {m.label && (
+            <Fragment>
+              <line x1={lx} y1={m.y} x2={tx} y2={m.y} stroke="#1F2328" stroke-width="0.75" />
+              <text x={tx + (side === 'r' ? 4 : -4)} y={m.y + 1} font-size="9" fill="#1F2328" text-anchor={anchor} font-weight="500">{m.label}</text>
+              {m.sub && <text x={tx + (side === 'r' ? 4 : -4)} y={m.y + 11} font-size="8" fill="#656D76" text-anchor={anchor} letter-spacing="0.04em">{m.sub}</text>}
+            </Fragment>
+          )}
+          {isPulse && (
+            <circle cx={m.x} cy={m.y} r="4.5" fill="none" stroke="#009B8F" stroke-width="1" opacity="0.5">
+              <animate attributeName="r" from="4.5" to="20" dur="2.4s" repeatCount="indefinite" />
+              <animate attributeName="opacity" from="0.6" to="0" dur="2.4s" repeatCount="indefinite" />
+            </circle>
+          )}
+        </g>
+      );
+    })}
+
+    {/* corner crosshair */}
+    <line x1="12" y1="12" x2="24" y2="12" stroke="#1F2328" stroke-width="0.75" />
+    <line x1="12" y1="12" x2="12" y2="24" stroke="#1F2328" stroke-width="0.75" />
+  </svg>
+</div>

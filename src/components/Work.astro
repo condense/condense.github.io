@@ -1,0 +1,29 @@
+---
+// Copy lives in src/copy/home.ts.
+import { home } from '../copy/home.ts';
+const { eyebrow, title, lede, items } = home.work;
+---
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-lede">{lede}</p>
+    </div>
+    <div class="work-list">
+      {items.map((w) => (
+        <div class="work-row">
+          <div>
+            <h3>{w.title}</h3>
+            <div class="client">{w.client}</div>
+          </div>
+          <p class="desc">{w.desc}</p>
+          <div class="meta">
+            <span class="cat">{w.cat}</span>
+            <span>{w.yr}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

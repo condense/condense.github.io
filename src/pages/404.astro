@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../copy/site.ts';
+const { notFound, contact } = site;
+---
+<Base title="Page not found — Condense">
+  <Nav />
+  <main>
+    <section class="section" id="top">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="section-eyebrow">{notFound.eyebrow}</span>
+          <h2 class="section-title">{notFound.title}</h2>
+          <p class="section-lede">{notFound.lede}</p>
+        </div>
+        <div class="actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href={notFound.actions.home.href}>{notFound.actions.home.label}</a>
+          <a class="btn btn-ghost" href={`mailto:${contact.email}`}>{notFound.actions.email.label}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

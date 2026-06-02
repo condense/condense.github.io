@@ -1,0 +1,29 @@
+---
+// Section prose from src/copy/home.ts; contact details (email/phone/address) from
+// src/copy/site.ts so they stay in sync with the Footer and 404.
+import Icon from './Icon.astro';
+import { home } from '../copy/home.ts';
+import { site } from '../copy/site.ts';
+const { heading, body, emailLabel, callLabelPrefix } = home.contact;
+const { email, phoneLabel, phoneHref, address, hours } = site.contact;
+---
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-panel">
+      <h2>{heading.before}<span class="accent">{heading.accent}</span>{heading.after}</h2>
+      <p>{body}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href={`mailto:${email}`}>
+          {emailLabel}
+          <span class="arr"><Icon name="arrow" size={16} /></span>
+        </a>
+        <a class="btn btn-ghost" href={phoneHref}>{callLabelPrefix}{phoneLabel}</a>
+      </div>
+      <div class="info">
+        <span><a href={`mailto:${email}`}>{email}</a></span>
+        <span>{address}</span>
+        <span>{hours}</span>
+      </div>
+    </div>
+  </div>
+</section>

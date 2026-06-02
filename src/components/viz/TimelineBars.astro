@@ -1,0 +1,46 @@
+---
+// TimelineBars — horizontal bars over a year domain.
+// Props:
+//   domain  – [minYear, maxYear]
+//   rows    – [{ label, start, end?, status?, n? }, …]
+//             end defaults to domain[1]; status: 'live' | 'supported'
+//   axisStep – tick spacing in years (default 10)
+const { domain, rows, axisStep = 10 } = Astro.props;
+const [min, max] = domain;
+const span = max - min;
+const pctOf = (y: number) => `${((y - min) / span) * 100}%`;
+const widthBetween = (a: number, b: number) => `${((b - a) / span) * 100}%`;
+
+const ticks: number[] = [];
+for (let y = Math.ceil(min / axisStep) * axisStep; y <= max; y += axisStep) ticks.push(y);
+if (!ticks.includes(min)) ticks.unshift(min);
+if (!ticks.includes(max)) ticks.push(max);
+---
+<div class="viz-timeline">
+  <div class="axis">
+    {ticks.map((y) => (
+      <Fragment>
+        <span class="tick major" style={`left:${pctOf(y)}`}></span>
+        <span class="tlabel" style={`left:${pctOf(y)}`}>{`'${(y % 100).toString().padStart(2, '0')}`}</span>
+      </Fragment>
+    ))}
+  </div>
+  {rows.map((r: any, i: number) => {
+    const end = r.end ?? max;
+    const muted = r.status === 'supported';
+    const yrs = end - r.start;
+    return (
+      <div class={`row ${muted ? 'muted' : ''}`}>
+        <div class="label">
+          <span class="num">{r.n ?? String(i + 1).padStart(2, '0')}</span>
+          {r.label}
+        </div>
+        <div class="bar">
+          <div class="fill" style={`left:${pctOf(r.start)};width:${widthBetween(r.start, end)}`}></div>
+          <span class="endpt" style={`left:calc(${pctOf(r.start)} - 5px)`}></span>
+        </div>
+        <div class="yrs">{yrs} yr{yrs !== 1 ? 's' : ''}</div>
+      </div>
+    );
+  })}
+</div>

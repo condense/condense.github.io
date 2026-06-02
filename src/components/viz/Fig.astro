@@ -1,0 +1,40 @@
+---
+// Fig — the shared frame for every viz primitive.
+// Props:
+//   n          – fig number ('04', '01a' …) shown in the header
+//   title      – inline title
+//   status     – { label, live } badge top-right
+//   caption    – left text of the footer (mono uppercase)
+//   captionRhs – right text of the footer
+//   bare       – render body only (no header/footer)
+const { n, title, status, caption, captionRhs, bare } = Astro.props;
+const hasHead = n || title || status;
+const hasFoot = caption || captionRhs;
+---
+{bare ? (
+  <div class="fig"><div class="fig-body"><slot /></div></div>
+) : (
+  <div class="fig">
+    {hasHead && (
+      <div class="fig-head">
+        <div class="lhs">
+          {n && <span class="n">FIG. {n}</span>}
+          {title && <span class="title">{title}</span>}
+        </div>
+        {status && (
+          <div class={`rhs ${status.live ? 'live' : ''}`}>
+            {status.live && <span class="pulse"></span>}
+            <span>{status.label}</span>
+          </div>
+        )}
+      </div>
+    )}
+    <div class="fig-body"><slot /></div>
+    {hasFoot && (
+      <div class="fig-foot">
+        <span>{caption}</span>
+        <span>{captionRhs}</span>
+      </div>
+    )}
+  </div>
+)}

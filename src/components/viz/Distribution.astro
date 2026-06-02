@@ -1,0 +1,20 @@
+---
+// Distribution — small bar histogram.
+// Props:
+//   bins – [{ v, hi?, note? }, …]   v 0..1
+//   labels – [leftLabel, rightLabel]
+const { bins, labels = [] } = Astro.props;
+---
+<div class="viz-dist-row">
+  <div class="viz-dist">
+    {bins.map((b: any) => (
+      <div class={`bin ${b.hi ? 'hi' : ''}`} style={`height:${Math.max(b.v * 100, 4)}%`}>
+        {b.note && <span class="v">{b.note}</span>}
+      </div>
+    ))}
+  </div>
+  <div class="viz-dist-labels">
+    <span>{labels[0]}</span>
+    <span>{labels[1]}</span>
+  </div>
+</div>

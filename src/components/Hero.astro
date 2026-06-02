@@ -1,0 +1,47 @@
+---
+// Homepage Hero — asymmetric full-bleed: an oversized blueprint illustration
+// bleeds off the right edge, feathered with a radial mask, while a left→right
+// scrim keeps the copy that sits over it legible. Numbered pillar strip below.
+// Style basis: eg3.html "Direction A" layout lab. Copy lives in src/copy/home.ts.
+import Icon from './Icon.astro';
+import { home } from '../copy/home.ts';
+const { eyebrow, heading, lede, actions, meta } = home.hero;
+---
+<section class="hero" id="top">
+  <div class="hero-art" aria-hidden="true">
+    <img
+      class="hero-blueprint"
+      src="/assets/hero-data-platform-map.png"
+      alt=""
+      width="1254"
+      height="1254"
+      loading="eager"
+      decoding="async"
+    />
+  </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="wrap-hero">
+    <div class="hero-content">
+      {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+      <h1>
+        {heading.before}<span class="accent">{heading.accent}</span>{heading.after}
+      </h1>
+      {lede.map((para) => <p class="lede">{para}</p>)}
+      <div class="actions">
+        <a class="btn btn-primary" href={actions.primary.href}>
+          {actions.primary.label}
+          <span class="arr"><Icon name="arrow" size={16} /></span>
+        </a>
+        <a class="btn btn-ghost" href={actions.ghost.href}>{actions.ghost.label}</a>
+      </div>
+    </div>
+    <div class="hero-pillars">
+      {meta.map((label, i) => (
+        <div class="pillar">
+          <span class="k">{String(i + 1).padStart(2, '0')}</span>
+          <span class="v">{label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

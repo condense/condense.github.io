@@ -1,0 +1,45 @@
+---
+// Lineage — node graph (field → validate → portal).
+// Props:
+//   nodes – [{ id, x, y, label, sub, accent? }, …]
+//   edges – [[fromId, toId], …]
+//   pulsePath – optional SVG path-d a teal dot animates along
+const { nodes, edges, pulsePath, width = 540, height = 320 } = Astro.props;
+const W = 110, H = 38;
+const byId: Record<string, any> = Object.fromEntries(nodes.map((n: any) => [n.id, n]));
+const center = (n: any, side: string): [number, number] => {
+  if (side === 'r') return [n.x + W, n.y + H / 2];
+  if (side === 'l') return [n.x, n.y + H / 2];
+  return [n.x + W / 2, n.y + H / 2];
+};
+---
+<div class="viz-lineage">
+  <svg viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet">
+    <g stroke="#D0D5DB" stroke-width="1" fill="none">
+      {edges.map(([a, b]: [string, string]) => {
+        if (!byId[a] || !byId[b]) return null;
+        const [ax, ay] = center(byId[a], 'r');
+        const [bx, by] = center(byId[b], 'l');
+        const cx = (ax + bx) / 2;
+        return <path d={`M ${ax} ${ay} C ${cx} ${ay}, ${cx} ${by}, ${bx} ${by}`} />;
+      })}
+    </g>
+    {nodes.map((n: any) => (
+      <g>
+        <rect
+          x={n.x} y={n.y} width={W} height={H} rx="5"
+          fill={n.accent ? 'rgba(0,155,143,0.06)' : '#fff'}
+          stroke={n.accent ? '#009B8F' : '#1F2328'}
+          stroke-width={n.accent ? 1.25 : 1}
+        />
+        <text x={n.x + 10} y={n.y + 16} font-size="10" font-weight="500" fill={n.accent ? '#009B8F' : '#1F2328'} letter-spacing="0.06em">{n.label}</text>
+        <text x={n.x + 10} y={n.y + 28} font-size="8" fill="#656D76">{n.sub}</text>
+      </g>
+    ))}
+    {pulsePath && (
+      <circle r="3" fill="#009B8F">
+        <animateMotion dur="3.5s" repeatCount="indefinite" path={pulsePath} />
+      </circle>
+    )}
+  </svg>
+</div>
