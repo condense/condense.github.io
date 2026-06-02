@@ -558,6 +558,7 @@ img { display: block; max-width: 100%; }
 
 .team { display: flex; flex-direction: column; gap: 32px; }
 .member {
+  position: relative;
   display: grid;
   grid-template-columns: 80px 1fr;
   gap: 20px;
@@ -567,6 +568,12 @@ img { display: block; max-width: 100%; }
   transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 .member:hover { border-color: var(--c-ink-2); box-shadow: 0 4px 16px rgba(0,0,0,0.03); }
+.member-card-link {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+}
 .member img {
   width: 80px;
   height: 80px;
@@ -594,6 +601,8 @@ img { display: block; max-width: 100%; }
   margin: 0;
 }
 .member .socials {
+  position: relative;
+  z-index: 2;
   display: flex;
   gap: 16px;
   margin-top: 12px;

@@ -91,6 +91,7 @@ export const home = {
         photo: '/assets/og-head-5.jpg',
         bio: "Sits at the front of engagements. Strategy, scoping, and the early judgment calls about what's worth building and what shouldn't be built at all. Cares as much about how the work is run as about the work itself.",
         email: 'oliver@condense.com.au',
+        linkedin: 'https://www.linkedin.com/in/olivergeorge/',
       },
       {
         name: 'Mark Hepburn',
@@ -98,6 +99,7 @@ export const home = {
         photo: '/assets/mh-head-3.jpg',
         bio: "The technical lead behind our core platforms. Systems design, data infrastructure, provenance, and the standards that let our work stand up to scrutiny and survive handover. Lately, working out where AI genuinely earns its place. And where it doesn't.",
         email: 'mark@condense.com.au',
+        linkedin: 'https://www.linkedin.com/in/markhepburn/',
       },
     ],
   },

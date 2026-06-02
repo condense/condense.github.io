@@ -1,6 +1,6 @@
 ---
 // Copy lives in src/copy/home.ts. Lede paragraphs may carry inline markup (e.g. <b>),
-// so they render via set:html. Social links beyond email are added once real URLs exist.
+// so they render via set:html.
 import { home } from '../copy/home.ts';
 const { eyebrow, title, lede, team } = home.about;
 ---
@@ -17,6 +17,7 @@ const { eyebrow, title, lede, team } = home.about;
       <div class="team">
         {team.map((m) => (
           <div class="member">
+            <a class="member-card-link" href={m.linkedin} aria-label={`${m.name} on LinkedIn`} target="_blank" rel="noopener noreferrer"></a>
             <img src={m.photo} alt={m.name} width="80" height="80" />
             <div>
               <h4>{m.name}</h4>
