@@ -7,7 +7,7 @@ export const home = {
       after: '.',
     },
     lede: [
-      'We build the platforms, public portals, atlases, pipelines and reporting systems that make that possible. We design the checks, permissions and handovers in from the start.',
+      'We help domain experts turn important project data into platforms, public portals, atlases, pipelines and reporting systems that stay trusted after handover.',
       "So when formats drift, feeds break, or the person who built it moves on, the work holds. You're never left guessing.",
     ],
     actions: {
