@@ -327,18 +327,11 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--c-line);
   border-radius: 20px;
   padding: 40px;
-  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 16px;
   /* Clear the sticky nav when linked to from the footer's "What we build" anchors. */
   scroll-margin-top: 90px;
-}
-.svc-card:hover {
-  border-color: var(--c-ink);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
 }
 .svc-icon {
   width: 48px; height: 48px;
