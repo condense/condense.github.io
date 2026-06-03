@@ -293,8 +293,7 @@ img { display: block; max-width: 100%; }
 
 .trusted {
   padding: 64px 0;
-  border-top: 1px solid var(--c-line);
-  border-bottom: 1px solid var(--c-line);
+  background: var(--c-soft);
 }
 .trusted .inner {
   display: flex;
@@ -303,12 +302,14 @@ img { display: block; max-width: 100%; }
   gap: 20px;
   text-align: center;
 }
+/* Match the teal, sentence-case eyebrow used by every other section, so the
+   strip reads as part of the system. Its centred layout is the deliberate
+   feature that sets this interstitial band apart from the left-aligned sections. */
 .trusted .label {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--c-mute);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--c-accent);
 }
 
 /* ============================================================
@@ -609,7 +610,10 @@ img { display: block; max-width: 100%; }
    ============================================================ */
 
 .contact-panel {
-  background: var(--c-soft);
+  /* Light teal wash — lifts the CTA off the page while keeping the overall
+     white/light feel. Faint teal border + accent token over white. */
+  background: linear-gradient(180deg, rgba(0,155,143,0.09) 0%, rgba(0,155,143,0.05) 100%);
+  border: 1px solid rgba(0,155,143,0.16);
   border-radius: 24px;
   padding: 80px 64px;
   text-align: center;
@@ -642,7 +646,7 @@ img { display: block; max-width: 100%; }
 .contact-panel .info {
   margin-top: 48px;
   padding-top: 32px;
-  border-top: 1px solid var(--c-line);
+  border-top: 1px solid rgba(0,155,143,0.18);
   display: flex;
   justify-content: center;
   gap: 48px;
@@ -886,26 +890,41 @@ img { display: block; max-width: 100%; }
   font-weight: 500;
 }
 
-/* TRUSTED — domain chips (stand in for the logo strip). Centred, wrap-safe,
-   reusing the service-card .tag pill language so the strip ties into the page. */
+/* TRUSTED — the sectors we build for, as a quiet, balanced 2×2 grid rather
+   than chunky pills (which read as clickable buttons) or a flowing line (whose
+   separator dots dangle at the wrap). Each item carries a small teal marker —
+   a hint of brand colour, no literal icons. */
 .trusted .lines {
-  display: flex;
-  gap: 10px 12px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   justify-content: center;
+  gap: 14px 56px;
 }
 .trusted .lines span {
-  font-size: 14px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 16px;
   color: var(--c-ink-2);
-  background: var(--c-soft);
-  border: 1px solid var(--c-line);
   font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 999px;
+  letter-spacing: -0.005em;
+}
+.trusted .lines span::before {
+  content: '';
+  flex: none;
+  align-self: center;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--c-accent);
+}
+@media (max-width: 560px) {
+  .trusted .lines { grid-template-columns: 1fr; gap: 12px; justify-items: center; }
 }
 
-/* SIGNALS — "Is this you?" numbered symptom strip */
-.section-signals { background: var(--c-soft); }
+/* SIGNALS — "Is this you?" numbered symptom strip (white, per the
+   grey/white section alternation). */
+.section-signals { background: var(--c-paper); }
 .signals-list {
   margin: 0;
   display: flex;
