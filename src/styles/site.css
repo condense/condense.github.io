@@ -757,7 +757,7 @@ img { display: block; max-width: 100%; }
      can't run away before the narrow-screen rule below takes over. */
   right: clamp(-300px, calc((100vw - 1600px) * 0.5), 0px);
   width: min(70vw, 880px);
-  transform: translateY(-50%);
+  transform: translateY(-48%);
   z-index: 1;
   pointer-events: none;
 }
