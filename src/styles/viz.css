@@ -169,7 +169,7 @@
 }
 .viz-timeline .row {
   display: grid;
-  /* Label column wide enough for typical platform names ("Blue-carbon platform")
+  /* Label column wide enough for typical platform names ("Blue carbon platform")
      so they don't ellipsis-clip; bar takes the rest. */
   grid-template-columns: 165px 1fr 56px;
   gap: 12px;
