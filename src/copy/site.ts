@@ -21,8 +21,8 @@ export const site = {
 
   nav: {
     links: [
-      { label: 'Work', href: '/#work' },
       { label: 'Services', href: '/#services' },
+      { label: 'Work', href: '/#work' },
       { label: 'Practice', href: '/#practice' },
     ],
     cta: { label: 'Get in touch', href: '/#contact' },
