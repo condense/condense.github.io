@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playbook Studio</title>
+    <style>
+      /* Workspace shell layout. The custom-elements own their own paint
+         (Shadow DOM, token-driven). This stylesheet is just the grid
+         scaffolding plus splitter chrome — the bits that live in the
+         light DOM between elements. */
+      .workspace-grid {
+        --raw-left: 240px;
+        --raw-right: 220px;
+        --raw-bottom: 200px;
+        --raw-left-bottom: 200px;
+        --col-left: clamp(160px, var(--raw-left), 480px);
+        --col-right: clamp(160px, var(--raw-right), 480px);
+        --row-bottom: clamp(120px, var(--raw-bottom), 480px);
+        --row-left-bottom: clamp(80px, var(--raw-left-bottom), 480px);
+        display: grid;
+        width: 100%;
+        height: 100%;
+        gap: 0;
+        grid-template-columns:
+          var(--col-left) 6px minmax(240px, 1fr) 6px var(--col-right);
+        grid-template-rows: 68px 1fr 6px var(--row-bottom);
+        grid-template-areas:
+          'header header header header header'
+          'left   vl     center vr     right'
+          'hsplit hsplit hsplit hsplit hsplit'
+          'bottom bottom bottom bottom bottom';
+      }
+      /* Pane-visibility region collapse (Epic 6 Windows menu). The
+         user's preferred raw widths persist in v6:layout for the
+         toggle-back-on path, so we override the derived col/row
+         vars to 0 rather than zeroing the raw widths themselves. */
+      .workspace-grid.no-left { --col-left: 0px; }
+      .workspace-grid.no-right { --col-right: 0px; }
+      .workspace-grid.no-bottom { --row-bottom: 0px; }
+      /* Inner left-column rows: hide the splitter row + the empty
+         row when one of models / outline+navigator is hidden. */
+      .workspace-grid.no-models .left-column {
+        grid-template-rows: 0 0 1fr;
+      }
+      .workspace-grid.no-outline-nav .left-column {
+        grid-template-rows: 1fr 0 0;
+      }
+      .left-column {
+        display: grid;
+        min-height: 0;
+        min-width: 0;
+        overflow: hidden;
+        grid-template-rows: minmax(80px, 1fr) 6px var(--row-left-bottom);
+      }
+      .left-column > models-tree,
+      .left-column > tab-group {
+        min-height: 0;
+        overflow: hidden;
+      }
+      .left-column > tab-group {
+        border-top: 1px solid var(--color-slate-200);
+        background: var(--color-white);
+      }
+      .center-column {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        min-width: 0;
+      }
+      .right-column {
+        min-height: 0;
+        overflow: hidden;
+        border-left: 1px solid var(--color-slate-200);
+        background: var(--color-white);
+      }
+      .bottom-pane {
+        min-height: 0;
+        overflow: hidden;
+        border-top: 1px solid var(--color-slate-200);
+        background: var(--color-white);
+      }
+      #canvas-host {
+        position: relative;
+        flex: 1 1 0%;
+        min-height: 0;
+        overflow: hidden;
+      }
+      /* Slotted panels inside left-column tab-group + right-column tab-group
+         need to fill their tab-group's flex column. Their :host already
+         sets display:flex/height:100%; flex-1 ensures they stretch as
+         flex children even when the parent height isn't fully rigid. */
+      tab-group > outline-pane,
+      tab-group > navigator-pane,
+      tab-group > palette-panel,
+      tab-group > hints-pane,
+      tab-group > model-health-pane,
+      tab-group > comments-panel {
+        flex: 1 1 0%;
+        min-height: 0;
+        overflow: hidden;
+      }
+      property-panel {
+        display: block;
+        height: 100%;
+      }
+
+      /* Splitters — drag handles between grid areas. */
+      .splitter {
+        background: transparent;
+        position: relative;
+        z-index: 10;
+        touch-action: none;
+      }
+      .splitter:hover,
+      .splitter:active {
+        background: rgb(148 163 184 / 0.4); /* slate-400/40 */
+      }
+      .splitter-v { cursor: col-resize; }
+      .splitter-h { cursor: row-resize; }
+      .splitter::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
+      .splitter-v::before { left: -9px; right: -9px; } /* 24px hit area */
+      .splitter-h::before { top: -9px; bottom: -9px; }
+      body.dragging-splitter-h,
+      body.dragging-splitter-h * { cursor: col-resize !important; user-select: none; }
+      body.dragging-splitter-v,
+      body.dragging-splitter-v * { cursor: row-resize !important; user-select: none; }
+      body.dragging-splitter-h diagram-canvas,
+      body.dragging-splitter-v diagram-canvas,
+      body.dragging-splitter-h models-tree,
+      body.dragging-splitter-v models-tree,
+      body.dragging-splitter-h outline-pane,
+      body.dragging-splitter-v outline-pane,
+      body.dragging-splitter-h palette-panel,
+      body.dragging-splitter-v palette-panel,
+      body.dragging-splitter-h hints-pane,
+      body.dragging-splitter-v hints-pane,
+      body.dragging-splitter-h model-health-pane,
+      body.dragging-splitter-v model-health-pane,
+      body.dragging-splitter-h property-panel,
+      body.dragging-splitter-v property-panel { pointer-events: none; }
+    </style>
+    <script type="module" crossorigin src="./assets/index-Ddy6jghO.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BFStaUGS.css">
+  </head>
+  <body>
+    <div class="workspace-grid">
+      <app-header style="grid-area: header;"></app-header>
+      <div class="left-column" style="grid-area: left;">
+        <models-tree></models-tree>
+        <div id="splitter-left-bottom" class="splitter splitter-h"
+             role="separator" aria-orientation="horizontal"
+             aria-label="Resize Outline/Navigator pane" tabindex="0"></div>
+        <tab-group>
+          <outline-pane data-tab-label="Outline"></outline-pane>
+          <navigator-pane data-tab-label="Navigator"></navigator-pane>
+        </tab-group>
+      </div>
+      <div id="splitter-left" class="splitter splitter-v" style="grid-area: vl;"
+           role="separator" aria-orientation="vertical" aria-label="Resize left pane" tabindex="0"></div>
+      <section class="center-column" style="grid-area: center;">
+        <diagram-tab-bar></diagram-tab-bar>
+        <div id="canvas-host"></div>
+      </section>
+      <div id="splitter-right" class="splitter splitter-v" style="grid-area: vr;"
+           role="separator" aria-orientation="vertical" aria-label="Resize right pane" tabindex="0"></div>
+      <tab-group class="right-column" style="grid-area: right;">
+        <palette-panel data-tab-label="Palette"></palette-panel>
+        <hints-pane data-tab-label="Hints"></hints-pane>
+        <model-health-pane data-tab-label="Health"></model-health-pane>
+        <comments-panel data-tab-label="Comments"></comments-panel>
+      </tab-group>
+      <div id="splitter-bottom" class="splitter splitter-h" style="grid-area: hsplit;"
+           role="separator" aria-orientation="horizontal" aria-label="Resize bottom pane" tabindex="0"></div>
+      <aside class="bottom-pane" style="grid-area: bottom;">
+        <property-panel></property-panel>
+      </aside>
+    </div>
+    <div id="app-status" role="status" aria-live="polite" hidden></div>
+    <connection-picker></connection-picker>
+    <canvas-context-menu></canvas-context-menu>
+    <models-tree-context-menu></models-tree-context-menu>
+    <project-schema-editor></project-schema-editor>
+    <project-settings-metamodel></project-settings-metamodel>
+    <project-settings-specialisations></project-settings-specialisations>
+    <shortcuts-help></shortcuts-help>
+    <sign-in-dialog></sign-in-dialog>
+    <find-bar></find-bar>
+    <scenario-diff-report></scenario-diff-report>
+  </body>
+</html>
