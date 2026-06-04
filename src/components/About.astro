@@ -2,7 +2,9 @@
 // Copy lives in src/copy/home.ts. Lede paragraphs may carry inline markup (e.g. <b>),
 // so they render via set:html.
 import { home } from '../copy/home.ts';
+import { site } from '../copy/site.ts';
 const { eyebrow, title, lede, team } = home.about;
+const { linkedin } = site.contact;
 ---
 <section class="section" id="practice">
   <div class="wrap">
@@ -13,6 +15,7 @@ const { eyebrow, title, lede, team } = home.about;
     <div class="about-grid">
       <div class="about-lede">
         {lede.map((para) => <p set:html={para} />)}
+        <!-- <a class="about-company-link" href={linkedin} target="_blank" rel="noopener noreferrer">Follow Condense on LinkedIn</a> -->
       </div>
       <div class="team">
         {team.map((m) => (
@@ -25,6 +28,7 @@ const { eyebrow, title, lede, team } = home.about;
               <p>{m.bio}</p>
               <div class="socials">
                 <a href={`mailto:${m.email}`}>Email</a>
+                <a href={m.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </div>

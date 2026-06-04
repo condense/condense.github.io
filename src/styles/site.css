@@ -549,6 +549,14 @@ img { display: block; max-width: 100%; }
   margin-bottom: 0;
 }
 .about-lede b { font-weight: 500; }
+.about-company-link {
+  display: inline-flex;
+  margin-top: 8px;
+  color: var(--c-accent);
+  font-size: 15px;
+  font-weight: 500;
+}
+.about-company-link:hover { color: var(--c-ink); }
 
 .team { display: flex; flex-direction: column; gap: 32px; }
 .member {
@@ -696,6 +704,14 @@ img { display: block; max-width: 100%; }
   margin: 8px 0 0;
   max-width: 280px;
 }
+.foot .brand-link {
+  align-self: flex-start;
+  color: var(--c-mute);
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+.foot .brand-link:hover { color: var(--c-ink); }
 
 .foot h5 {
   font-size: 13px;

@@ -14,6 +14,7 @@ export const site = {
     email: 'hello@condense.com.au',
     phoneLabel: '0428 740 978',
     phoneHref: 'tel:+61428740978',
+    linkedin: 'https://www.linkedin.com/company/condense-pty-ltd/posts/?feedView=all',
     address: 'Level 3, 13–17 Castray Esplanade, Battery Point TAS 7004',
     addressShort: 'Battery Point, Hobart',
     hours: 'Mon–Fri · 9am–5pm Hobart time',
