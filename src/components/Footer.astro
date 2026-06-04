@@ -22,7 +22,11 @@ const year = new Date().getFullYear();
         <div>
           <h5>{col.title}</h5>
           <ul>
-            {col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+            {col.links.map((l) => (
+              <li class:list={[!('href' in l) && 'footer-subhead']}>
+                {'href' in l ? <a href={l.href}>{l.label}</a> : l.label}
+              </li>
+            ))}
           </ul>
         </div>
       ))}

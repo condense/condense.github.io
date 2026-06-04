@@ -734,6 +734,11 @@ img { display: block; max-width: 100%; }
   font-size: 14px;
   line-height: 1.5;
 }
+.foot .footer-subhead {
+  color: var(--c-ink);
+  font-weight: 500;
+  margin-top: 18px;
+}
 .foot ul a { color: var(--c-mute); font-size: 14px; font-weight: 400; }
 .foot ul a:hover { color: var(--c-ink); }
 

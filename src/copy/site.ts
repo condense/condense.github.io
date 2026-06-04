@@ -39,7 +39,8 @@ export const site = {
           { label: 'About', href: '/#practice' },
           { label: 'Work', href: '/#work' },
           { label: 'Partner with us', href: '/partner' },
-          { label: 'Studio', href: '/playbook-studio-app/' },
+          { label: 'Tools' },
+          { label: 'Playbook Studio', href: '/playbook-studio-app/' },
         ],
       },
       {
