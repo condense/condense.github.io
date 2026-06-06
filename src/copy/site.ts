@@ -40,7 +40,7 @@ export const site = {
           { label: 'Work', href: '/#work' },
           { label: 'Partner with us', href: '/partner' },
           { label: 'Tools' },
-          { label: 'Visual domain modeling', href: '/playbook-studio-app/' },
+          { label: 'Visual domain modeling', href: 'https://storage.googleapis.com/condense-tools-static/playbook-studio/index.html' },
         ],
       },
       {
