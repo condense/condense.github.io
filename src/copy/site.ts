@@ -41,6 +41,8 @@ export const site = {
           { label: 'Partner with us', href: '/partner' },
           { label: 'Tools' },
           { label: 'Visual domain modeling', href: 'https://storage.googleapis.com/condense-tools-static/playbook-studio/index.html' },
+          { label: 'Field guide demo', href: 'https://storage.googleapis.com/condense-tools-static/field-guide-demo/index.html' },
+          { label: 'Spatial decision support', href: 'https://storage.googleapis.com/condense-tools-static/spatial-decision-support/index.html' },
         ],
       },
       {
