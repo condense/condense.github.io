@@ -9,12 +9,13 @@
 
 :root {
   --c-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --c-serif: 'Newsreader', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
   --c-ink: #1F2328;
   --c-ink-2: #424A53;
   --c-mute: #656D76;
   --c-line: #E5E7EB;
   --c-line-2: #F0F1F3;
-  --c-paper: #FFFFFF;
+  --c-paper: #FCFCFA;
   --c-soft:  #F8F9FA;
   --c-soft-2: #F2F4F6;
   --c-accent: #009B8F;   /* Condense teal preserved */
@@ -103,7 +104,7 @@ img { display: block; max-width: 100%; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255,255,255,0.96);
+  background: rgba(252,252,250,0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid transparent;
@@ -258,20 +259,33 @@ img { display: block; max-width: 100%; }
   margin-bottom: 64px;
   max-width: 720px;
 }
+/* Eyebrows read as archival index labels: small caps, tracked out, numbered
+   in page order via a CSS counter — echoing the hero pillars and signals
+   numbering, so the whole page reads like one well-kept document. */
+body { counter-reset: sec; }
 .section-eyebrow {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
   color: var(--c-accent);
-  margin-bottom: 16px;
-  letter-spacing: -0.005em;
+  margin-bottom: 18px;
+  letter-spacing: 0.12em;
+  counter-increment: sec;
+}
+.section-eyebrow::before {
+  content: counter(sec, decimal-leading-zero);
+  font-weight: 500;
+  color: var(--c-mute);
 }
 .section-title {
-  font-family: var(--c-font);
+  font-family: var(--c-serif);
   font-weight: 500;
-  font-size: clamp(34px, 4vw, 52px);
-  line-height: 1.1;
-  letter-spacing: -0.025em;
+  font-size: clamp(36px, 4.2vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
   color: var(--c-ink);
   margin: 0 0 20px;
   text-wrap: balance;
@@ -306,9 +320,10 @@ img { display: block; max-width: 100%; }
    strip reads as part of the system. Its centred layout is the deliberate
    feature that sets this interstitial band apart from the left-aligned sections. */
 .trusted .label {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: -0.005em;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: var(--c-accent);
 }
 
@@ -326,30 +341,32 @@ img { display: block; max-width: 100%; }
 .svc-card {
   background: white;
   border: 1px solid var(--c-line);
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   /* Clear the sticky nav when linked to from the footer's "What we build" anchors. */
   scroll-margin-top: 90px;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
 }
+.svc-card:hover {
+  border-color: #D3D8DC;
+  box-shadow: 0 12px 32px rgba(31, 35, 40, 0.05);
+}
+/* Bare teal stroke icon — no tinted chip; quieter, more drawn-instrument. */
 .svc-icon {
-  width: 48px; height: 48px;
-  background: var(--c-accent-soft);
   color: var(--c-accent);
-  border-radius: 12px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
-.svc-icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.svc-icon svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
 .svc-card h3 {
-  font-family: var(--c-font);
+  font-family: var(--c-serif);
   font-weight: 500;
-  font-size: 24px;
-  letter-spacing: -0.02em;
+  font-size: 27px;
+  letter-spacing: -0.01em;
   margin: 0;
   color: var(--c-ink);
   line-height: 1.2;
@@ -367,13 +384,17 @@ img { display: block; max-width: 100%; }
   flex-wrap: wrap;
   margin-top: 8px;
 }
+/* Tags as a quiet middot-separated index line, not clickable-looking chips. */
 .svc-card .tag {
-  font-size: 13px;
-  color: var(--c-ink-2);
-  background: var(--c-soft);
-  padding: 6px 12px;
-  border-radius: 999px;
+  font-size: 13.5px;
+  color: var(--c-mute);
   font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.svc-card .tag + .tag::before {
+  content: '·';
+  color: var(--c-accent);
+  margin-right: 8px;
 }
 .svc-card .more {
   margin-top: 8px;
@@ -398,11 +419,11 @@ img { display: block; max-width: 100%; }
 }
 @media (max-width: 760px) { .stats-grid { grid-template-columns: 1fr; gap: 48px; } }
 .stat .big {
-  font-family: var(--c-font);
+  font-family: var(--c-serif);
   font-weight: 500;
   font-size: clamp(72px, 9vw, 124px);
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   color: white;
   margin-bottom: 16px;
 }
@@ -447,10 +468,10 @@ img { display: block; max-width: 100%; }
   .work-row .meta { order: -1; font-size: 14px; }
 }
 .work-row h3 {
-  font-family: var(--c-font);
+  font-family: var(--c-serif);
   font-weight: 500;
-  font-size: 28px;
-  letter-spacing: -0.02em;
+  font-size: 30px;
+  letter-spacing: -0.01em;
   margin: 0 0 6px;
   color: var(--c-ink);
   line-height: 1.2;
@@ -493,23 +514,21 @@ img { display: block; max-width: 100%; }
   margin-top: 48px;
 }
 @media (max-width: 760px) { .steps-grid { grid-template-columns: 1fr; gap: 40px; } }
+/* Bare serif-italic numeral — a marginal figure, not a UI badge. */
 .step .num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  background: var(--c-soft);
-  color: var(--c-ink);
+  font-family: var(--c-serif);
+  font-style: italic;
   font-weight: 500;
-  font-size: 16px;
-  margin-bottom: 24px;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--c-accent);
+  margin-bottom: 20px;
 }
 .step h3 {
-  font-family: var(--c-font);
+  font-family: var(--c-serif);
   font-weight: 500;
-  font-size: 24px;
-  letter-spacing: -0.02em;
+  font-size: 26px;
+  letter-spacing: -0.01em;
   margin: 0 0 12px;
   color: var(--c-ink);
   line-height: 1.25;
@@ -583,10 +602,10 @@ img { display: block; max-width: 100%; }
   object-fit: cover;
 }
 .member h4 {
-  font-family: var(--c-font);
+  font-family: var(--c-serif);
   font-weight: 500;
-  font-size: 19px;
-  letter-spacing: -0.01em;
+  font-size: 22px;
+  letter-spacing: -0.005em;
   margin: 0;
   color: var(--c-ink);
 }
@@ -628,16 +647,16 @@ img { display: block; max-width: 100%; }
 }
 @media (max-width: 760px) { .contact-panel { padding: 56px 32px; border-radius: 20px; } }
 .contact-panel h2 {
-  font-family: var(--c-font);
+  font-family: var(--c-serif);
   font-weight: 500;
-  font-size: clamp(32px, 4vw, 48px);
-  line-height: 1.1;
-  letter-spacing: -0.025em;
+  font-size: clamp(34px, 4.2vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
   color: var(--c-ink);
   margin: 0 0 16px;
   text-wrap: balance;
 }
-.contact-panel h2 .accent { color: var(--c-accent); }
+.contact-panel h2 .accent { color: var(--c-accent); font-style: italic; }
 .contact-panel p {
   font-size: 19px;
   line-height: 1.55;
@@ -672,7 +691,7 @@ img { display: block; max-width: 100%; }
 .foot {
   border-top: 1px solid var(--c-line);
   padding: 64px 0 32px;
-  background: white;
+  background: var(--c-paper);
 }
 .foot .top {
   display: grid;
@@ -693,7 +712,8 @@ img { display: block; max-width: 100%; }
 }
 .foot .wordmark img { width: 28px; height: 28px; }
 .foot .tagline {
-  font-size: 14px;
+  font-family: var(--c-serif);
+  font-size: 16px;
   color: var(--c-mute);
   font-style: italic;
 }
@@ -809,8 +829,8 @@ img { display: block; max-width: 100%; }
     to right,
     var(--c-paper) 0%,
     var(--c-paper) 34%,
-    rgba(255, 255, 255, 0.72) 52%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(252, 252, 250, 0.72) 52%,
+    rgba(252, 252, 250, 0) 100%
   );
 }
 
@@ -829,27 +849,28 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
   max-width: 600px;
 }
-/* Sentence-case Inter eyebrow, matching the section eyebrows. */
+/* Tracked-caps eyebrow, matching the numbered section eyebrows below. */
 .hero-content .eyebrow {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
   color: var(--c-accent);
-  letter-spacing: -0.005em;
+  letter-spacing: 0.12em;
   margin: 0 0 28px;
 }
 
 .hero h1 {
-  font-family: var(--c-font);
+  font-family: var(--c-serif);
   font-weight: 500;
-  font-size: clamp(40px, 4.4vw, 60px);
-  line-height: 1.04;
-  letter-spacing: -0.028em;
+  font-size: clamp(44px, 4.9vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
   color: var(--c-ink);
   margin: 0 0 24px;
   max-width: 20ch;
   text-wrap: balance;
 }
-.hero h1 .accent { color: var(--c-accent); }
+.hero h1 .accent { color: var(--c-accent); font-style: italic; }
 .hero .lede {
   font-size: 19px;
   line-height: 1.55;
@@ -872,8 +893,8 @@ img { display: block; max-width: 100%; }
       to right,
       var(--c-paper) 0%,
       var(--c-paper) 46%,
-      rgba(255, 255, 255, 0.82) 66%,
-      rgba(255, 255, 255, 0) 100%
+      rgba(252, 252, 250, 0.82) 66%,
+      rgba(252, 252, 250, 0) 100%
     );
   }
 }
@@ -999,8 +1020,32 @@ img { display: block; max-width: 100%; }
   background: var(--c-accent);
 }
 
-/* ABOUT — bigger first lede paragraph; allow inline <b> */
-.about-lede p:first-child { font-size: 22px; }
+/* HERO ENTRANCE — one orchestrated load: copy rises in sequence, the
+   blueprint art breathes in behind it, the pillar strip arrives last.
+   The global prefers-reduced-motion rule collapses all of this. */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-content > * { animation: hero-rise 600ms cubic-bezier(0.22, 0.65, 0.3, 1) both; }
+.hero-content > :nth-child(2) { animation-delay: 80ms; }
+.hero-content > :nth-child(3) { animation-delay: 160ms; }
+.hero-content > :nth-child(4) { animation-delay: 240ms; }
+.hero-content > :nth-child(5) { animation-delay: 320ms; }
+.hero-art { animation: hero-fade 1100ms ease both 200ms; }
+.hero-pillars { animation: hero-rise 600ms cubic-bezier(0.22, 0.65, 0.3, 1) both 420ms; }
+
+/* ABOUT — serif opening paragraph, sized like a standfirst; allow inline <b> */
+.about-lede p:first-child {
+  font-family: var(--c-serif);
+  font-size: 25px;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+}
 .about-lede p b { font-weight: 500; }
 
 /* CONTACT — minor copy-driven tweaks */
