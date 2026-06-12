@@ -40,6 +40,7 @@ export const site = {
           { label: 'Work', href: '/#work' },
           { label: 'Partner with us', href: '/partner' },
           { label: 'Tools' },
+          { label: 'Governance Check', href: 'https://condense-govcheck.web.app/governance-check' },
           { label: 'Visual domain modeling', href: 'https://storage.googleapis.com/condense-tools-static/playbook-studio/index.html' },
           { label: 'Field guide demo', href: 'https://storage.googleapis.com/condense-tools-static/field-guide-demo/index.html' },
           { label: 'Spatial decision support', href: 'https://storage.googleapis.com/condense-tools-static/spatial-decision-support/index.html' },
