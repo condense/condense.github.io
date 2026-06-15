@@ -41,7 +41,7 @@ export const site = {
           { label: 'Partner with us', href: '/partner' },
           { label: 'Tools' },
           { label: 'Governance Check', href: 'https://boardroom.condense.com.au/governance-check' },
-          { label: 'Visual domain modeling', href: 'https://playbook-studio.condense.com.au/' },
+          { label: 'Visual domain modeling', href: 'https://studio.condense.com.au/playbook' },
           { label: 'Field guide demo', href: 'https://field-guide-demo.condense.com.au/' },
           { label: 'Spatial decision support', href: 'https://storage.googleapis.com/condense-tools-static/spatial-decision-support/index.html' },
         ],
