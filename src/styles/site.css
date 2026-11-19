@@ -21,6 +21,9 @@
   --c-accent: #009B8F;   /* Condense teal preserved */
   --c-accent-soft: rgba(0,155,143,0.08);
   --c-accent-hover: #007A70;
+  /* Teal for small text: #009B8F is 3.4:1 on paper, this is 5.1:1 (AA). */
+  --c-accent-text: #007A70;
+  --c-line-strong: #8B939B;  /* 3:1 on paper, for control borders */
 }
 
 * { box-sizing: border-box; }
@@ -227,6 +230,8 @@ img { display: block; max-width: 100%; }
   letter-spacing: -0.005em;
   transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 100ms ease;
 }
+/* Keep the pill shape on keyboard focus (a:focus-visible sets 4px). */
+.btn:focus-visible { border-radius: 999px; }
 .btn:active { transform: translateY(1px); }
 .btn .arr { display: inline-flex; transition: transform 180ms ease; }
 .btn:hover .arr { transform: translateX(3px); }
@@ -235,8 +240,8 @@ img { display: block; max-width: 100%; }
 .btn-primary:hover { background: #000; color: white; text-decoration: none; }
 .btn-accent { background: var(--c-accent); color: white; }
 .btn-accent:hover { background: var(--c-accent-hover); color: white; text-decoration: none; }
-.btn-ghost { background: white; color: var(--c-ink); border-color: var(--c-line); }
-.btn-ghost:hover { background: var(--c-soft); border-color: var(--c-mute); text-decoration: none; }
+.btn-ghost { background: white; color: var(--c-ink); border-color: var(--c-line-strong); }
+.btn-ghost:hover { background: var(--c-soft); border-color: var(--c-ink-2); text-decoration: none; }
 .btn-text { background: transparent; color: var(--c-ink); padding: 14px 8px; }
 .btn-text:hover { color: var(--c-accent); text-decoration: none; }
 .btn-text:hover .arr { transform: translateX(3px); }
@@ -270,7 +275,7 @@ body { counter-reset: sec; }
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--c-accent);
+  color: var(--c-accent-text);
   margin-bottom: 18px;
   letter-spacing: 0.12em;
   counter-increment: sec;
@@ -324,7 +329,7 @@ body { counter-reset: sec; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--c-accent);
+  color: var(--c-accent-text);
 }
 
 /* ============================================================
@@ -854,7 +859,7 @@ body { counter-reset: sec; }
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--c-accent);
+  color: var(--c-accent-text);
   letter-spacing: 0.12em;
   margin: 0 0 28px;
 }
@@ -903,13 +908,16 @@ body { counter-reset: sec; }
 @media (max-width: 720px) {
   .hero-art,
   .hero-scrim { display: none; }
+  .hero .wrap-hero { padding: 0 24px; }
 }
 
 /* Pillar strip — full-width row below the grid */
 .hero-pillars {
   max-width: 1120px;
   margin: 56px auto 0;
-  padding: 28px 32px 0;
+  /* No side padding: .wrap-hero already insets, so labels align with the h1. */
+  padding: 28px 0 0;
+  list-style: none;
   border-top: 1px solid var(--c-line);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -924,7 +932,7 @@ body { counter-reset: sec; }
 .hero-pillars .pillar .k {
   font-size: 12px;
   font-weight: 600;
-  color: var(--c-accent);
+  color: var(--c-accent-text);
   letter-spacing: 0.04em;
 }
 .hero-pillars .pillar .v {
@@ -1006,7 +1014,7 @@ body { counter-reset: sec; }
   left: 0;
   top: 4px;
   font-size: 12px;
-  color: var(--c-accent);
+  color: var(--c-accent-text);
   letter-spacing: 0.04em;
   font-weight: 600;
 }
@@ -1038,6 +1046,13 @@ body { counter-reset: sec; }
 .hero-content > :nth-child(5) { animation-delay: 320ms; }
 .hero-art { animation: hero-fade 1100ms ease both 200ms; }
 .hero-pillars { animation: hero-rise 600ms cubic-bezier(0.22, 0.65, 0.3, 1) both 420ms; }
+/* The global rule shortens durations but leaves the delays, which would hold
+   each element invisible and then pop it in. Skip the entrance entirely. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content > *,
+  .hero-art,
+  .hero-pillars { animation: none; }
+}
 
 /* ABOUT — serif opening paragraph, sized like a standfirst; allow inline <b> */
 .about-lede p:first-child {

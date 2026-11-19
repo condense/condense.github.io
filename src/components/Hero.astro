@@ -35,13 +35,13 @@ const { eyebrow, heading, lede, actions, meta } = home.hero;
         <a class="btn btn-ghost" href={actions.ghost.href}>{actions.ghost.label}</a>
       </div>
     </div>
-    <div class="hero-pillars">
+    <ul class="hero-pillars">
       {meta.map((label, i) => (
-        <div class="pillar">
-          <span class="k">{String(i + 1).padStart(2, '0')}</span>
+        <li class="pillar">
+          <span class="k" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
           <span class="v">{label}</span>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   </div>
 </section>
