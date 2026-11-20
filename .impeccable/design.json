@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-20T13:20:00+11:00",
+  "title": "Design System: Condense",
+  "extensions": {
+    "colorMeta": {
+      "teal": {
+        "role": "primary",
+        "displayName": "Condense Teal",
+        "canonical": "#009B8F",
+        "tonalRamp": [
+          "#00100D",
+          "#00312B",
+          "#00564D",
+          "#00766C",
+          "#009B8F",
+          "#48C1B4",
+          "#99DDD4",
+          "#D6F7F2"
+        ]
+      },
+      "teal-text": {
+        "role": "primary",
+        "displayName": "Teal Text",
+        "canonical": "#00756C",
+        "tonalRamp": [
+          "#000F0D",
+          "#00302B",
+          "#00544C",
+          "#00736A",
+          "#3A988E",
+          "#63BDB3",
+          "#A4DAD3",
+          "#DAF5F1"
+        ]
+      },
+      "teal-tint": {
+        "role": "primary",
+        "displayName": "Teal Tint",
+        "canonical": "#D5EDEA",
+        "tonalRamp": [
+          "#070C0C",
+          "#1C2928",
+          "#354A47",
+          "#536866",
+          "#758B89",
+          "#9AB0AE",
+          "#C2D1CF",
+          "#E9F0EF"
+        ]
+      },
+      "rev": {
+        "role": "secondary",
+        "displayName": "Revision Red",
+        "canonical": "#C93A17",
+        "tonalRamp": [
+          "#1E0100",
+          "#550000",
+          "#8E0000",
+          "#B52300",
+          "#DF4F2F",
+          "#FF7856",
+          "#FFB19A",
+          "#FFE1D5"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Drafting Ink",
+        "canonical": "#0C2B33",
+        "tonalRamp": [
+          "#060C0F",
+          "#162A2F",
+          "#2C4A53",
+          "#4A6972",
+          "#6C8C96",
+          "#90B1BB",
+          "#BDD2D9",
+          "#E6F1F4"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Two",
+        "canonical": "#3A535B",
+        "tonalRamp": [
+          "#070C0E",
+          "#19292E",
+          "#314951",
+          "#4E6870",
+          "#718B94",
+          "#95B0B9",
+          "#BFD1D7",
+          "#E7F0F3"
+        ]
+      },
+      "ink-deep": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "canonical": "#06212A",
+        "tonalRamp": [
+          "#060C0F",
+          "#182930",
+          "#2F4954",
+          "#4D6873",
+          "#6F8B97",
+          "#93B0BC",
+          "#BED1D9",
+          "#E7F0F4"
+        ]
+      },
+      "sheet": {
+        "role": "neutral",
+        "displayName": "Sheet",
+        "canonical": "#F5F8F7",
+        "tonalRamp": [
+          "#0A0C0B",
+          "#252726",
+          "#434645",
+          "#616463",
+          "#848786",
+          "#A9ABAA",
+          "#CBCECD",
+          "#ECEFEE"
+        ]
+      },
+      "desk": {
+        "role": "neutral",
+        "displayName": "Desk",
+        "canonical": "#DCE5E3",
+        "tonalRamp": [
+          "#070D0B",
+          "#212827",
+          "#3F4745",
+          "#5D6563",
+          "#808886",
+          "#A4ADAB",
+          "#C7D0CE",
+          "#E8F1EF"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#262626",
+          "#454545",
+          "#636363",
+          "#868686",
+          "#ABABAB",
+          "#CECECE",
+          "#EEEEEE"
+        ]
+      },
+      "hair": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(12, 43, 51, 0.26)",
+        "tonalRamp": [
+          "#060C0F",
+          "#162A2F",
+          "#2C4A53",
+          "#4A6972",
+          "#6C8C96",
+          "#90B1BB",
+          "#BDD2D9",
+          "#E6F1F4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero and lead headlines. Sentence case, normal width, weight 700."
+      },
+      "display-closing": {
+        "displayName": "Display, closing",
+        "purpose": "The white heading on the closing teal section."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles."
+      },
+      "headline-wide": {
+        "displayName": "Headline, wide",
+        "purpose": "The large section title of the wide head (work register)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Row and item titles in schedules, registers and steps; team names and station numbers at its 21px floor."
+      },
+      "action-bar": {
+        "displayName": "Action bar",
+        "purpose": "The title block action."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Condense beside the C mark in the nav; 20px in the footer, 18px in the phone nav."
+      },
+      "value": {
+        "displayName": "Value",
+        "purpose": "Title block values and the contact strip: the floor for white text on teal."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Ledes and the issues list; steps up to 19 to 22px for lead and practice text; also the on-teal button label."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text with tabular lining numerals; 16.5px inside tables; lines capped at 56 to 70ch."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Button labels and emphasised cell text."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Nav links, check labels, client and role lines, contact details, footer links."
+      },
+      "fine": {
+        "displayName": "Fine",
+        "purpose": "Footer bottom line and phone nav links."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Narrow capital lettering on the drawing: title block field names, pipe designations, tags, status, category and SVG lettering."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "flow",
+        "value": "stroke-dashoffset to -20 over 1400ms linear, infinite",
+        "purpose": "Dashed feed lines flowing into the hero drawing."
+      },
+      {
+        "name": "pipe-flow",
+        "value": "background-position 10px over 700ms linear, infinite",
+        "purpose": "The dashed centre line carrying the flow through the hero pipe, the elbow and down the margin."
+      },
+      {
+        "name": "state",
+        "value": "160ms ease-out",
+        "purpose": "Background, colour and border changes on hover (180ms for drawing part fills)."
+      },
+      {
+        "name": "arrow-slide",
+        "value": "220ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Action arrows slide 5 to 6px right on hover."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tb-narrow",
+        "value": "480px"
+      },
+      {
+        "name": "lettering",
+        "value": "560px"
+      },
+      {
+        "name": "phone",
+        "value": "640px"
+      },
+      {
+        "name": "table",
+        "value": "900px"
+      },
+      {
+        "name": "register",
+        "value": "960px"
+      },
+      {
+        "name": "wide",
+        "value": "1080px"
+      },
+      {
+        "name": "checks-row",
+        "value": "1300px"
+      },
+      {
+        "name": "desk",
+        "value": "1432px"
+      }
+    ],
+    "lines": [
+      {
+        "name": "line",
+        "value": "1.5px solid #0C2B33",
+        "purpose": "Every cell, table, button and section rule."
+      },
+      {
+        "name": "frame",
+        "value": "2px solid #0C2B33",
+        "purpose": "Sheet side rules, the rule under the nav and over the footer."
+      },
+      {
+        "name": "hairline",
+        "value": "1px solid rgba(12, 43, 51, 0.26)",
+        "purpose": "Secondary dividers inside a zone."
+      }
+    ],
+    "ownerPinned": [
+      "Brand teal is `teal` (#009B8F).",
+      "The C logo mark (`public/assets/c-element.svg`) is used unchanged, at 28px in the nav and footer and as the favicon.",
+      "The ground is light.",
+      "All copy is authoritative in `src/copy/*.ts`. Components render it and never rewrite it.",
+      "The home page section order is fixed.",
+      "Display type is Archivo at normal width, sentence case, weight 700. Wide heavy capitals were tried and removed.",
+      "The hero drawing does not draw itself in on load. The continuous flow is the only authored motion."
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action outside the title block: ink block, white label, arrow that slides on hover.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Start a conversation <span class=\"ds-arr\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline points=\"13 6 19 12 13 18\"/></svg></span></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 14px 22px; font-family: var(--font); font-weight: 700; font-size: 16px; line-height: 1.1; text-decoration: none; cursor: pointer; border: 1.5px solid var(--ink); border-radius: 0; transition: background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out; } .ds-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; } .ds-btn:active { transform: translateY(1px); } .ds-btn .ds-arr { display: inline-flex; transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn:hover .ds-arr { transform: translateX(5px); } .ds-btn-primary { background: var(--ink); color: var(--white); } .ds-btn-primary:hover { background: var(--teal-text); border-color: var(--teal-text); } .ds-btn-ghost { background: transparent; color: var(--ink); } .ds-btn-ghost:hover { background: var(--ink); color: var(--white); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "The secondary action: ruled outline that inverts to ink on hover.",
+      "html": "<a class=\"ds-btn ds-btn-ghost\" href=\"#\">See the work</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 14px 22px; font-family: var(--font); font-weight: 700; font-size: 16px; line-height: 1.1; text-decoration: none; cursor: pointer; border: 1.5px solid var(--ink); border-radius: 0; transition: background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out; } .ds-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; } .ds-btn:active { transform: translateY(1px); } .ds-btn .ds-arr { display: inline-flex; transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn:hover .ds-arr { transform: translateX(5px); } .ds-btn-primary { background: var(--ink); color: var(--white); } .ds-btn-primary:hover { background: var(--teal-text); border-color: var(--teal-text); } .ds-btn-ghost { background: transparent; color: var(--ink); } .ds-btn-ghost:hover { background: var(--ink); color: var(--white); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "The sheet's top strip: C mark and sentence-case wordmark left, ruled link cells and an ink call to action right.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\"><img src=\"/assets/c-element.svg\" alt=\"\" width=\"28\" height=\"28\">Condense</a><div class=\"ds-nav-links\"><a href=\"#\">Services</a><a href=\"#\">Work</a><a href=\"#\">Practice</a><a class=\"ds-nav-cta\" href=\"#\">Get in touch</a></div></nav>",
+      "css": ".ds-nav { display: flex; align-items: stretch; justify-content: space-between; min-height: 64px; padding-left: 24px; background: var(--sheet); border-bottom: 2px solid var(--ink); font-family: var(--font); } .ds-nav-brand { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 22px; letter-spacing: -0.01em; } .ds-nav-links { display: flex; align-items: stretch; } .ds-nav-links a { display: flex; align-items: center; padding: 0 18px; color: var(--ink); font-size: 15px; font-weight: 600; text-decoration: none; border-left: 1.5px solid var(--hair); transition: background-color 160ms ease-out, color 160ms ease-out; } .ds-nav-links a:hover { background: var(--teal-tint); } .ds-nav-links a:focus-visible { outline: 3px solid var(--ink); outline-offset: -5px; } .ds-nav-links a.ds-nav-cta { background: var(--ink); color: var(--white); border-left-color: var(--ink); font-weight: 700; } .ds-nav-links a.ds-nav-cta:hover { background: var(--teal-text); } .ds-nav-links a.ds-nav-cta:focus-visible { outline-color: var(--white); }"
+    },
+    {
+      "name": "Title Block",
+      "kind": "custom",
+      "refersTo": "title-block",
+      "description": "The drawing's title block: practice facts in a teal ruled grid, with the page's primary action as an ink bar. Used on home, /partner and 404.",
+      "html": "<div class=\"ds-tb\"><div class=\"ds-tb-cell ds-tb-wide\"><span class=\"ds-tb-value\">Software people for domain experts.</span></div><div class=\"ds-tb-cell\"><span class=\"ds-tb-label\">Practice</span><span class=\"ds-tb-value\">Condense Pty Ltd</span></div><div class=\"ds-tb-cell\"><span class=\"ds-tb-label\">Location</span><span class=\"ds-tb-value\">Hobart, Tasmania</span></div><div class=\"ds-tb-cell ds-tb-last\"><span class=\"ds-tb-label\">Established</span><span class=\"ds-tb-value\">2013</span></div><a class=\"ds-tb-go\" href=\"#\">Start a conversation <svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline points=\"13 6 19 12 13 18\"/></svg></a></div>",
+      "css": ".ds-tb { display: grid; grid-template-columns: 1.2fr 1.2fr 0.8fr; max-width: 560px; background: var(--teal); color: var(--white); border: 1.5px solid var(--ink); font-family: var(--font); } .ds-tb-cell { padding: 12px 16px 14px; border-right: 1.5px solid rgba(255,255,255,0.55); border-bottom: 1.5px solid rgba(255,255,255,0.55); } .ds-tb-wide { grid-column: 1 / -1; border-right: 0; } .ds-tb-last { border-right: 0; } .ds-tb-label { display: block; color: var(--ink-deep); margin-bottom: 5px; font-stretch: 78%; font-weight: 600; font-size: 12.5px; line-height: 1.2; letter-spacing: 0.06em; text-transform: uppercase; } .ds-tb-value { display: block; font-weight: 700; font-size: 19px; line-height: 1.15; } .ds-tb-go { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 16px; background: var(--ink); color: var(--white); font-weight: 700; font-size: 25px; line-height: 1.05; letter-spacing: -0.015em; text-decoration: none; transition: background-color 160ms ease-out; } .ds-tb-go:hover { background: var(--ink-deep); } .ds-tb-go svg { flex: none; transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tb-go:hover svg { transform: translateX(6px); } .ds-tb-go:focus-visible { outline: 3px solid var(--white); outline-offset: -6px; }"
+    },
+    {
+      "name": "Checks (ruled cells with balloons)",
+      "kind": "custom",
+      "refersTo": "ruled-cell",
+      "description": "A white ruled grid of short claims, each keyed by a balloon that matches a part of the hero drawing.",
+      "html": "<ul class=\"ds-checks\"><li><span class=\"ds-key\">A</span>Fit for purpose</li><li><span class=\"ds-key\">B</span>Used as intended</li><li><span class=\"ds-key\">C</span>Read the right way</li><li><span class=\"ds-key\">D</span>Reliable for years</li></ul>",
+      "css": ".ds-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 420px; margin: 0; padding: 0; list-style: none; border: 1.5px solid var(--ink); background: var(--white); color: var(--ink); font-family: var(--font); } .ds-checks li { display: flex; align-items: center; gap: 10px; padding: 12px 14px; font-weight: 650; font-size: 15px; line-height: 1.2; border-right: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); transition: background-color 160ms ease-out, color 160ms ease-out; } .ds-checks li:nth-child(2n) { border-right: 0; } .ds-checks li:nth-last-child(-n+2) { border-bottom: 0; } .ds-checks li:hover { background: var(--ink); color: var(--white); } .ds-key { flex: none; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--ink); background: var(--white); color: var(--ink); font-weight: 700; font-size: 13px; line-height: 1; }"
+    },
+    {
+      "name": "Schedule Row",
+      "kind": "card",
+      "refersTo": "schedule-row",
+      "description": "The ruled table that replaces a card grid: title, body and ink-2 tags in columns divided by ink rules.",
+      "html": "<div class=\"ds-spec\"><div class=\"ds-spec-row\"><h3>Data you can trace and trust</h3><p>[Body from src/copy/home.ts]</p><ul class=\"ds-tags\"><li>Validation</li><li>Provenance</li><li>Guardrails</li></ul></div></div>",
+      "css": ".ds-spec { border: 1.5px solid var(--ink); background: var(--white); color: var(--ink); font-family: var(--font); } .ds-spec-row { display: grid; grid-template-columns: minmax(0, 3.6fr) minmax(0, 6fr) minmax(0, 2.4fr); } .ds-spec-row > * { margin: 0; padding: 28px 26px; } .ds-spec-row > * + * { border-left: 1.5px solid var(--ink); } .ds-spec-row h3 { font-weight: 700; font-size: 23px; line-height: 1.15; letter-spacing: -0.005em; } .ds-spec-row p { font-size: 16.5px; line-height: 1.55; color: var(--ink-2); } .ds-tags { display: flex; flex-direction: column; gap: 10px; list-style: none; color: var(--ink-2); font-stretch: 78%; font-weight: 600; font-size: 12.5px; line-height: 1.2; letter-spacing: 0.06em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Register Row",
+      "kind": "custom",
+      "refersTo": "status-stamp",
+      "description": "A row in the register of systems in service: title and client, description, and a status stamp over a category.",
+      "html": "<article class=\"ds-reg\"><div><h3>A seabed-habitat platform marine managers still rely on</h3><div class=\"ds-client\">Seamap Australia</div></div><p>[Description from src/copy/home.ts]</p><div class=\"ds-reg-meta\"><span class=\"ds-status\">10 years live</span><span class=\"ds-cat\">Public platform</span></div></article>",
+      "css": ".ds-reg { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr) 170px; gap: 32px; padding: 36px 0; border-top: 1.5px solid var(--ink); color: var(--ink); font-family: var(--font); } .ds-reg h3 { margin: 0 0 8px; font-weight: 700; font-size: 23px; line-height: 1.15; letter-spacing: -0.005em; } .ds-client { font-weight: 650; font-size: 15px; color: var(--teal-text); } .ds-reg p { margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--ink-2); } .ds-reg-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; text-align: right; } .ds-status { display: inline-block; padding: 6px 9px 5px; border: 1.5px solid var(--teal-text); color: var(--teal-text); background: var(--white); font-stretch: 78%; font-weight: 600; font-size: 12.5px; line-height: 1.2; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; } .ds-cat { color: var(--ink-2); font-stretch: 78%; font-weight: 600; font-size: 12.5px; line-height: 1.2; letter-spacing: 0.06em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Issue Line",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "A marked-up issue: a revision triangle in red beside one line of recognition copy.",
+      "html": "<ul class=\"ds-issues\"><li><svg viewBox=\"0 0 22 20\" width=\"22\" height=\"20\" aria-hidden=\"true\"><path d=\"M11 1.6 20.6 18.6H1.4Z\" fill=\"#fff\" stroke=\"#C93A17\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/></svg>The person who understood how it all fits together is moving on.</li><li><svg viewBox=\"0 0 22 20\" width=\"22\" height=\"20\" aria-hidden=\"true\"><path d=\"M11 1.6 20.6 18.6H1.4Z\" fill=\"#fff\" stroke=\"#C93A17\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/></svg>The project was always going to end.</li></ul>",
+      "css": ".ds-issues { margin: 0; padding: 0; list-style: none; border-top: 1.5px solid var(--ink); color: var(--ink); font-family: var(--font); } .ds-issues li { position: relative; padding: 20px 0 20px 40px; font-size: 18px; line-height: 1.45; font-weight: 500; border-bottom: 1px solid var(--hair); } .ds-issues li:last-child { border-bottom: 0; } .ds-issues svg { position: absolute; left: 2px; top: 24px; }"
+    },
+    {
+      "name": "Display Headline with Accent Bar",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Bold sentence-case display type with the accented words knocked out of a solid teal bar.",
+      "html": "<h1 class=\"ds-display\">Once others rely on your data, it has to <span class=\"ds-accent\">keep working.</span></h1>",
+      "css": ".ds-display { margin: 0; max-width: 14em; color: var(--ink); font-family: var(--font); font-weight: 700; font-size: 52px; line-height: 1.04; letter-spacing: -0.022em; text-wrap: balance; } .ds-accent { background: var(--teal); color: var(--white); padding: 0.02em 0.14em 0; box-decoration-break: clone; -webkit-box-decoration-break: clone; }"
+    },
+    {
+      "name": "Reversed Sheet",
+      "kind": "custom",
+      "refersTo": "sheet-reversed",
+      "description": "The closing teal zone: white display heading, white body, on-teal buttons and a contact strip ruled in white.",
+      "html": "<section class=\"ds-end\"><h2 class=\"ds-end-title\">Tell us what you need your data to <span class=\"ds-end-accent\">make possible.</span></h2><p class=\"ds-end-body\">[Body from src/copy/home.ts]</p><div class=\"ds-end-actions\"><a class=\"ds-tbtn ds-tbtn-primary\" href=\"#\">Email us</a><a class=\"ds-tbtn ds-tbtn-ghost\" href=\"#\">Call us</a></div><div class=\"ds-end-info\"><span><a href=\"#\">[email]</a></span><span>[address]</span><span>[hours]</span></div></section>",
+      "css": ".ds-end { background: var(--teal); color: var(--white); padding: 40px 32px; font-family: var(--font); } .ds-end-title { margin: 0; max-width: 17ch; color: var(--white); font-weight: 700; font-size: 48px; line-height: 1.03; letter-spacing: -0.024em; text-wrap: balance; } .ds-end-accent { background: var(--ink-deep); color: var(--white); padding: 0.02em 0.14em 0; box-decoration-break: clone; -webkit-box-decoration-break: clone; } .ds-end-body { margin: 30px 0 0; max-width: 40ch; color: var(--white); font-weight: 600; font-size: 22px; line-height: 1.4; } .ds-end-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; } .ds-tbtn { display: inline-flex; align-items: center; min-height: 56px; padding: 14px 22px; font-weight: 700; font-size: 18px; line-height: 1.1; text-decoration: none; border: 1.5px solid var(--ink-deep); transition: background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out; } .ds-tbtn:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; } .ds-tbtn:active { transform: translateY(1px); } .ds-tbtn-primary { background: var(--ink-deep); color: var(--white); } .ds-tbtn-primary:hover { background: var(--white); color: var(--ink-deep); border-color: var(--white); } .ds-tbtn-ghost { background: var(--white); color: var(--ink-deep); border-color: var(--white); } .ds-tbtn-ghost:hover { background: var(--ink-deep); color: var(--white); border-color: var(--ink-deep); } .ds-end-info { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; margin-top: 44px; border: 1.5px solid rgba(255,255,255,0.6); color: var(--white); font-weight: 700; font-size: 19px; line-height: 1.3; } .ds-end-info span { padding: 16px 18px; border-right: 1.5px solid rgba(255,255,255,0.6); } .ds-end-info span:last-child { border-right: 0; } .ds-end-info a { color: var(--white); text-decoration-thickness: 1.5px; text-underline-offset: 3px; } .ds-end-info a:hover { text-decoration-thickness: 3px; } .ds-end-info a:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }"
+    },
+    {
+      "name": "Station",
+      "kind": "custom",
+      "refersTo": "balloon",
+      "description": "A numbered step sitting on a white pipe: one of three stations on the approach line.",
+      "html": "<div class=\"ds-step\"><div class=\"ds-num\">1</div><h3>Start with the data and the decision.</h3><p>We start with your data and the people who rely on it.</p></div>",
+      "css": ".ds-step { position: relative; max-width: 360px; color: var(--ink); font-family: var(--font); } .ds-step::before { content: ''; position: absolute; left: 0; right: 0; top: 21px; height: 14px; background: var(--white); border-block: 1.5px solid var(--ink); } .ds-num { position: relative; z-index: 1; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--white); border: 1.5px solid var(--ink); font-weight: 700; font-size: 21px; line-height: 1; margin-bottom: 22px; } .ds-step h3 { margin: 0 0 12px; font-weight: 700; font-size: 23px; line-height: 1.15; } .ds-step p { margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--ink-2); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Drawing Sheet",
+    "overview": "The site is one set of issued engineering drawings. Every page is a sheet: a cool drafting-film ground inside a ruled frame, sitting on a slightly darker desk. Content is laid out the way a drawing office lays it out, in ruled cells, schedules, registers and a title block, and one pipe runs from the hero drawing down the left margin through every section to the place where you get in touch. The visitor's data is drawn as plant that other people depend on. That is the whole argument of the practice, made visible.\n\nThe system is spare and exact. There is one type family, Archivo, set at normal width in sentence case, bold for anything that is a title; a narrow capital cut of the same family is kept for the small lettering on the drawing. There is one accent, Condense teal, and it is used as solid fields that own whole regions, never as decoration. Red exists only as mark-up on the drawing. Depth is never implied: there are no shadows, shaded gradients or blurs anywhere in the build. Structure is carried by ruled ink lines, and emphasis is carried by a solid fill.\n\nIt is dense where a drawing would be dense (schedules, registers, the title block) and open where a reader needs room (section headings, ledes). It refuses the consultancy template of serif headline, card grid and rounded call-to-action panel that it replaced.",
+    "keyCharacteristics": [
+      "A ruled sheet (max 1400px) on a desk, framed by 2px ink lines.",
+      "One pipe in the left margin, continuous from the hero drawing to the contact block, with a flange at every section boundary and a dashed flow line running through the hero.",
+      "One family at two widths: normal-width sentence case for everything read, bold for titles; narrow capitals for drawing annotations only.",
+      "Solid teal fields for the title block and the closing section; ink for every action; type on teal is white, bold and large.",
+      "Square corners on every cell and control. Only drawn round things (balloons, station numbers, pipe elbows) are round.",
+      "Flat. No shadows, no shaded gradients, no blur.",
+      "Tabular lining numerals throughout."
+    ],
+    "rules": [
+      {
+        "name": "The Solid Field Rule",
+        "body": "Teal appears as a solid field that owns a whole region, or not at all. No teal outlines around cards, no teal gradients, no teal at reduced opacity.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Teals Rule",
+        "body": "`teal` is for fields, graphics and the bar behind large bold type. Teal text on a light ground uses `teal-text`, and only where the text is a link or names a party (a client, a role, a status). Tags and other plain annotations are `ink-2`: teal on small text reads as a link.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reversed Field Rule",
+        "body": "Everything on a teal field follows the title block: white, bold and 19px or larger, with ink for the action. No small text on teal. The title block's own field names, in `ink-deep`, are the one annotation that sits there.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mark-Up Rule",
+        "body": "Red is what a reviewer's pen leaves on a drawing. If it is not a revision mark, a sign-off or a pointed-at part, it is not red.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "No second typeface, and two widths only: 100 for everything read, 78 for annotations. Weights in use are 400, 500, 600, 650 and 700; nothing is heavier than 700.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Every title, button and wordmark is sentence case at normal width. Full capitals belong to the label voice alone.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lettering Rule",
+        "body": "Narrow capitals label fields and pipes. They name a cell in the title block, a line in the margin, a part of the drawing, or a column value in a schedule or register. They are never set above a heading as a kicker, and they never carry a sentence.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Sheet Rule",
+        "body": "No shadows at rest and none on hover or focus. If something needs to read as in front, give it a white fill and an ink outline.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the pipe continuous. Every new section gets the left rail, the pipe and a flange at its top rule; the last section on a page ends the pipe.",
+      "Do build repeated content as a ruled schedule or a register, with 1.5px ink rules between rows and columns, and let the last row of an open list end without a rule.",
+      "Do put a page's primary action in the title block, and give it the ink action bar.",
+      "Do set every title in sentence case at normal width and weight 700.",
+      "Do set anything on a teal field the way the title block does: white, bold, 19px or larger, with `ink-deep` or white blocks for actions.",
+      "Do use `teal-text` for links and named parties on a light ground, and `ink-2` for tags and plain annotations.",
+      "Do make state a change of fill: `teal-tint` for quiet hover, ink inversion for strong hover.",
+      "Do set every focus ring at 3px, ink on light grounds and white on teal or ink.",
+      "Do keep numerals tabular and lining, and cap reading lines between 56ch and 70ch.",
+      "Do honour the owner-pinned constraints: `teal` as given, the C mark unchanged, a light ground, copy from `src/copy/*.ts` only, home section order as is, normal-width sentence-case display, no draw-in."
+    ],
+    "donts": [
+      "Don't add a shadow, shaded gradient, blur or glow. The sheet is flat.",
+      "Don't round a corner on a button, cell, table, photo or panel. Only balloons, station numbers, pipe elbows and drawn plant are round.",
+      "Don't introduce a second typeface, a width other than 100 and 78, or a weight above 700.",
+      "Don't set display or section titles in capitals or at expanded width.",
+      "Don't set label-voice capitals above a heading as a kicker. Labels name title block fields, pipes, drawing parts and table values.",
+      "Don't use `rev` for anything but mark-up on the drawing: no red text, buttons, alerts or backgrounds.",
+      "Don't put white text smaller than 19px bold on `teal`, or dark reading text on `teal` at all.",
+      "Don't colour a tag or annotation teal. Teal text means a link or a named party.",
+      "Don't use teal as an outline, a tint behind text blocks, or a decorative accent. It is a solid field or the `teal-tint` state wash.",
+      "Don't wrap content in free-floating cards with gaps between them. Cells share their rules.",
+      "Don't add motion beyond the continuous flow and state feedback. No load reveal, no draw-in."
+    ]
+  }
+}
