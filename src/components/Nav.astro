@@ -3,7 +3,7 @@
 import { site } from '../copy/site.ts';
 const { brand, nav } = site;
 ---
-<nav class="nav" id="nav">
+<nav class="nav" aria-label="Main">
   <div class="inner">
     <a class="brand" href="/">
       <img src="/assets/c-element.svg" alt="" width="28" height="28" />
@@ -15,13 +15,3 @@ const { brand, nav } = site;
     </div>
   </div>
 </nav>
-
-<script>
-  // Nav gains a hairline border once the page is scrolled (ported from the prototype).
-  const nav = document.getElementById('nav');
-  if (nav) {
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-</script>

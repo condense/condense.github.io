@@ -1,23 +1,21 @@
 ---
-// Copy lives in src/copy/home.ts.
+// Three stations on one line. Copy lives in src/copy/home.ts.
 import { home } from '../copy/home.ts';
 const { eyebrow, title, lede, steps } = home.approach;
 ---
-<section class="section section-soft">
-  <div class="wrap">
-    <div class="section-header">
-      <span class="section-eyebrow">{eyebrow}</span>
-      <h2 class="section-title">{title}</h2>
-      <p class="section-lede">{lede}</p>
-    </div>
-    <div class="steps-grid">
-      {steps.map((s) => (
-        <div class="step">
-          <div class="num">{s.num}</div>
-          <h3>{s.title}</h3>
-          <p>{s.body}</p>
-        </div>
-      ))}
-    </div>
+<section class="sec" id="approach">
+  <p class="rail"><span>{eyebrow}</span></p>
+  <div class="sec-head">
+    <h2 class="sec-title">{title}</h2>
+    <p class="sec-lede">{lede}</p>
   </div>
+  <ol class="steps">
+    {steps.map((s) => (
+      <li class="step">
+        <div class="num" aria-hidden="true">{s.num}</div>
+        <h3>{s.title}</h3>
+        <p>{s.body}</p>
+      </li>
+    ))}
+  </ol>
 </section>

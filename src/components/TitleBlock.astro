@@ -1,0 +1,19 @@
+---
+// The drawing's title block: practice, location, year, and the sheet's primary action.
+// Facts come from src/copy/site.ts; the tagline line and action are passed in.
+import Icon from './Icon.astro';
+import { site } from '../copy/site.ts';
+interface Props { tagline?: string; label: string; href: string; }
+const { tagline, label, href } = Astro.props;
+const { legalName, location, established } = site.footer;
+---
+<div class="titleblock">
+  {tagline && <div class="tb-cell tb-wide"><span class="tb-value">{tagline}</span></div>}
+  <div class="tb-cell tb-practice"><span class="tb-label">Practice</span><span class="tb-value">{legalName}</span></div>
+  <div class="tb-cell"><span class="tb-label">Location</span><span class="tb-value">{location}</span></div>
+  <div class="tb-cell tb-est"><span class="tb-label">Established</span><span class="tb-value">{established.replace(/^est\.\s*/i, '')}</span></div>
+  <a class="tb-go" href={href}>
+    {label}
+    <Icon name="arrow" size={28} />
+  </a>
+</div>

@@ -1,0 +1,302 @@
+---
+// The hero plant drawing: the original raster illustration redrawn as line SVG
+// (drawn by Gemini 4 Carbon to this page's contract, 20 Nov 2026).
+// A spreadsheet, a script and a feed come in on the right, pass four safeguards
+// (the hero checks A-D), hold up what other people rely on (atlas, report,
+// decision), and the flow carries on down the page.
+// Contract with site.css: the main pipe leaves at the left edge (y 452-488 of
+// 560); .collar marks where the drop leg leaves; parts .p1-.p4 match checks A-D.
+---
+<svg class="dwg" viewBox="0 0 800 560" aria-hidden="true" focusable="false">
+  <g class="ln">
+    <!-- isometric floor grid and vertical telemetry drop lines -->
+    <path class="thin" d="M240 384 L690 474 M170 400 L648 495.6 M120 420 L648 525.6 M90 444 L645 555 M65 469 L495 555 M45 495 L345 555" />
+    <path class="thin" d="M55 485 L235 440 M105 510 L365 445 M175 530 L495 450 M260 546 L612 458 M370 554 L648 484.5 M495 556 L648 517.8" />
+    <path class="thin" d="M108 488 V532 M218 488 V538 M346 488 V544 M468 488 V548 M542 488 V550 M618 488 V538 M642 254 V518" />
+    <circle class="solid" cx="108" cy="532" r="2.5" />
+    <circle class="solid" cx="218" cy="538" r="2.5" />
+    <circle class="solid" cx="346" cy="544" r="2.5" />
+    <circle class="solid" cx="468" cy="548" r="2.5" />
+    <circle class="solid" cx="542" cy="550" r="2.5" />
+    <circle class="solid" cx="618" cy="538" r="2.5" />
+    <rect class="solid" x="639.5" y="515.5" width="5" height="5" />
+
+    <!-- subtle floor sensor trace with red accent nodes -->
+    <path class="thin" d="M108 532 L146 516 L346 544 L468 528 L542 536" />
+    <circle class="solid red" cx="346" cy="527" r="2.5" />
+    <circle class="solid red" cx="468" cy="528" r="2.5" />
+    <circle class="solid red" cx="542" cy="536" r="2.5" />
+
+    <!-- secondary pipework behind and beneath the main run -->
+    <!-- right support column under slab -->
+    <path class="solid" d="M639 252 H645 V452 H639 Z" />
+    <ellipse class="solid" cx="642" cy="348" rx="7" ry="3" />
+    <ellipse class="solid" cx="642" cy="344" rx="7" ry="3" />
+
+    <!-- left elbow riser to slab and floor anchor leg -->
+    <path class="solid" d="M72 488 H80 V522 H72 Z" />
+    <ellipse class="solid" cx="76" cy="523" rx="8" ry="3" />
+    <path class="solid" d="M114 250 H122 V398 Q122 410 110 410 H86 Q78 410 78 418 V452 H70 V416 Q70 402 84 402 H106 Q114 402 114 394 Z" />
+    <ellipse class="solid" cx="118" cy="254" rx="10" ry="3.5" />
+
+    <!-- risers from safeguards up to platform slab -->
+    <path class="solid" d="M171 260 H179 V362 H171 Z" />
+    <ellipse class="solid" cx="175" cy="265" rx="10" ry="3.5" />
+
+    <path class="solid" d="M222 270 H230 V452 H222 Z" />
+    <ellipse class="solid" cx="226" cy="276" rx="9" ry="3" />
+    <ellipse class="solid" cx="226" cy="396" rx="14" ry="4.5" />
+    <ellipse class="wdot" cx="226" cy="396" rx="9" ry="2.5" />
+
+    <path class="solid" d="M442 300 H448 V360 H442 Z" />
+    <ellipse class="solid" cx="445" cy="306" rx="9" ry="3" />
+
+    <path class="solid" d="M568 268 H580 V384 H568 Z" />
+    <ellipse class="solid" cx="574" cy="275" rx="13" ry="4.5" />
+
+    <!-- lower secondary drain and instrumentation loops (kept clear of x 655-685) -->
+    <path class="solid" d="M172 504 H178 V518 Q178 524 184 524 H392 Q398 524 398 518 V488 H392 V516 Q392 518 390 518 H186 Q184 518 184 516 V504 Z" />
+    <path class="solid" d="M302 496 H308 V518 H302 Z" />
+    <ellipse class="solid" cx="395" cy="523" rx="6" ry="2.5" />
+
+    <path class="solid" d="M551 434 H557 V516 Q557 522 563 522 H622 Q628 522 628 516 V488 H622 V514 Q622 516 620 516 H565 Q563 516 563 514 V434 Z" />
+    <path class="solid" d="M571 434 H577 V452 H571 Z" />
+    <path class="solid" d="M591 434 H597 V502 Q597 508 603 508 H622 V502 H605 Q603 502 603 500 V434 Z" />
+
+    <!-- translucent isometric platform slab -->
+    <!-- slab sides -->
+    <path class="solid" d="M95 213 V247 L402 308 Q415 311 428 308 L715 236 V202 L415 277 Z" />
+    <path class="tint" stroke="none" d="M95 213 V247 L402 308 Q409 310 415 310 V277 Z" />
+    <path class="teal" stroke="none" d="M415 277 V310 Q422 310 428 308 L715 236 V202 Z" />
+    <path class="solid" stroke="none" d="M425 275 V308 L715 236 V202 Z" />
+    <path class="tint" stroke="none" d="M415 277 V310 Q422 310 428 308 L715 236 V202 Z" />
+    <path class="thin" d="M145 223 V257 M195 233 V267 M245 243 V277 M295 253 V287 M345 263 V297 M395 273 V307 M415 277 V310 M465 265 V298 M515 252 V285 M565 240 V273 M615 227 V260 M665 215 V248" />
+    <path class="thin" d="M95 230 L402 291 Q415 294 428 291 L715 219" />
+    <path d="M95 213 V247 L402 308 Q415 311 428 308 L715 236 V202" />
+
+    <!-- slab top face -->
+    <path class="solid" d="M107 210 L383 141 Q395 138 407 140.4 L703 199.6 Q715 202 703 205 L428 273.8 Q415 277 402 274.4 L107 215.4 Q95 213 107 210 Z" />
+    <path class="tint" stroke="none" d="M122 212 L395 144 L692 203 L415 272 Z" />
+    <path class="solid" stroke="none" d="M142 212 L395 149 L672 204 L415 268 Z" />
+
+    <!-- slab surface network, grid and contour lines -->
+    <path class="thin" d="M155 198 L475 262 M215 183 L535 247 M275 168 L595 232 M335 153 L655 217" />
+    <path class="thin" d="M159 226 L459 151 M223 239 L523 164 M287 251 L587 176 M351 264 L651 189" />
+    <path class="thin" d="M180 212 C210 192 260 225 310 198 S390 172 440 196 S520 232 585 206 S645 192 675 204" />
+    <path class="thin" d="M215 183 L287 251 L395 196 L523 164 L535 247 L651 189 M275 168 L395 196 L475 262" />
+    <circle class="wdot" cx="215" cy="183" r="2.2" />
+    <circle class="wdot" cx="287" cy="251" r="2.2" />
+    <circle class="wdot" cx="395" cy="196" r="2.5" />
+    <circle class="wdot" cx="523" cy="164" r="2.2" />
+    <circle class="wdot" cx="535" cy="247" r="2.2" />
+    <circle class="wdot" cx="651" cy="189" r="2.2" />
+
+    <!-- WHAT OTHER PEOPLE RELY ON: ATLAS, REPORT, DECISION -->
+    <!-- 1. ATLAS: folded map on stand with red location pin -->
+    <ellipse class="solid" cx="258" cy="202" rx="18" ry="6" />
+    <ellipse class="solid" cx="258" cy="198" rx="18" ry="6" />
+    <path class="solid" d="M255 150 H261 V198 H255 Z" />
+    <path class="solid" d="M196 66 L238 50 L278 66 L320 50 V142 L278 158 L238 142 L196 158 Z" />
+    <path class="tint" stroke="none" d="M239 52 L277 67 V156 L239 141 Z" />
+    <path d="M238 50 V142 M278 66 V158" />
+    <path class="thin" d="M204 92 C218 78 226 96 238 88 M202 132 C220 116 232 130 248 118 S270 98 288 110 S306 120 314 106" />
+    <path class="lead" d="M208 124 C224 118 232 102 248 106 S268 124 284 114 S302 104 303 94" />
+    <path class="solid red" d="M303 93 C303 93 294 82 294 75 A9 9 0 1 1 312 75 C312 82 303 93 303 93 Z" />
+    <circle class="solid red" cx="303" cy="75" r="3.2" />
+
+    <!-- 2. REPORT: presentation board on tripod with pie and bar charts -->
+    <path class="solid" d="M449 146 L455 206 H459 L453 146 Z" />
+    <path class="solid" d="M510 86 L526 208 H522 L506 86 Z" />
+    <path class="solid" d="M412 146 L399 218 H404 L417 146 Z" />
+    <path class="solid" d="M492 146 L504 222 H499 L487 146 Z" />
+    <ellipse class="solid" cx="401.5" cy="219" rx="3.5" ry="1.5" />
+    <ellipse class="solid" cx="457" cy="207" rx="3.5" ry="1.5" />
+    <ellipse class="solid" cx="501.5" cy="223" rx="3.5" ry="1.5" />
+    <ellipse class="solid" cx="524" cy="209" rx="3.5" ry="1.5" />
+
+    <rect class="solid" x="390" y="42" width="124" height="104" rx="5" />
+    <path class="tint" stroke="none" d="M391 47 Q391 43 395 43 H509 Q513 43 513 47 V57 H391 Z" />
+    <path d="M390 57 H514 M390 141 H514" />
+    <circle class="wdot" cx="399" cy="50" r="1.8" />
+    <circle class="wdot" cx="406" cy="50" r="1.8" />
+    <circle class="wdot" cx="413" cy="50" r="1.8" />
+
+    <circle class="solid" cx="424" cy="92" r="20" />
+    <path class="teal" d="M424 92 V72 A20 20 0 0 1 444 92 Z" />
+    <path class="tint" d="M424 92 H444 A20 20 0 0 1 412 108 Z" />
+    <path d="M404 122 H444 M404 130 H428" />
+
+    <path d="M456 126 H504" />
+    <rect class="tint" x="461" y="106" width="10" height="20" />
+    <rect class="solid" x="476" y="92" width="10" height="34" />
+    <rect class="teal" x="491" y="76" width="10" height="50" />
+
+    <!-- 3. DECISION: tall circular tick sign in red accent -->
+    <ellipse class="solid red" cx="608" cy="208" rx="19" ry="6" />
+    <ellipse class="solid red" cx="608" cy="204" rx="19" ry="6" />
+    <rect class="solid red" x="605" y="142" width="6" height="62" />
+    <circle class="solid red" cx="608" cy="108" r="36" />
+    <circle class="solid red" cx="608" cy="108" r="30" />
+    <path class="red" d="M593 109 L603 119 L624 97" />
+
+    <!-- SOURCES ENTERING AT RIGHT EDGE (x=800) -->
+    <!-- subtle companion guide curves -->
+    <path class="thin" d="M800 314 C736 314 742 454 698 454 M800 394 C744 394 742 464 698 464 M800 474 C748 474 742 474 698 474 M800 534 C742 534 742 486 698 486" />
+
+    <!-- animated flow lines inward from x=800 to pipe manifold -->
+    <path class="flow" d="M800 306 C730 306 740 458 698 458" />
+    <path class="flow" d="M800 386 C738 386 738 466 698 466" />
+    <path class="flow" d="M800 466 C744 466 738 474 698 474" />
+    <path class="flow" d="M800 526 C734 526 738 482 698 482" />
+
+    <!-- scatter of data squares streaming along the incoming curves -->
+    <rect class="solid" x="736" y="318" width="4.5" height="4.5" />
+    <rect class="teal" x="724" y="344" width="4" height="4" />
+    <rect class="solid red" x="718" y="374" width="4" height="4" />
+    <rect class="solid" x="738" y="392" width="4.5" height="4.5" />
+    <rect class="tint" x="722" y="412" width="4.5" height="4.5" />
+    <rect class="teal" x="708" y="438" width="4" height="4" />
+    <rect class="solid" x="734" y="458" width="4.5" height="4.5" />
+    <rect class="solid red" x="718" y="463" width="4" height="4" />
+    <rect class="tint" x="706" y="452" width="3.5" height="3.5" />
+    <rect class="solid" x="736" y="514" width="4.5" height="4.5" />
+    <rect class="teal" x="722" y="498" width="4" height="4" />
+    <rect class="solid red" x="710" y="484" width="4" height="4" />
+    <circle class="dot" cx="730" cy="332" r="1.5" />
+    <circle class="dot" cx="714" cy="426" r="1.5" />
+    <circle class="dot" cx="728" cy="480" r="1.5" />
+    <circle class="dot" cx="730" cy="528" r="1.5" />
+
+    <!-- Source 1 icon: SPREADSHEET -->
+    <path class="solid" d="M750 282 H778 L788 292 V328 H750 Z" />
+    <path d="M778 282 V292 H788" />
+    <rect class="tint" x="756" y="296" width="24" height="7" />
+    <rect x="756" y="296" width="24" height="22" />
+    <path class="thin" d="M756 303 H780 M756 311 H780 M764 296 V318 M772 296 V318" />
+
+    <!-- Source 2 icon: SCRIPT -->
+    <path class="solid" d="M750 364 H778 L788 374 V410 H750 Z" />
+    <path d="M778 364 V374 H788" />
+    <path d="M763 383 L758 388 L763 393 M775 383 L780 388 L775 393 M771 381 L767 395" />
+    <path class="thin" d="M758 402 H778" />
+
+    <!-- Source 3 icon: FEED -->
+    <rect class="solid" x="750" y="446" width="38" height="38" rx="5" />
+    <circle class="teal" cx="759" cy="475" r="3.5" />
+    <path d="M759 464 A11 11 0 0 1 770 475 M759 454 A21 21 0 0 1 780 475" />
+
+    <!-- Source 4 icon: unlabelled document -->
+    <path class="solid" d="M750 502 H778 L788 512 V546 H750 Z" />
+    <path d="M778 502 V512 H788" />
+    <path d="M758 518 H778 M758 526 H778 M758 534 H772" />
+
+    <!-- MAIN HORIZONTAL PIPE (y=452 to y=488, open at left edge x=0) -->
+    <path class="solid" stroke="none" d="M0 452 H694 V488 H0 Z" />
+    <path class="tint" stroke="none" d="M0 478 H694 V488 H0 Z" />
+    <path d="M0 452 H694 M0 488 H694" />
+    <path class="flow" d="M698 470 H0" />
+
+    <!-- pipe inlet manifold at right end and bolted flanges along run -->
+    <rect class="solid" x="690" y="440" width="8" height="60" rx="2" />
+    <rect class="tint" x="698" y="444" width="6" height="52" rx="1" />
+    <path class="thin" d="M690 450 H698 M690 470 H698 M690 490 H698" />
+
+    <rect class="solid" x="122" y="445" width="7" height="50" rx="1" />
+    <rect class="solid" x="129" y="445" width="7" height="50" rx="1" />
+
+    <rect class="solid" x="204" y="445" width="7" height="50" rx="1" />
+    <rect class="solid" x="254" y="445" width="7" height="50" rx="1" />
+
+    <rect class="solid" x="344" y="445" width="7" height="50" rx="1" />
+    <rect class="solid" x="351" y="445" width="7" height="50" rx="1" />
+
+    <rect class="solid" x="498" y="445" width="7" height="50" rx="1" />
+    <rect class="solid" x="505" y="445" width="7" height="50" rx="1" />
+
+    <rect class="solid" x="636" y="445" width="7" height="50" rx="1" />
+    <rect class="solid" x="643" y="445" width="7" height="50" rx="1" />
+
+    <!-- collar where the drop leg to the title block leaves the pipe (x 655-685, y 488-560 kept empty) -->
+    <rect class="solid collar" x="661" y="488" width="18" height="9" />
+
+    <!-- FOUR SAFEGUARDS A-D (LEFT TO RIGHT) -->
+    <!-- A (.p1): glass filter vessel with granular media -->
+    <rect class="part p1 solid" x="151" y="362" width="48" height="142" rx="6" />
+    <rect class="tint" x="158" y="388" width="34" height="54" rx="2" />
+    <path d="M148 374 H202 M148 448 H202 M148 492 H202" />
+    <path class="thin" d="M155 388 V442 M195 388 V442" />
+    <circle class="wdot" cx="165" cy="396" r="2.2" />
+    <circle class="wdot" cx="174" cy="394" r="2" />
+    <circle class="wdot" cx="184" cy="397" r="2.3" />
+    <circle class="wdot" cx="163" cy="406" r="2" />
+    <circle class="wdot" cx="171" cy="404" r="2.4" />
+    <circle class="wdot" cx="180" cy="406" r="2" />
+    <circle class="wdot" cx="187" cy="404" r="1.8" />
+    <circle class="wdot" cx="166" cy="415" r="2.3" />
+    <circle class="wdot" cx="176" cy="414" r="2.2" />
+    <circle class="wdot" cx="185" cy="416" r="2.1" />
+    <circle class="wdot" cx="163" cy="425" r="2.1" />
+    <circle class="wdot" cx="172" cy="424" r="2.4" />
+    <circle class="wdot" cx="181" cy="426" r="2" />
+    <circle class="wdot" cx="167" cy="434" r="2.2" />
+    <circle class="wdot" cx="177" cy="435" r="2.3" />
+    <circle class="wdot" cx="186" cy="434" r="2" />
+    <circle class="dot" cx="169" cy="400" r="1.2" />
+    <circle class="dot" cx="182" cy="411" r="1.2" />
+    <circle class="dot" cx="168" cy="420" r="1.2" />
+    <circle class="dot" cx="179" cy="430" r="1.2" />
+
+    <!-- B (.p2): industrial flanged handwheel valve -->
+    <path d="M305 376 V410" />
+    <ellipse class="solid" cx="305" cy="376" rx="24" ry="7" />
+    <ellipse class="wdot" cx="305" cy="376" rx="16" ry="4" />
+    <path class="thin" d="M289 376 H321 M305 370 V382" />
+    <rect class="solid" x="296" y="402" width="18" height="8" rx="1" />
+    <path class="part p2 teal" d="M286 410 H324 V446 L334 452 V488 L324 494 V498 H286 V494 L276 488 V452 L286 446 Z" />
+    <path d="M282 422 H328" />
+    <circle class="wdot" cx="305" cy="470" r="5" />
+
+    <!-- C (.p3): pressure gauge -->
+    <rect class="solid" x="438" y="444" width="14" height="8" rx="1" />
+    <rect class="solid" x="441" y="420" width="8" height="24" />
+    <circle class="part p3 solid" cx="445" cy="390" r="30" />
+    <circle class="solid" cx="445" cy="390" r="24" />
+    <path class="tint" stroke="none" d="M445 390 L460 375 A21 21 0 0 1 466 390 Z" />
+    <path class="thin" d="M425 390 H430 M431 376 L435 380 M445 370 V375 M459 376 L455 380 M465 390 H460 M431 404 L435 400 M459 404 L455 400" />
+    <path d="M437 398 L457 378" />
+    <circle class="dot" cx="445" cy="390" r="3" />
+
+    <!-- D (.p4): isometric junction and feed monitor box -->
+    <path class="solid" d="M532 384 L542 377 H622 L612 384 Z" />
+    <path class="tint" d="M612 384 L622 377 V427 L612 434 Z" />
+    <rect class="part p4 teal" x="532" y="384" width="80" height="50" rx="2" />
+    <path class="thin" d="M532 396 H612" />
+    <circle class="wdot" cx="552" cy="416" r="4.5" />
+    <circle class="wdot" cx="572" cy="416" r="4.5" />
+    <circle class="wdot" cx="592" cy="416" r="4.5" />
+    <circle class="dot" cx="538" cy="390" r="1.5" />
+    <circle class="dot" cx="606" cy="390" r="1.5" />
+    <rect class="solid" x="549" y="434" width="10" height="6" />
+    <rect class="solid" x="569" y="434" width="10" height="6" />
+    <rect class="solid" x="589" y="434" width="10" height="6" />
+
+    <!-- leaders and keyed balloons A-D -->
+    <path class="lead" d="M151 372 L132 346 M286 414 L259 352 M421 374 L403 357 M534 385 L515 356" />
+    <g class="keys">
+      <circle class="solid" cx="122" cy="336" r="14" /><text x="122" y="342">A</text>
+      <circle class="solid" cx="252" cy="340" r="14" /><text x="252" y="346">B</text>
+      <circle class="solid" cx="392" cy="348" r="14" /><text x="392" y="354">C</text>
+      <circle class="solid" cx="506" cy="344" r="14" /><text x="506" y="350">D</text>
+    </g>
+
+    <!-- lettering -->
+    <g class="lettering">
+      <text x="258" y="36" text-anchor="middle">ATLAS</text>
+      <text x="453" y="28" text-anchor="middle">REPORT</text>
+      <text x="608" y="58" text-anchor="middle">DECISION</text>
+      <text x="794" y="274" text-anchor="end">SPREADSHEET</text>
+      <text x="794" y="356" text-anchor="end">SCRIPT</text>
+      <text x="794" y="438" text-anchor="end">FEED</text>
+    </g>
+  </g>
+</svg>

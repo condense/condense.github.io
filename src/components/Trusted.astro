@@ -2,13 +2,11 @@
 import { home } from '../copy/home.ts';
 const { label, lines } = home.trusted;
 ---
-<section class="trusted">
-  <div class="wrap">
-    <div class="inner">
-      <span class="label">{label}</span>
-      <div class="lines">
-        {lines.map((c) => <span>{c}</span>)}
-      </div>
-    </div>
+<section class="sec strip">
+  <div class="strip-grid">
+    <h2 class="sec-title">{label}</h2>
+    <ul class="strip-list">
+      {lines.map((c) => <li>{c}</li>)}
+    </ul>
   </div>
 </section>

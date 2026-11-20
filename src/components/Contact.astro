@@ -7,23 +7,21 @@ import { site } from '../copy/site.ts';
 const { heading, body, emailLabel, callLabelPrefix } = home.contact;
 const { email, phoneLabel, phoneHref, address, hours } = site.contact;
 ---
-<section class="section" id="contact">
-  <div class="wrap">
-    <div class="contact-panel">
-      <h2>{heading.before}<span class="accent">{heading.accent}</span>{heading.after}</h2>
-      <p>{body}</p>
-      <div class="actions">
-        <a class="btn btn-primary" href={`mailto:${email}`}>
-          {emailLabel}
-          <span class="arr"><Icon name="arrow" size={16} /></span>
-        </a>
-        <a class="btn btn-ghost" href={phoneHref}>{callLabelPrefix}{phoneLabel}</a>
-      </div>
-      <div class="info">
-        <span><a href={`mailto:${email}`}>{email}</a></span>
-        <span>{address}</span>
-        <span>{hours}</span>
-      </div>
+<section class="sec sec--teal sec--end" id="contact">
+  <h2 class="contact-title">{heading.before}<span class="accent">{heading.accent}{heading.after}</span></h2>
+  <div class="contact-panel">
+    <p class="contact-body">{body}</p>
+    <div class="actions">
+      <a class="btn btn-primary" href={`mailto:${email}`}>
+        {emailLabel}
+        <span class="arr"><Icon name="arrow" size={18} /></span>
+      </a>
+      <a class="btn btn-ghost" href={phoneHref}>{callLabelPrefix}{phoneLabel}</a>
+    </div>
+    <div class="contact-info">
+      <span><a href={`mailto:${email}`}>{email}</a></span>
+      <span>{address}</span>
+      <span>{hours}</span>
     </div>
   </div>
 </section>

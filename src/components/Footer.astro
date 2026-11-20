@@ -7,7 +7,7 @@ const { brand, tagline, contact, footer } = site;
 const year = new Date().getFullYear();
 ---
 <footer class="foot">
-  <div class="wrap">
+  <div>
     <div class="top">
       <div class="brand-col">
         <div class="wordmark">
@@ -20,7 +20,7 @@ const year = new Date().getFullYear();
       </div>
       {footer.columns.map((col) => (
         <div>
-          <h5>{col.title}</h5>
+          <h2>{col.title}</h2>
           <ul>
             {col.links.map((l) => (
               <li class:list={[!('href' in l) && 'footer-subhead']}>
@@ -31,7 +31,7 @@ const year = new Date().getFullYear();
         </div>
       ))}
       <div>
-        <h5>Contact</h5>
+        <h2>Contact</h2>
         <ul>
           <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
           <li><a href={contact.phoneHref}>{contact.phoneLabel}</a></li>

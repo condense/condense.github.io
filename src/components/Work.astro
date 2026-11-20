@@ -1,29 +1,27 @@
 ---
-// Copy lives in src/copy/home.ts.
+// Selected work as a register of systems still in service. Copy lives in src/copy/home.ts.
 import { home } from '../copy/home.ts';
 const { eyebrow, title, lede, items } = home.work;
 ---
-<section class="section" id="work">
-  <div class="wrap">
-    <div class="section-header">
-      <span class="section-eyebrow">{eyebrow}</span>
-      <h2 class="section-title">{title}</h2>
-      <p class="section-lede">{lede}</p>
-    </div>
-    <div class="work-list">
-      {items.map((w) => (
-        <div class="work-row">
-          <div>
-            <h3>{w.title}</h3>
-            <div class="client">{w.client}</div>
-          </div>
-          <p class="desc">{w.desc}</p>
-          <div class="meta">
-            <span class="cat">{w.cat}</span>
-            <span>{w.yr}</span>
-          </div>
+<section class="sec" id="work">
+  <p class="rail"><span>{eyebrow}</span></p>
+  <div class="sec-head sec-head--wide">
+    <h2 class="sec-title">{title}</h2>
+    <p class="sec-lede">{lede}</p>
+  </div>
+  <div class="register">
+    {items.map((w) => (
+      <article class="reg-row">
+        <div>
+          <h3>{w.title}</h3>
+          <div class="client">{w.client}</div>
         </div>
-      ))}
-    </div>
+        <p class="desc">{w.desc}</p>
+        <div class="reg-meta">
+          <span class="status">{w.yr}</span>
+          <span class="cat">{w.cat}</span>
+        </div>
+      </article>
+    ))}
   </div>
 </section>

@@ -1,47 +1,44 @@
 ---
-// Homepage Hero — asymmetric full-bleed: an oversized blueprint illustration
-// bleeds off the right edge, feathered with a radial mask, while a left→right
-// scrim keeps the copy that sits over it legible. Numbered pillar strip below.
-// Style basis: eg3.html "Direction A" layout lab. Copy lives in src/copy/home.ts.
+// Homepage hero: the drawing sheet. Headline and lede top-left as one reading
+// unit, the plant drawing on the right, its main pipe running left under the
+// copy and down the margin, and the title block (primary action) bottom-right.
+// Copy lives in src/copy/home.ts and src/copy/site.ts.
 import Icon from './Icon.astro';
+import HeroDrawing from './HeroDrawing.astro';
+import TitleBlock from './TitleBlock.astro';
 import { home } from '../copy/home.ts';
 const { eyebrow, heading, lede, actions, meta } = home.hero;
 ---
-<section class="hero" id="top">
-  <div class="hero-art" aria-hidden="true">
-    <img
-      class="hero-blueprint"
-      src="/assets/hero-data-platform-map.png"
-      alt=""
-      width="1254"
-      height="1254"
-      loading="eager"
-      decoding="async"
-    />
-  </div>
-  <div class="hero-scrim" aria-hidden="true"></div>
-  <div class="wrap-hero">
-    <div class="hero-content">
-      {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+<section class="sec hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-head">
       <h1>
-        {heading.before}<span class="accent">{heading.accent}</span>{heading.after}
+        {heading.before}<span class="accent">{heading.accent}{heading.after}</span>
       </h1>
       {lede.map((para) => <p class="lede">{para}</p>)}
+    </div>
+    <div class="hero-hpipe" aria-hidden="true"></div>
+    <a class="btn btn-primary hero-cta-m" href={actions.primary.href}>
+      {actions.primary.label}
+      <span class="arr"><Icon name="arrow" size={18} /></span>
+    </a>
+    <div class="hero-drawing"><HeroDrawing /></div>
+    <div class="hero-copy">
       <div class="actions">
-        <a class="btn btn-primary" href={actions.primary.href}>
-          {actions.primary.label}
-          <span class="arr"><Icon name="arrow" size={16} /></span>
-        </a>
         <a class="btn btn-ghost" href={actions.ghost.href}>{actions.ghost.label}</a>
       </div>
+      <ul class="checks">
+        {meta.map((label, i) => (
+          <li>
+            <span class="key" aria-hidden="true">{'ABCD'[i]}</span>
+            {label}
+          </li>
+        ))}
+      </ul>
     </div>
-    <ul class="hero-pillars">
-      {meta.map((label, i) => (
-        <li class="pillar">
-          <span class="k" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
-          <span class="v">{label}</span>
-        </li>
-      ))}
-    </ul>
+    <div class="tb-wrap">
+      <div class="drop" aria-hidden="true"></div>
+      <TitleBlock tagline={eyebrow} label={actions.primary.label} href={actions.primary.href} />
+    </div>
   </div>
 </section>
