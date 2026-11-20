@@ -105,14 +105,13 @@
     <circle class="solid red" cx="303" cy="75" r="3.2" />
 
     <!-- 2. REPORT: presentation board on tripod with pie and bar charts -->
-    <path class="solid" d="M449 146 L455 206 H459 L453 146 Z" />
-    <path class="solid" d="M510 86 L526 208 H522 L506 86 Z" />
-    <path class="solid" d="M412 146 L399 218 H404 L417 146 Z" />
-    <path class="solid" d="M492 146 L504 222 H499 L487 146 Z" />
-    <ellipse class="solid" cx="401.5" cy="219" rx="3.5" ry="1.5" />
-    <ellipse class="solid" cx="457" cy="207" rx="3.5" ry="1.5" />
-    <ellipse class="solid" cx="501.5" cy="223" rx="3.5" ry="1.5" />
-    <ellipse class="solid" cx="524" cy="209" rx="3.5" ry="1.5" />
+    <!-- tripod: one shorter rear leg (further away, so higher on the slab), two splayed front legs -->
+    <path class="solid" d="M450 146 L454 196 H458 L454 146 Z" />
+    <ellipse class="solid" cx="456" cy="197" rx="3.5" ry="1.5" />
+    <path class="solid" d="M410 146 L398 220 H403 L415 146 Z" />
+    <path class="solid" d="M494 146 L506 220 H501 L489 146 Z" />
+    <ellipse class="solid" cx="400.5" cy="221" rx="3.5" ry="1.5" />
+    <ellipse class="solid" cx="503.5" cy="221" rx="3.5" ry="1.5" />
 
     <rect class="solid" x="390" y="42" width="124" height="104" rx="5" />
     <path class="tint" stroke="none" d="M391 47 Q391 43 395 43 H509 Q513 43 513 47 V57 H391 Z" />
@@ -139,56 +138,35 @@
     <circle class="solid red" cx="608" cy="108" r="30" />
     <path class="red" d="M593 109 L603 119 L624 97" />
 
-    <!-- SOURCES ENTERING AT RIGHT EDGE (x=800) -->
-    <!-- subtle companion guide curves -->
-    <path class="thin" d="M800 314 C736 314 742 454 698 454 M800 394 C744 394 742 464 698 464 M800 474 C748 474 742 474 698 474 M800 534 C742 534 742 486 698 486" />
+    <!-- SOURCES: three inputs at the right, each with one feed line into the pipe -->
+    <path class="flow" d="M752 331 C722 331 730 458 698 458" />
+    <path class="flow" d="M752 423 C728 423 726 466 698 466" />
+    <path class="flow" d="M752 511 C724 511 728 480 698 480" />
 
-    <!-- animated flow lines inward from x=800 to pipe manifold -->
-    <path class="flow" d="M800 306 C730 306 740 458 698 458" />
-    <path class="flow" d="M800 386 C738 386 738 466 698 466" />
-    <path class="flow" d="M800 466 C744 466 738 474 698 474" />
-    <path class="flow" d="M800 526 C734 526 738 482 698 482" />
-
-    <!-- scatter of data squares streaming along the incoming curves -->
-    <rect class="solid" x="736" y="318" width="4.5" height="4.5" />
-    <rect class="teal" x="724" y="344" width="4" height="4" />
-    <rect class="solid red" x="718" y="374" width="4" height="4" />
-    <rect class="solid" x="738" y="392" width="4.5" height="4.5" />
-    <rect class="tint" x="722" y="412" width="4.5" height="4.5" />
-    <rect class="teal" x="708" y="438" width="4" height="4" />
-    <rect class="solid" x="734" y="458" width="4.5" height="4.5" />
-    <rect class="solid red" x="718" y="463" width="4" height="4" />
-    <rect class="tint" x="706" y="452" width="3.5" height="3.5" />
-    <rect class="solid" x="736" y="514" width="4.5" height="4.5" />
-    <rect class="teal" x="722" y="498" width="4" height="4" />
-    <rect class="solid red" x="710" y="484" width="4" height="4" />
-    <circle class="dot" cx="730" cy="332" r="1.5" />
-    <circle class="dot" cx="714" cy="426" r="1.5" />
-    <circle class="dot" cx="728" cy="480" r="1.5" />
-    <circle class="dot" cx="730" cy="528" r="1.5" />
+    <rect class="solid" x="733" y="362" width="4.5" height="4.5" />
+    <rect class="teal" x="722" y="398" width="4" height="4" />
+    <rect class="solid red" x="713" y="434" width="4" height="4" />
+    <rect class="solid" x="731" y="446" width="4.5" height="4.5" />
+    <rect class="teal" x="716" y="494" width="4" height="4" />
+    <rect class="solid red" x="734" y="500" width="4" height="4" />
 
     <!-- Source 1 icon: SPREADSHEET -->
-    <path class="solid" d="M750 282 H778 L788 292 V328 H750 Z" />
-    <path d="M778 282 V292 H788" />
-    <rect class="tint" x="756" y="296" width="24" height="7" />
-    <rect x="756" y="296" width="24" height="22" />
-    <path class="thin" d="M756 303 H780 M756 311 H780 M764 296 V318 M772 296 V318" />
+    <path class="solid" d="M752 308 H780 L790 318 V354 H752 Z" />
+    <path d="M780 308 V318 H790" />
+    <rect class="tint" x="758" y="322" width="24" height="7" />
+    <rect x="758" y="322" width="24" height="22" />
+    <path class="thin" d="M758 329 H782 M758 337 H782 M766 322 V344 M774 322 V344" />
 
     <!-- Source 2 icon: SCRIPT -->
-    <path class="solid" d="M750 364 H778 L788 374 V410 H750 Z" />
-    <path d="M778 364 V374 H788" />
-    <path d="M763 383 L758 388 L763 393 M775 383 L780 388 L775 393 M771 381 L767 395" />
-    <path class="thin" d="M758 402 H778" />
+    <path class="solid" d="M752 400 H780 L790 410 V446 H752 Z" />
+    <path d="M780 400 V410 H790" />
+    <path d="M765 419 L760 424 L765 429 M777 419 L782 424 L777 429 M773 417 L769 431" />
+    <path class="thin" d="M760 438 H780" />
 
     <!-- Source 3 icon: FEED -->
-    <rect class="solid" x="750" y="446" width="38" height="38" rx="5" />
-    <circle class="teal" cx="759" cy="475" r="3.5" />
-    <path d="M759 464 A11 11 0 0 1 770 475 M759 454 A21 21 0 0 1 780 475" />
-
-    <!-- Source 4 icon: unlabelled document -->
-    <path class="solid" d="M750 502 H778 L788 512 V546 H750 Z" />
-    <path d="M778 502 V512 H788" />
-    <path d="M758 518 H778 M758 526 H778 M758 534 H772" />
+    <rect class="solid" x="752" y="492" width="38" height="38" rx="5" />
+    <circle class="teal" cx="761" cy="521" r="3.5" />
+    <path d="M761 510 A11 11 0 0 1 772 521 M761 500 A21 21 0 0 1 782 521" />
 
     <!-- MAIN HORIZONTAL PIPE (y=452 to y=488, open at left edge x=0) -->
     <path class="solid" stroke="none" d="M0 452 H694 V488 H0 Z" />
@@ -294,9 +272,9 @@
       <text x="258" y="36" text-anchor="middle">ATLAS</text>
       <text x="453" y="28" text-anchor="middle">REPORT</text>
       <text x="608" y="58" text-anchor="middle">DECISION</text>
-      <text x="794" y="274" text-anchor="end">SPREADSHEET</text>
-      <text x="794" y="356" text-anchor="end">SCRIPT</text>
-      <text x="794" y="438" text-anchor="end">FEED</text>
+      <text x="790" y="300" text-anchor="end">SPREADSHEET</text>
+      <text x="790" y="392" text-anchor="end">SCRIPT</text>
+      <text x="790" y="484" text-anchor="end">FEED</text>
     </g>
   </g>
 </svg>
